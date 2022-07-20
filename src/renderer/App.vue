@@ -56,7 +56,6 @@ import {
   getUserInfo,
   checkToken,
   getUserBalance,
-  ApiError,
 } from '@/libs/apis';
 import sagi from '@/libs/sagi';
 import { apiOfAccountService, siteOfAccountService, forceRefresh } from '@/../shared/config';

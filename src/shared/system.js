@@ -13,6 +13,8 @@ async function spawn(...args) {
 export async function setAsDefaultApp() {
   const exts = getAllValidExtensions();
   if (process.platform === 'darwin') {
+    // TODO:
+    // eslint-disable-next-line import/extensions, import/no-webpack-loader-syntax
     let { default: code } = await import('raw-loader!./python/setAsDefaultAppForMac.py');
     code = code.replace('$EXTS', exts.map(ext => `'${ext}'`).join(', '));
     await spawn('python', ['-c', code]);

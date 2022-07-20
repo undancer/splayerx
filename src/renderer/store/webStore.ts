@@ -4,6 +4,8 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const modules = {
+  // TODO:
+  // eslint-disable-next-line import/extensions
   UserInfo: require('@/store/modules/UserInfo.ts').default,
 };
 

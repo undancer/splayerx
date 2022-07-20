@@ -7,5 +7,9 @@
     "typescript",
     "typescritpreact"
   ],
-  "sort-imports.on-save": false
+  "sort-imports.on-save": false,
+  "i18n-ally.localesPaths": [
+    "src/renderer/locales",
+    "src/renderer/locales/lang"
+  ]
 }
