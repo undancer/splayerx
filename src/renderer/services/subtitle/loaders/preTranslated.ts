@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { TranscriptInfo } from 'sagi-api/translation/v1/translation_pb';
 import { LanguageCode, normalizeCode } from '@/libs/language';
 import {

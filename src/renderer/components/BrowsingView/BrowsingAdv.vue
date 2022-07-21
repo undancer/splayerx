@@ -49,6 +49,7 @@
             transition: 'transform 300ms linear, box-shadow 100ms linear',
           }"
           v-for="(item, index) in advItems"
+          :key="`adv-${index}`"
           @click="handleAdvClick(item.url)"
           class="adv-content"
         >

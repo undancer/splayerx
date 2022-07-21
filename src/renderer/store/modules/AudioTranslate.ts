@@ -8,7 +8,7 @@
 // @ts-ignore
 import { event } from 'vue-analytics';
 import { ipcRenderer, remote } from 'electron';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { AudioTranslate as m } from '@/store/mutationTypes';
 import store from '@/store';
 import { AudioTranslate as a, SubtitleManager as smActions, UserInfo as uActions } from '@/store/actionTypes';

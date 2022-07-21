@@ -3,7 +3,7 @@ import { cloneDeep } from 'lodash';
 import path from 'path';
 import { remote, OpenDialogReturnValue } from 'electron';
 import Vue from 'vue';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 // @ts-ignore
 import { event } from 'vue-analytics';
 import {

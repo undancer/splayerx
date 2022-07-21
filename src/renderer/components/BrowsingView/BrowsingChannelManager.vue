@@ -7,16 +7,20 @@
     class="channel-manager no-drag"
   >
     <div class="manager-container">
+      {{ /* eslint-disable vue/no-use-v-if-with-v-for */ }}
       <div
         v-if="allChannels.get(category.type).channels.length"
         v-for="category in categories"
+        :key="`category-part-${category.type}`"
         class="category-part"
       >
+        {{ /* eslint-enabled vue/no-use-v-if-with-v-for */ }}
         <span :style="{ fontWeight: 'bold' }">{{ $t(category.locale) }}</span>
         <div class="channel-container">
           <div
             :title="item.category === 'customized' && index !== 0 ? item.title : $t(item.title)"
             v-for="(item, index) in allChannels.get(category.type).channels"
+            :key="`channel-details-${index}`"
             @mouseover="handleMouseover(index, category.type)"
             @mouseleave="handleMouseleave"
             @mousedown.stop="handleMousedown($event, item, index)"

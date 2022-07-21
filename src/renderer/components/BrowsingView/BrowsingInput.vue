@@ -61,6 +61,7 @@
           >
             <div
               v-for="(item, index) in new Array(3)"
+              :key="`loading-${index}`"
               :style="{
                 background: loadingBackground(index),
               }"

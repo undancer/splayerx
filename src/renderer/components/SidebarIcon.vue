@@ -32,6 +32,7 @@
       >
         <div
           v-for="(item) in [0, 1, 2]"
+          :key="`loading-${item}`"
           :style="{
             background: item === loadingIndex ?
               'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.5)',

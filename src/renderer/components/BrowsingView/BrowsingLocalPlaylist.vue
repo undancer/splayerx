@@ -48,6 +48,7 @@
             @mouseover="handleMouseover(index)"
             @mouseleave="handleMouseleave"
             v-for="(item, index) in playlist"
+            :key="`play-list-${index}`"
           >
             <div
               v-show="hasPlaylist"

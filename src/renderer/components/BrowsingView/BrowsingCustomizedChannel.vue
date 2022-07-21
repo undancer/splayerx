@@ -65,6 +65,7 @@
               marginLeft: index === 0 ? '17px' : '12px',
             }"
             v-for="(style, index) in bookmarkStyles"
+            :key="`bookmark-style-${index}`"
             @click="handleUpdateSelectedIndex(initUrl, index)"
             class="bookmark-style"
           >

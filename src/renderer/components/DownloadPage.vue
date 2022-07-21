@@ -71,6 +71,7 @@
                 marginBottom: index === settingsContent.length - 1 ? '5px' : '',
               }"
               v-for="(i, index) in settingsContent"
+              :key="`settings-item-${index}`"
               @click="handleGlobalSettings(i.type)"
               class="settings--item"
             >
@@ -153,6 +154,7 @@
         }"
         v-show="downloadList.length"
         v-for="(item, index) in downloadList"
+        :key="`download-page-item-${index}`"
         @mouseover="handleMouseover(index)"
         @mouseleave="handleMouseleave"
         class="downloadPage--item"

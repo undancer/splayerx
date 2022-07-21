@@ -2,7 +2,7 @@ import {
   MutationTree, GetterTree, ActionTree,
   Module, ActionContext,
 } from 'vuex';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import {
   isEqual, sortBy, differenceWith, flatten, remove, debounce, difference, cloneDeep,
 } from 'lodash';
