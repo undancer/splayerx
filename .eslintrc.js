@@ -22,6 +22,7 @@ module.exports = {
     },
   ],
   rules: {
+    'import/no-extraneous-dependencies': 'off',
     'no-console': ['error', { allow: ['trace', 'warn', 'error', 'time', 'timeEnd'] }],
     'no-unused-expressions': 0,
     'no-unused-vars': 1,
@@ -32,7 +33,9 @@ module.exports = {
     'dot-notation': 0,
     'import/extensions': [
       'error',
-      { js: 'never', json: 'ignorePackages', vue: 'always', scss: 'always' },
+      {
+        js: 'never', json: 'ignorePackages', vue: 'always', scss: 'always',
+      },
     ],
     'import/newline-after-import': 1,
     'import/prefer-default-export': 0,

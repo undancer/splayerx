@@ -1,6 +1,6 @@
 'use strict';
 
-require('module-alias/register');
+// require('module-alias/register');
 const chalk = require('chalk');
 const electron = require('electron');
 const path = require('path');

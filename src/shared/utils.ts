@@ -3,7 +3,7 @@ import { join } from 'path';
 import osLocale from 'os-locale';
 import { v4 as uuidv4 } from 'uuid';
 import regedit from 'regedit';
-import storage from '@splayer/electron-json-storage';
+import storage from 'electron-json-storage';
 import * as platformInfo from './common/platform';
 import { checkPathExist, read, write } from '../renderer/libs/file';
 import { TOKEN_FILE_NAME } from '../renderer/constants';

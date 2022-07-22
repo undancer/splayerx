@@ -2,7 +2,7 @@
 import {
   toVttTime, toSrtTime, stringifyVtt, stringify,
   // @ts-ignore
-} from '@splayer/subtitle';
+} from 'subtitle';
 import { TextCue } from '@/interfaces/ISubtitle';
 import { SagiTextSubtitlePayload } from '../parsers';
 

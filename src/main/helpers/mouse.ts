@@ -13,7 +13,8 @@ class Mouse implements IMouse {
 
   public constructor() {
     try {
-      const mouseConstructor = process.platform === 'win32' ? require('win-mouse') : require('@splayer/osx-mouse-cocoa'); //eslint-disable-line
+      // TODO: 鼠标
+      const mouseConstructor = process.platform === 'win32' ? require('win-mouse') : require('osx-mouse-cocoa'); //eslint-disable-line
       this.mouse = mouseConstructor();
     } catch (ex) {
       console.error(ex);

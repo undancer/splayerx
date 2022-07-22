@@ -41,7 +41,7 @@ function generateFileAssociations(platform) {
 const packageJson = JSON.parse(
   fs.readFileSync(path.join(__dirname, '../package.json'), 'utf-8'),
 );
-const electronVersion = packageJson.devDependencies['@chiflix/electron'].split('-')[0];
+const electronVersion = packageJson.devDependencies['electron'].split('-')[0];
 const win = {
   icon: 'build/icons/icon.ico',
   fileAssociations: generateFileAssociations('win'),
@@ -55,6 +55,9 @@ const mac = {
   fileAssociations: generateFileAssociations('mac'),
 };
 
+/**
+ * @type {import('electron-builder').Configuration}
+ * */
 const config = {
   appId: 'org.splayer.splayerx',
   productName: 'SPlayer',
@@ -72,12 +75,12 @@ const config = {
     output: 'build',
   },
   electronVersion,
-  electronDist: 'node_modules/@chiflix/electron/dist',
-  electronDownload: {
-    mirror: 'https://github.com/chiflix/electron/releases/download/v',
-    isVerifyChecksum: false,
-    version: electronVersion,
-  },
+  // electronDist: 'node_modules/@chiflix/electron/dist',
+  // electronDownload: {
+  //   mirror: 'https://github.com/chiflix/electron/releases/download/v',
+  //   isVerifyChecksum: false,
+  //   version: electronVersion,
+  // },
   files: ['dist/electron/**/*'],
   extraResources: [
     {

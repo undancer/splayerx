@@ -2,7 +2,7 @@ import {
   app,
   ipcMain,
   dialog,
-  splayerx,
+  // splayerx,
 } from 'electron';
 import path from 'path';
 import http from 'http';
@@ -27,6 +27,7 @@ function encodeRFC5987ValueChars(str: string) {
 
 /* eslint-enable */
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars */
 function ipToInt(ip: string): number {
   return ip.split('.').map((val, idx, arr) => parseInt(val, 10) * (256 ** (arr.length - idx - 1))).reduce((prev, curr) => prev + curr);
 }
@@ -252,6 +253,7 @@ class LosslessStreaming {
         if (this.info.enabled) this.disableService();
         const info = this.enableService(filePath);
         if (info) {
+          // @ts-ignore
           this.setInfo({ enabled: true, ...info });
           return true;
         }
@@ -275,34 +277,51 @@ class LosslessStreaming {
     ipcMain.removeAllListeners('losslessStreaming.getInfo');
   }
 
+  // TODO:
+  /* eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars */
   private enableService(filePath: string) {
     if (process.platform !== 'darwin') return null;
-    const port = 62020;
-    const host = this.startHttpServer(filePath, port);
-    if (host) {
-      // the ip need translate to code
-      const code = ipToInt(host);
-      console.info('enable shared service for file: ', host, code);
-      const url = `http://${host}:${port}/`;
-      splayerx.startBluetoothService(`s${code}p`, url);
-      return {
-        filePath,
-        host,
-        port,
-        code,
-      };
-    }
     return null;
   }
 
+  // TODO:
+  // private enableService(filePath: string) {
+  //   if (process.platform !== 'darwin') return null;
+  //   const port = 62020;
+  //   const host = this.startHttpServer(filePath, port);
+  //   if (host) {
+  //     // the ip need translate to code
+  //     const code = ipToInt(host);
+  //     console.info('enable shared service for file: ', host, code);
+  //     const url = `http://${host}:${port}/`;
+  //     splayerx.startBluetoothService(`s${code}p`, url);
+  //     return {
+  //       filePath,
+  //       host,
+  //       port,
+  //       code,
+  //     };
+  //   }
+  //   return null;
+  // }
+
+  // TODO:
   private disableService() {
+    // eslint-disable-next-line no-useless-return
     if (process.platform !== 'darwin') return;
-    console.info('disable shared service.');
-    if (this.httpServer) {
-      this.httpServer.close();
-    }
-    splayerx.stopBluetoothService();
+    // eslint-disable-next-line no-useless-return
+    return;
   }
+
+  // TODO:
+  // private disableService() {
+  //   if (process.platform !== 'darwin') return;
+  //   console.info('disable shared service.');
+  //   if (this.httpServer) {
+  //     this.httpServer.close();
+  //   }
+  //   splayerx.stopBluetoothService();
+  // }
 
   private getValidIP(): string|null {
     // Need a better way to find a valid IP

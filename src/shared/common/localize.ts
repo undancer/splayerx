@@ -1,5 +1,5 @@
-import { join } from 'path';
-import { isElectronRenderer } from './platform';
+// import { join } from 'path';
+// import { isElectronRenderer } from './platform';
 import messages from '../../renderer/locales/index';
 import { getSystemLocale } from '../utils';
 
@@ -32,27 +32,36 @@ export default class Locale {
     return this._displayLanguage;
   }
 
-  public refreshDisplayLanguage() {
-    let data;
-    try {
-      const electron = require('electron'); // eslint-disable-line
-      const { readFileSync } = require('fs'); // eslint-disable-line
-      const { app } = isElectronRenderer ? electron.remote : electron;
-      const preferencesPath = join(app.getPath('userData'), 'storage', 'preferences.json');
-      const jsonString = readFileSync(preferencesPath) as unknown as string;
-      data = JSON.parse(jsonString);
-    } catch (err) {
-      data = {};
-    }
-    if (data && data.displayLanguage) {
-      if (data.displayLanguage === 'zh-TW' || data.displayLanguage === 'zh-HK' || data.displayLanguage === 'zh-Hant') {
-        data.displayLanguage = 'zh-Hant';
-      } else if (data.displayLanguage.startsWith('zh')) {
-        data.displayLanguage = 'zh-Hans';
-      }
-      this._displayLanguage = data.displayLanguage;
-    } else {
-      this._displayLanguage = getSystemLocale();
-    }
+  // TODO:
+  public refreshDisplayLanguage(): void {
+    this._displayLanguage = getSystemLocale();
   }
+
+  // TODO:
+  // public refreshDisplayLanguageOld() {
+  //   let data;
+  //   try {
+  //     const electron = require('electron'); // eslint-disable-line
+  //     const { readFileSync } = require('fs'); // eslint-disable-line
+  //     const { app } = isElectronRenderer ? electron.remote : electron;
+  //     const preferencesPath = join(app.getPath('userData'), 'storage', 'preferences.json');
+  //     const jsonString = readFileSync(preferencesPath) as unknown as string;
+  //     data = JSON.parse(jsonString);
+  //   } catch (err) {
+  //     data = {};
+  //   }
+  //   if (data && data.displayLanguage) {
+  //     if (data.displayLanguage === 'zh-TW'
+  //       || data.displayLanguage === 'zh-HK'
+  //       || data.displayLanguage === 'zh-Hant'
+  //     ) {
+  //       data.displayLanguage = 'zh-Hant';
+  //     } else if (data.displayLanguage.startsWith('zh')) {
+  //       data.displayLanguage = 'zh-Hans';
+  //     }
+  //     this._displayLanguage = data.displayLanguage;
+  //   } else {
+  //     this._displayLanguage = getSystemLocale();
+  //   }
+  // }
 }

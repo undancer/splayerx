@@ -1,5 +1,9 @@
 import { pick, get } from 'lodash';
-import { compile, CompiledASS, AssStream } from '@splayer/ass-compiler';
+import {
+  compile,
+  CompiledASS,
+  // AssStream,
+} from 'ass-compiler';
 import {
   Format, IParser, ILoader, IMetadata, TextCue, IVideoSegments,
 } from '@/interfaces/ISubtitle';
@@ -33,10 +37,10 @@ export class AssParser implements IParser {
                 return deduplicatedLines;
               }, [] as string[])
               .join('\n');
-            this.normalize(compile(deduplicatedStringPayload));
+            this.normalize(compile(deduplicatedStringPayload, {}));
             // some clean up
             if (this.timer) clearTimeout(this.timer);
-            this.assStream = undefined;
+            // this.assStream = undefined;
             this.timeSegments = undefined;
           });
       }
@@ -134,7 +138,7 @@ export class AssParser implements IParser {
 
   public async getMetadata() { return this.metadata; }
 
-  private assStream?: AssStream;
+  // private assStream?: AssStream;
 
   private timeSegments?: StreamTimeSegments;
 
@@ -161,7 +165,7 @@ export class AssParser implements IParser {
       if (!this.loader.fullyRead) {
         const payload = await this.loader.getPayload() as string;
         if (this.loader.fullyRead) {
-          this.normalize(compile(payload));
+          this.normalize(compile(payload, {}));
         }
       }
     } else if (!this.loader.fullyRead) {
@@ -174,13 +178,19 @@ export class AssParser implements IParser {
         this.isRequesting = true;
         const payload = (await this.loader.getPayload(time) as Buffer || Buffer.alloc(0)).toString('utf8');
         const newLines = payload.split(/\r?\n/);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
         const deDuplicatedPayload = newLines.filter(line => !this.lastLines.includes(line)).join('\n');
         this.lastLines = newLines;
-        if (!this.assStream) this.assStream = new AssStream();
-        const result = this.assStream.compile(this._metadataString.concat(deDuplicatedPayload));
-        if (!this.timeSegments) this.timeSegments = new StreamTimeSegments();
-        this.timeSegments.bulkInsert(result.map(({ Start, End }) => [Start, End]), time || 0);
-        this.normalize(this.assStream.compiled);
+        // TODO: 视频内置字幕流
+        // if (!this.assStream){
+        //   this.assStream = new AssStream();
+        // }
+        // const result = this.assStream.compile(this._metadataString.concat(deDuplicatedPayload));
+        // if (!this.timeSegments){
+        //   this.timeSegments = new StreamTimeSegments();
+        // }
+        // this.timeSegments.bulkInsert(result.map(({ Start, End }) => [Start, End]), time || 0);
+        // this.normalize(this.assStream.compiled);
         this.isRequesting = false;
       }
     }

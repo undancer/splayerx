@@ -10,7 +10,7 @@ declare module 'regedit' {
   ): void;
 }
 
-declare module '@splayer/electron-json-storage' {
+declare module 'electron-json-storage' {
   export function get(
     key: string,
     cb: (err: Err, result: any) => void,

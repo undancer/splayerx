@@ -60,14 +60,20 @@ const languages = [
 // https://github.com/electron-userland/electron-builder/issues/708
 // https://github.com/electron/electron/issues/2484
 exports.default = (context) => {
-  const APP_NAME = context.packager.appInfo.productFilename;
-  const APP_OUT_DIR = context.appOutDir;
-  const PLATFORM = context.packager.platform.name;
-  if (PLATFORM === 'mac') {
-    languages.forEach((item) => {
-      fs.writeFile(`${APP_OUT_DIR}/${APP_NAME}.app/Contents/Resources/${item}.lproj`, '', (err) => {
-        if (err) throw err;
-      });
-    });
-  }
+  // const APP_NAME = context.packager.appInfo.productFilename;
+  // const APP_OUT_DIR = context.appOutDir;
+  // const PLATFORM = context.packager.platform.name;
+  // eslint-disable-next-line no-console
+  console.log('AFTER PACK HOOK', context);
+  // if (PLATFORM === 'mac') {
+  //   languages.forEach((item) => {
+  //     fs.writeFile(
+  //       `${APP_OUT_DIR}/${APP_NAME}.app/Contents/Resources/${item}.lproj`,
+  //       '',
+  //       (err) => {
+  //         if (err) throw err;
+  //       },
+  //     );
+  //   });
+  // }
 };
