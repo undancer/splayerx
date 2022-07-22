@@ -286,7 +286,14 @@ export default {
           } else {
             const generateAudioEvent = (type: string) => (trackEvent: TrackEvent) => {
               if (!this.$refs.video) return;
-              const track = trackEvent.track as AudioTrack;
+              interface AudioTrack {
+                id: string,
+                kind: string,
+                label: string,
+                language: string,
+                enabled: boolean,
+              }
+              const track = trackEvent.track as unknown as AudioTrack;
               const {
                 id, kind, label, language,
               } = track;
