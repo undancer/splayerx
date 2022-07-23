@@ -1,0 +1,143 @@
+diff --git a/node_modules/sagi-api/build/client.js b/node_modules/sagi-api/build/client.js
+index f80641a..fd40a61 100644
+--- a/node_modules/sagi-api/build/client.js
++++ b/node_modules/sagi-api/build/client.js
+@@ -35,7 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
+ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+ /* eslint-disable */
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ /* eslint-enable */
+
+ var Sagi = function () {
+diff --git a/node_modules/sagi-api/google/bytestream/bytestream_grpc_pb.js b/node_modules/sagi-api/google/bytestream/bytestream_grpc_pb.js
+index e8128d5..9393429 100644
+--- a/node_modules/sagi-api/google/bytestream/bytestream_grpc_pb.js
++++ b/node_modules/sagi-api/google/bytestream/bytestream_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var google_bytestream_bytestream_pb = require('../../google/bytestream/bytestream_pb.js');
+ var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
+ var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');
+diff --git a/node_modules/sagi-api/google/cloud/location/locations_grpc_pb.js b/node_modules/sagi-api/google/cloud/location/locations_grpc_pb.js
+index a1ba260..dc8fe5d 100644
+--- a/node_modules/sagi-api/google/cloud/location/locations_grpc_pb.js
++++ b/node_modules/sagi-api/google/cloud/location/locations_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var google_cloud_location_locations_pb = require('../../../google/cloud/location/locations_pb.js');
+ var google_api_annotations_pb = require('../../../google/api/annotations_pb.js');
+ var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
+diff --git a/node_modules/sagi-api/google/cloud/speech/v1/cloud_speech_grpc_pb.js b/node_modules/sagi-api/google/cloud/speech/v1/cloud_speech_grpc_pb.js
+index 96fd4bf..deb4d92 100644
+--- a/node_modules/sagi-api/google/cloud/speech/v1/cloud_speech_grpc_pb.js
++++ b/node_modules/sagi-api/google/cloud/speech/v1/cloud_speech_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var google_cloud_speech_v1_cloud_speech_pb = require('../../../../google/cloud/speech/v1/cloud_speech_pb.js');
+ var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
+ var google_longrunning_operations_pb = require('../../../../google/longrunning/operations_pb.js');
+diff --git a/node_modules/sagi-api/google/cloud/speech/v1beta1/cloud_speech_grpc_pb.js b/node_modules/sagi-api/google/cloud/speech/v1beta1/cloud_speech_grpc_pb.js
+index 24f9165..b9b48ea 100644
+--- a/node_modules/sagi-api/google/cloud/speech/v1beta1/cloud_speech_grpc_pb.js
++++ b/node_modules/sagi-api/google/cloud/speech/v1beta1/cloud_speech_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var google_cloud_speech_v1beta1_cloud_speech_pb = require('../../../../google/cloud/speech/v1beta1/cloud_speech_pb.js');
+ var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
+ var google_longrunning_operations_pb = require('../../../../google/longrunning/operations_pb.js');
+diff --git a/node_modules/sagi-api/google/cloud/speech/v1p1beta1/cloud_speech_grpc_pb.js b/node_modules/sagi-api/google/cloud/speech/v1p1beta1/cloud_speech_grpc_pb.js
+index 2400ccf..172f74e 100644
+--- a/node_modules/sagi-api/google/cloud/speech/v1p1beta1/cloud_speech_grpc_pb.js
++++ b/node_modules/sagi-api/google/cloud/speech/v1p1beta1/cloud_speech_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var google_cloud_speech_v1p1beta1_cloud_speech_pb = require('../../../../google/cloud/speech/v1p1beta1/cloud_speech_pb.js');
+ var google_api_annotations_pb = require('../../../../google/api/annotations_pb.js');
+ var google_longrunning_operations_pb = require('../../../../google/longrunning/operations_pb.js');
+diff --git a/node_modules/sagi-api/google/longrunning/operations_grpc_pb.js b/node_modules/sagi-api/google/longrunning/operations_grpc_pb.js
+index 0452a69..39ee50a 100644
+--- a/node_modules/sagi-api/google/longrunning/operations_grpc_pb.js
++++ b/node_modules/sagi-api/google/longrunning/operations_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var google_longrunning_operations_pb = require('../../google/longrunning/operations_pb.js');
+ var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
+ var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
+diff --git a/node_modules/sagi-api/health/v1/health_grpc_pb.js b/node_modules/sagi-api/health/v1/health_grpc_pb.js
+index 5ea0062..7d91e4e 100644
+--- a/node_modules/sagi-api/health/v1/health_grpc_pb.js
++++ b/node_modules/sagi-api/health/v1/health_grpc_pb.js
+@@ -19,7 +19,7 @@
+ // https://github.com/grpc/grpc-proto/blob/master/grpc/health/v1/health.proto
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var health_v1_health_pb = require('../../health/v1/health_pb.js');
+
+ function serialize_sagittarius_health_v1_HealthCheckRequest(arg) {
+diff --git a/node_modules/sagi-api/media/v1/media_grpc_pb.js b/node_modules/sagi-api/media/v1/media_grpc_pb.js
+index 99f57e0..c99aad3 100644
+--- a/node_modules/sagi-api/media/v1/media_grpc_pb.js
++++ b/node_modules/sagi-api/media/v1/media_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var media_v1_media_pb = require('../../media/v1/media_pb.js');
+ var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
+ var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
+diff --git a/node_modules/sagi-api/training/v1/training_grpc_pb.js b/node_modules/sagi-api/training/v1/training_grpc_pb.js
+index 4e9794e..38a9abd 100644
+--- a/node_modules/sagi-api/training/v1/training_grpc_pb.js
++++ b/node_modules/sagi-api/training/v1/training_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var training_v1_training_pb = require('../../training/v1/training_pb.js');
+ var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
+ var google_rpc_status_pb = require('../../google/rpc/status_pb.js');
+diff --git a/node_modules/sagi-api/translation/v1/translation_grpc_pb.js b/node_modules/sagi-api/translation/v1/translation_grpc_pb.js
+index 62dec66..7f05250 100644
+--- a/node_modules/sagi-api/translation/v1/translation_grpc_pb.js
++++ b/node_modules/sagi-api/translation/v1/translation_grpc_pb.js
+@@ -16,7 +16,7 @@
+ // limitations under the License.
+ //
+ 'use strict';
+-var grpc = require('grpc');
++var grpc = require('@grpc/grpc-js');
+ var translation_v1_translation_pb = require('../../translation/v1/translation_pb.js');
+ var google_api_annotations_pb = require('../../google/api/annotations_pb.js');
+ var google_rpc_status_pb = require('../../google/rpc/status_pb.js');

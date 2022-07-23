@@ -171,6 +171,7 @@
     "mocha": "^5.2.0",
     "mocha-webpack": "^1.1.0",
     "node-gyp": "^9.0.0",
+    "patch-package": "^6.4.7",
     "raw-loader": "^2.0.0",
     "sass": "^1.53.0",
     "sass-loader": "^7.1.0",
