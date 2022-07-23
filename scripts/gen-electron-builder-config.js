@@ -39,9 +39,10 @@ function generateFileAssociations(platform) {
 }
 
 const packageJson = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '../package.json'), 'utf-8'),
+  fs.readFileSync(path.join(__dirname, '../node_modules/electron/package.json'), { encoding: 'utf-8' }),
 );
-const electronVersion = packageJson.devDependencies['electron'].split('-')[0];
+const electronVersion = packageJson.version;
+// packageJson.devDependencies['electron'].split('-')[0];
 const win = {
   icon: 'build/icons/icon.ico',
   fileAssociations: generateFileAssociations('win'),
