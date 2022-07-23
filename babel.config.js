@@ -41,7 +41,7 @@ module.exports = function babelConfig(api) {
             '@babel/preset-env',
             {
               targets: {
-                chrome: 69,
+                chrome: 85,
               },
             },
           ],
@@ -54,7 +54,7 @@ module.exports = function babelConfig(api) {
             '@babel/preset-env',
             {
               targets: {
-                node: 10,
+                node: 12,
               },
             },
           ],
@@ -67,7 +67,7 @@ module.exports = function babelConfig(api) {
             {
               modules: false,
               targets: {
-                chrome: 69,
+                chrome: 85,
               },
             },
           ],
