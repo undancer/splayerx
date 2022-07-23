@@ -1,6 +1,5 @@
 import electron from 'electron';
-// @ts-ignore
-import youtubedl from 'youtube-dl';
+import yd from 'youtube-dl';
 import fs from 'fs';
 import url from 'url';
 import Path from 'path';
@@ -49,8 +48,7 @@ class BrowsingDownload implements IBrowsingDownload {
   public async getDownloadVideo(Cookie: string): Promise<any> {
     const options = Cookie ? ['--add-header', `Cookie:"${Cookie}"`] : [];
     return new Promise(((resolve, reject) => {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      youtubedl.getInfo(this.url, options, (err: any, info: any) => {
+      yd.getInfo(this.url, options, (err, info) => {
         if (err) reject(err);
         resolve({ info, url: this.url });
       });
@@ -68,8 +66,7 @@ class BrowsingDownload implements IBrowsingDownload {
       readable: true,
       writable: false,
     });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    youtubedl.getInfo(this.url, options.concat(['-f', id]), (err: any, data: any) => (err || this.manualAbort ? stream.emit('error', err || 'manual abort') : this.processData(data, stream, headers)));
+    yd.getInfo(this.url, options.concat(['-f', id]), (err, data) => (err || this.manualAbort ? stream.emit('error', err || 'manual abort') : this.processData(data, stream, headers)));
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     stream.on('info', (info: any) => {
       this.size = info.size + this.initProgress;
@@ -167,8 +164,7 @@ class BrowsingDownload implements IBrowsingDownload {
       readable: true,
       writable: false,
     });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    youtubedl.getInfo(this.url, ['-f', id], (err: any, data: any) => (err ? stream.emit('error', err) : this.processData(data, stream, {}, { start: lastIndex })));
+    yd.getInfo(this.url, ['-f', id], (err, data) => (err ? stream.emit('error', err) : this.processData(data, stream, {}, { start: lastIndex })));
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     stream.on('info', (info: any) => {
       this.size = info.size + this.initProgress;

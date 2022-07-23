@@ -14,7 +14,10 @@
     "noImplicitAny": true,
     "outDir": "dist/typescript",
     "paths": {
-      "@/*": ["renderer/*"]
+      "@/*": ["renderer/*"],
+      "@main/*": ["main/*"],
+      "@renderer/*": ["renderer/*"],
+      "@shared/*": ["shared/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

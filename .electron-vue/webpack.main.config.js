@@ -88,6 +88,9 @@ let mainConfig = {
   resolve: {
     extensions: ['.ts', '.js', '.json', '.node'],
     alias: {
+      '@main': path.join(__dirname, '../src/main'),
+      '@renderer': path.join(__dirname, '../src/renderer'),
+      '@shared': path.join(__dirname, '../src/shared'),
     },
   },
   target: 'electron-main',

@@ -218,6 +218,9 @@ let webConfig = {
   resolve: {
     alias: {
       '@': path.join(__dirname, '../src/renderer'),
+      '@main': path.join(__dirname, '../src/main'),
+      '@renderer': path.join(__dirname, '../src/renderer'),
+      '@shared': path.join(__dirname, '../src/shared'),
     },
     extensions: ['.web.ts', '.web.js', '.ts', '.tsx', '.js', '.json'],
   },

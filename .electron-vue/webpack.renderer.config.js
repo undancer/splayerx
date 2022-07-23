@@ -225,6 +225,9 @@ let rendererConfig = {
   resolve: {
     alias: {
       '@': path.join(__dirname, '../src/renderer'),
+      '@main': path.join(__dirname, '../src/main'),
+      '@renderer': path.join(__dirname, '../src/renderer'),
+      '@shared': path.join(__dirname, '../src/shared'),
     },
     extensions: ['.ts', '.tsx', '.js', '.json', '.node'],
   },
