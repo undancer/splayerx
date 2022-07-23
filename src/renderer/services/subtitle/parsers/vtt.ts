@@ -1,5 +1,4 @@
-// @ts-ignore
-import { parse, toMS } from 'subtitle';
+import { Cue, parseSync as parse, parseTimestamp } from 'subtitle';
 import {
   Format, TextCue, IParser, IVideoSegments,
 } from '@/interfaces/ISubtitle';
@@ -38,8 +37,8 @@ export class VttParser implements IParser {
       .filter(({ text }) => text)
       .forEach((subtitle) => {
         finalDialogues.push({
-          start: toMS(subtitle.start) / 1000,
-          end: toMS(subtitle.end) / 1000,
+          start: parseTimestamp(`${subtitle.start}`) / 1000,
+          end: parseTimestamp(`${subtitle.end}`) / 1000,
           tags: tagsGetter(subtitle.text, this.baseTags),
           text: subtitle.text
             .replace(/<\/?[^bius]+?>/g, '')
@@ -55,7 +54,16 @@ export class VttParser implements IParser {
   public async getDialogues(time?: number) {
     if (!this.loader.fullyRead) {
       const payload = await this.loader.getPayload() as string;
-      if (this.loader.fullyRead) this.normalizer(parse(payload));
+      if (this.loader.fullyRead) {
+        this.normalizer(parse(payload)
+          .filter(payload => payload.type === 'cue')
+          .map(payload => payload.data as Cue)
+          .map(({
+            start, end, text, settings,
+          }) => ({
+            start, end, text, settings: settings || '',
+          })));
+      }
     }
     return getDialogues(this.dialogues, time);
   }

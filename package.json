@@ -70,7 +70,7 @@
     "romanize": "^1.1.1",
     "sagi-api": "0.0.20",
     "streamify": "^0.2.9",
-    "subtitle": "^2.0.3",
+    "subtitle": "^4.2.1",
     "traditional-or-simplified": "^1.0.3",
     "url-parse-lax": "^3.0.0",
     "uuid": "^8.0.0",
