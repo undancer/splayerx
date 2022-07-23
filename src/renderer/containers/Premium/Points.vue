@@ -600,7 +600,7 @@ export default Vue.extend({
     margin-bottom: 20px;
   }
 
-  &__description ::v-deep a {
+  &__description :deep(a) {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: underline;
     &:hover {
