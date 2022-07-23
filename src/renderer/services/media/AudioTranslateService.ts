@@ -9,7 +9,7 @@
 import { ipcRenderer, Event } from 'electron';
 import { EventEmitter } from 'events';
 import { isNaN } from 'lodash';
-import { status } from 'grpc';
+import { status } from '@grpc/grpc-js';
 import {
   StreamingTranslationResponse,
 } from 'sagi-api/translation/v1/translation_pb';

@@ -69,7 +69,7 @@ let webConfig = {
     ...Object.keys(Object.assign({}, dependencies, optionalDependencies)).filter(
       d => !whiteListedModules.includes(d),
     ),
-    'eletron',
+    'electron',
   ],
   module: {
     rules: [
@@ -218,8 +218,6 @@ let webConfig = {
   resolve: {
     alias: {
       '@': path.join(__dirname, '../src/renderer'),
-      vue$: 'vue/dist/vue.esm.js',
-      grpc: '@grpc/grpc-js',
     },
     extensions: ['.web.ts', '.web.js', '.ts', '.tsx', '.js', '.json'],
   },

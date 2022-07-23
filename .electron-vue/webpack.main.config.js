@@ -88,8 +88,6 @@ let mainConfig = {
   resolve: {
     extensions: ['.ts', '.js', '.json', '.node'],
     alias: {
-      electron: '@chiflix/electron',
-      grpc: '@grpc/grpc-js',
     },
   },
   target: 'electron-main',

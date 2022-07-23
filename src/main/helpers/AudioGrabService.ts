@@ -11,7 +11,7 @@ import { splayerx } from 'electron';
 import path, { sep } from 'path';
 import fs from 'fs';
 import { take } from 'lodash';
-import { credentials, Metadata } from 'grpc';
+import { credentials, Metadata } from '@grpc/grpc-js';
 
 import { TranslationClient } from 'sagi-api/translation/v1/translation_grpc_pb';
 import {

@@ -92,41 +92,41 @@ const config = {
   ],
   win,
   mac,
-  appx: {
-    identityName: '29951SHENGSHEN.SPlayer4',
-    applicationId: 'SPlayer',
-    backgroundColor: '#FF7A1C',
-    displayName: 'SPlayer - One Browser for All Media',
-    publisher: 'CN=840E2570-B48E-4F56-A2DA-0D9720F91080',
-    publisherDisplayName: 'SHENG SHEN',
-    languages: ['en', 'ar', 'es', 'ja', 'ko', 'zh-Hans', 'zh-Hant'],
-  },
-  dmg: {
-    background: 'build/icons/dmg/bg.tiff',
-    icon: 'build/icons/dmg/install.icns',
-    iconSize: 95,
-    window: {
-      width: 540,
-      height: 320,
-    },
-    contents: [
-      {
-        x: 400,
-        y: 148,
-        type: 'link',
-        path: '/Applications',
-      },
-      {
-        x: 131,
-        y: 150,
-        type: 'file',
-      },
-    ],
-  },
-  nsis: {
-    oneClick: false,
-    allowToChangeInstallationDirectory: true,
-  },
+  // appx: {
+  //   identityName: '29951SHENGSHEN.SPlayer4',
+  //   applicationId: 'SPlayer',
+  //   backgroundColor: '#FF7A1C',
+  //   displayName: 'SPlayer - One Browser for All Media',
+  //   publisher: 'CN=840E2570-B48E-4F56-A2DA-0D9720F91080',
+  //   publisherDisplayName: 'SHENG SHEN',
+  //   languages: ['en', 'ar', 'es', 'ja', 'ko', 'zh-Hans', 'zh-Hant'],
+  // },
+  // dmg: {
+  //   background: 'build/icons/dmg/bg.tiff',
+  //   icon: 'build/icons/dmg/install.icns',
+  //   iconSize: 95,
+  //   window: {
+  //     width: 540,
+  //     height: 320,
+  //   },
+  //   contents: [
+  //     {
+  //       x: 400,
+  //       y: 148,
+  //       type: 'link',
+  //       path: '/Applications',
+  //     },
+  //     {
+  //       x: 131,
+  //       y: 150,
+  //       type: 'file',
+  //     },
+  //   ],
+  // },
+  // nsis: {
+  //   oneClick: false,
+  //   allowToChangeInstallationDirectory: true,
+  // },
 };
 
 const json = JSON.stringify(config, null, 2);

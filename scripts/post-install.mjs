@@ -1,8 +1,9 @@
-// const fs = require('fs');
-// const path = require('path');
-const { exec } = require('child_process');
+#!/usr/bin/env node
 
-// require('events').EventEmitter.prototype._maxListeners = 10000;
+import { exec } from 'child_process';
+import { EventEmitter } from 'events';
+
+EventEmitter.prototype._maxListeners = 10000;
 
 const commands = [
   'patch-package',

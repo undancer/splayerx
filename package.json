@@ -28,7 +28,7 @@
     "pack:web": "rimraf ./dist/web/* && cross-env NODE_ENV=production webpack --progress --colors --config .electron-vue/webpack.web.config.js",
     "test": "npm run unit",
     "unit": "karma start test/unit/karma.conf.js",
-    "postinstall": "node ./scripts/post-install.js"
+    "postinstall": "node ./scripts/post-install.mjs"
   },
   "dependencies": {
     "@grpc/grpc-js": "^0.5.2",

@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs';
-import grpc, { credentials, Metadata } from 'grpc';
+import grpc, { credentials, Metadata } from '@grpc/grpc-js';
 import { HealthCheckRequest, HealthCheckResponse } from 'sagi-api/health/v1/health_pb';
 import { HealthClient } from 'sagi-api/health/v1/health_grpc_pb';
 import {
