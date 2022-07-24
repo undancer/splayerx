@@ -1,5 +1,6 @@
 import electron from 'electron';
 import yd from 'youtube-dl';
+import yde from 'youtube-dl-exec';
 import fs from 'fs';
 import url from 'url';
 import Path from 'path';
@@ -164,6 +165,7 @@ class BrowsingDownload implements IBrowsingDownload {
       readable: true,
       writable: false,
     });
+    // yde(this.url, {}, {});
     yd.getInfo(this.url, ['-f', id], (err, data) => (err ? stream.emit('error', err) : this.processData(data, stream, {}, { start: lastIndex })));
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     stream.on('info', (info: any) => {
