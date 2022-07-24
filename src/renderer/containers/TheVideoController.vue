@@ -251,6 +251,7 @@ export default {
   },
   computed: {
     ...mapState({
+      // @ts-ignore
       currentWidget: ({ Input }) => Input.mousemoveComponentName,
       currentMouseupWidget: ({ Input }) => Input.mouseupComponentName,
       currentMousedownWidget: ({ Input }) => Input.mousedownComponentName,

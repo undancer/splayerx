@@ -38,7 +38,6 @@
 </template>
 
 <script lang="ts">
-//  @ts-ignore
 import { mapActions, mapGetters, mapState } from 'vuex';
 import { AnimationItem } from 'lottie-web';
 import lottie from '@/components/lottie.vue';
@@ -78,6 +77,7 @@ export default {
   computed: {
     ...mapGetters(['originSrc']),
     ...mapState({
+      // @ts-ignore
       currentMousedownComponent: ({ Input }) => Input.mousedownComponentName,
       currentMouseupComponent: ({ Input }) => Input.mouseupComponentName,
     }),

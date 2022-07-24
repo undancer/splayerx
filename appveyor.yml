@@ -17,10 +17,10 @@ init:
   - git config --global core.autocrlf input
 
 install:
-  - ps: Install-Product node 12 x64
+  - ps: Install-Product node 16 x64
   - git reset --hard HEAD
   - node --version
-  - npm i -g node-gyp@6.0.1
+  - npm i -g node-gyp@9.1.0
   - ps: npm prefix -g | % {npm config set node_gyp "$_\node_modules\node-gyp\bin\node-gyp.js"}
   - yarn
   - node scripts/check-electron-version.js
@@ -43,14 +43,14 @@ artifacts:
 environment:
   GH_TOKEN:
     secure:  # todo your encrypted token from GitHub
-deploy:
-  release: $(appveyor_repo_tag_name)
-  description: 'Release description'
-  provider: GitHub
-  auth_token:
-    secure: 4GOzxEBqjC32EfBBG5qfC1YdSNRaY2g/2zcwmSUHjWTo2Cqji47P8CRfYw5vMnSt # your encrypted token from GitHub
-  artifact:
-  draft: false
-  prerelease: false
-  on:
-    appveyor_repo_tag: true # deploy on tag push only
+# deploy:
+#   release: $(appveyor_repo_tag_name)
+#   description: 'Release description'
+#   provider: GitHub
+#   auth_token:
+#     secure: 4GOzxEBqjC32EfBBG5qfC1YdSNRaY2g/2zcwmSUHjWTo2Cqji47P8CRfYw5vMnSt # your encrypted token from GitHub
+#   artifact:
+#   draft: false
+#   prerelease: false
+#   on:
+#     appveyor_repo_tag: true # deploy on tag push only

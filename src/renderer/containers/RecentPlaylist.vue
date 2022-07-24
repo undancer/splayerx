@@ -718,6 +718,7 @@ export default {
   computed: {
     ...mapGetters(['playingList', 'playListId', 'incognitoMode', 'items', 'playListId', 'isFolderList', 'winWidth', 'playingIndex', 'duration', 'originSrc']),
     ...mapState({
+      // @ts-ignore
       currentMousedownComponent: ({ Input }) => Input.mousedownComponentName,
       currentMouseupComponent: ({ Input }) => Input.mouseupComponentName,
     }),

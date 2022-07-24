@@ -39,6 +39,7 @@ export default {
     };
   },
   computed: {
+    // @ts-ignore
     ...mapState({
       currentMousedownComponent: ({ Input }) => Input.mousedownComponentName,
     }),

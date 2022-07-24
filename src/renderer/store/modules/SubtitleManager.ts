@@ -736,6 +736,7 @@ const actions: ActionTree<ISubtitleManagerState, {}> = {
           .find(subtitle => subtitle.hash === hash && isEqual(subtitle.displaySource, source));
         if (!existed) {
           const id = uuidv4();
+          // @ts-ignore
           store.registerModule([id], { ...SubtitleModule, name: `${id}` });
           dispatch(`${id}/${subActions.initialize}`, { id, mediaHash: state.mediaHash });
           const subtitle: IEntity = await dispatch(`${id}/${subActions.add}`, subtitleGenerator);
@@ -920,7 +921,7 @@ const actions: ActionTree<ISubtitleManagerState, {}> = {
   },
   async [a.startAISelection]({ dispatch }) {
     unwatch = store.watch(
-      (state: ISubtitleManagerState, getters: { list: ISubtitleControlListItem[] }) => getters.list
+      (state, getters: { list: ISubtitleControlListItem[] }) => getters.list
         .map(({
           id, type, source, language,
         }) => ({
