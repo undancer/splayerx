@@ -6,6 +6,9 @@
 [![codecov](https://codecov.io/gh/chiflix/splayerx/branch/develop/graph/badge.svg)](https://codecov.io/gh/chiflix/splayerx/branch/develop)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/splayerx/localized.svg)](https://crowdin.com/project/splayerx)
 
+### 新的badge
+[![Test and Build SPlayer](https://github.com/undancer/splayerx/actions/workflows/test-and-build.yml/badge.svg?branch=develop)](https://github.com/undancer/splayerx/actions/workflows/test-and-build.yml)
+
 ### 开发指南
 
 目前架构的特点在 Electron 的基础上使用了 [Vue.js](https://vuejs.org/) MVVM组件化开发框架。
