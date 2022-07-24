@@ -1,8 +1,8 @@
-import { install, uninstall } from 'vue-devtools'; // eslint-disable-line import/no-extraneous-dependencies
+// import { install, uninstall } from 'vue-devtools';
 
 export const VueDevtools = {
   install() {
-    uninstall();
-    install();
+    // uninstall();
+    // install();
   },
 };

@@ -58,7 +58,7 @@ import {
 import {
   ISubtitleControlListItem, Type, NOT_SELECTED_SUBTITLE, ModifiedSubtitle,
 } from './interfaces/ISubtitle';
-import { VueDevtools } from './plugins/vueDevtools.dev';
+// import { VueDevtools } from './plugins/vueDevtools.dev';
 import {
   CHECK_FOR_UPDATES_OFFLINE, REQUEST_TIMEOUT,
   SNAPSHOT_FAILED, SNAPSHOT_SUCCESS, LOAD_SUBVIDEO_FAILED,
@@ -137,9 +137,9 @@ const i18n = new VueI18n({
 
 // Development-only devtools area
 // VueDevtools plugin
-if (process.env.NODE_ENV === 'development') {
-  Vue.use(VueDevtools);
-}
+// if (process.env.NODE_ENV === 'development') {
+//   Vue.use(VueDevtools);
+// }
 
 Vue.mixin(helpers);
 

@@ -11,7 +11,7 @@
 require('electron-debug')()
 
 // Install 'devtron'
-require('electron').app.on('ready', require('devtron').install)
+// require('electron').app.on('ready', require('devtron').install)
 
 // Require `main` process to boot app
 require('./index')
