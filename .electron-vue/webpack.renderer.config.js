@@ -11,7 +11,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const SentryWebpackPlugin = require('@sentry/webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { dependencies, optionalDependencies } = require('../package.json');
 
 let release = '';
@@ -75,17 +75,6 @@ let rendererConfig = {
   ],
   module: {
     rules: [
-      {
-        test: /\.(js)$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            formatter: require('eslint-friendly-formatter'),
-          },
-        },
-      },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -247,9 +236,9 @@ if (process.env.ENVIRONMENT_NAME === 'APPX') {
  * Adjust rendererConfig for development settings
  */
 if (process.env.NODE_ENV !== 'production') {
-  if (!process.env.TEST && process.platform === 'darwin') {
-    rendererConfig.plugins.push(new ForkTsCheckerWebpackPlugin({ eslint: true, vue: true }));
-  }
+  // if (!process.env.TEST && process.platform === 'darwin') {
+  //   rendererConfig.plugins.push(new ForkTsCheckerWebpackPlugin());
+  // }
   rendererConfig.plugins.push(
     new webpack.DefinePlugin(
       Object.assign(sharedDefinedVariables, {
@@ -303,10 +292,10 @@ if (process.env.NODE_ENV === 'production') {
     ],
   };
 
-  if (process.platform === 'darwin') {
-    // only check on mac, to speed up Windows build
-    rendererConfig.plugins.push(new ForkTsCheckerWebpackPlugin({ eslint: true, vue: true }));
-  }
+  // if (process.platform === 'darwin') {
+  //   // only check on Mac, to speed up Windows build
+  //   rendererConfig.plugins.push(new ForkTsCheckerWebpackPlugin());
+  // }
 
   if (release && process.env.SENTRY_AUTH_TOKEN) {
     rendererConfig.plugins.push(

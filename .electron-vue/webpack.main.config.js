@@ -7,7 +7,7 @@ const childProcess = require('child_process');
 const webpack = require('webpack');
 const { dependencies, optionalDependencies, _moduleAliases } = require('../package.json');
 const TerserPlugin = require('terser-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 let release = '';
 try {
@@ -25,6 +25,9 @@ try {
   console.error(ex);
 }
 
+// /**
+//  * @type {import('webpack').Configuration}
+//  */
 let mainConfig = {
   mode: 'development',
   devtool: '#source-map',
@@ -34,17 +37,6 @@ let mainConfig = {
   externals: [...Object.keys(Object.assign({}, dependencies, optionalDependencies))],
   module: {
     rules: [
-      {
-        test: /\.(js)$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            formatter: require('eslint-friendly-formatter'),
-          },
-        },
-      },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
@@ -136,10 +128,10 @@ if (process.env.NODE_ENV === 'production') {
     ],
   };
 
-  if (!process.env.TEST && process.platform === 'darwin') {
-    // only check on mac, to speed up Windows build
-    mainConfig.plugins.push(new ForkTsCheckerWebpackPlugin({ eslint: true }));
-  }
+  // if (!process.env.TEST && process.platform === 'darwin') {
+  //   // only check on Mac, to speed up Windows build
+  //   mainConfig.plugins.push(new ForkTsCheckerWebpackPlugin());
+  // }
 }
 
 module.exports = mainConfig;
