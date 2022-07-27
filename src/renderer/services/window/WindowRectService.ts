@@ -1,5 +1,5 @@
 import { ipcRenderer } from 'electron';
-import { IWindowRectRequest } from '@/interfaces/IWindowRectRequest';
+import { IWindowRectRequest } from '@renderer/interfaces/IWindowRectRequest';
 
 /** 最小窗口尺寸[320, 180]
  * @constant

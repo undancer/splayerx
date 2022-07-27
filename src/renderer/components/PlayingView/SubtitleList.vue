@@ -281,8 +281,8 @@
 </template>
 
 <script lang="ts">
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
-import { ISubtitleControlListItem, Type } from '@/interfaces/ISubtitle';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
+import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
 import Icon from '../BaseIconContainer.vue';
 import Progress from './Progress.vue';
 

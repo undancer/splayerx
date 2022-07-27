@@ -1,4 +1,4 @@
-import { log } from '@/libs/Log';
+import { log } from '@renderer/libs/Log';
 
 export interface IMediaTask<ResultType, CancelType = void> {
   getId(): string,

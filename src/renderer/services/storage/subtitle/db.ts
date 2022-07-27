@@ -5,12 +5,12 @@ import {
 import {
   unionWith, uniqWith, remove, isEqual, some, pick, keyBy, mergeWith, isFinite,
 } from 'lodash';
-import { LanguageCode } from '@/libs/language';
-import { DATADB_NAME } from '@/constants';
-import { Format, IOrigin, IRawVideoSegment } from '@/interfaces/ISubtitle';
+import { LanguageCode } from '@renderer/libs/language';
+import { DATADB_NAME } from '@renderer/constants';
+import { Format, IOrigin, IRawVideoSegment } from '@renderer/interfaces/ISubtitle';
 import {
   IStoredSubtitle, IStoredSubtitleItem, ISubtitlePreference, SelectedSubtitle,
-} from '@/interfaces/ISubtitleStorage';
+} from '@renderer/interfaces/ISubtitleStorage';
 
 interface IDataDBV5 extends DBSchema {
   'subtitles': {

@@ -165,11 +165,11 @@
 <script>
 import electron from 'electron';
 import { get } from 'lodash';
-import { setAsDefaultApp } from '@/../shared/system';
-import { calculateTextSize } from '@/libs/utils';
-import Icon from '@/components/BaseIconContainer.vue';
-import { codeToLanguageName } from '@/libs/language';
-import bookmark from '@/helpers/bookmark';
+import { setAsDefaultApp } from '@shared/system';
+import { calculateTextSize } from '@renderer/libs/utils';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import { codeToLanguageName } from '@renderer/libs/language';
+import bookmark from '@renderer/helpers/bookmark';
 import BaseCheckBox from './BaseCheckBox.vue';
 
 export default {

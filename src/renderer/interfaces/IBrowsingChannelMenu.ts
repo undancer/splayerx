@@ -1,4 +1,4 @@
-import { channelDetails } from '@/interfaces/IBrowsingChannelManager';
+import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
 
 export interface IBrowsingChannelMenu {
   getChannelMenu(): Electron.Menu,

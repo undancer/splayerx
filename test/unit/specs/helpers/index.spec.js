@@ -1,4 +1,4 @@
-import helpers from '@/helpers';
+import helpers from '@renderer/helpers';
 
 describe('index.js', () => {
   describe('timecodeFromSeconds method works fine', () => {

@@ -2,11 +2,11 @@ import {
   dirname, extname, basename, join,
 } from 'path';
 import { readdir } from 'fs';
-import { LanguageCode } from '@/libs/language';
-import { mediaQuickHash as calculateMediaIdentity } from '@/libs/utils';
-import Sagi from '@/libs/sagi';
-import { Format } from '@/interfaces/ISubtitle';
-import { getSubtitleStreams, ISubtitleStream } from '@/plugins/mediaTasks';
+import { LanguageCode } from '@renderer/libs/language';
+import { mediaQuickHash as calculateMediaIdentity } from '@renderer/libs/utils';
+import Sagi from '@renderer/libs/sagi';
+import { Format } from '@renderer/interfaces/ISubtitle';
+import { getSubtitleStreams, ISubtitleStream } from '@renderer/plugins/mediaTasks';
 import { pathToFormat } from './utils';
 
 export function searchForLocalList(videoSrc: string): Promise<string[]> {

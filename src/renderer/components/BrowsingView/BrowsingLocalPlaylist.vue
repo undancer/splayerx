@@ -42,8 +42,8 @@
               marginBottom: `${deleteIconSize}px`,
               marginLeft: `${listRight}px`,
               background: hasPlaylist ? ''
-                : `url(${isDarkMode ? require('@/assets/blankPlaylistDark.png')
-                  : require('@/assets/blankPlaylist.png')}) 0% 0% / 100% 100% no-repeat`,
+                : `url(${isDarkMode ? require('@renderer/assets/blankPlaylistDark.png')
+                  : require('@renderer/assets/blankPlaylist.png')}) 0% 0% / 100% 100% no-repeat`,
             }"
             @mouseover="handleMouseover(index)"
             @mouseleave="handleMouseleave"
@@ -125,8 +125,8 @@
 
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import { recentPlayService } from '@/services/media/RecentPlayService';
-import { playInfoStorageService } from '@/services/storage/PlayInfoStorageService';
+import { recentPlayService } from '@renderer/services/media/RecentPlayService';
+import { playInfoStorageService } from '@renderer/services/storage/PlayInfoStorageService';
 import blankPlaylist from '../../assets/blankPlaylist.png';
 import Icon from '../BaseIconContainer.vue';
 
@@ -308,4 +308,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/css/darkmode/BrowsingHomePage/BrowsingLocalPlaylist.scss"></style>
+<style scoped lang="scss"
+       src="@renderer/css/darkmode/BrowsingHomePage/BrowsingLocalPlaylist.scss">
+</style>

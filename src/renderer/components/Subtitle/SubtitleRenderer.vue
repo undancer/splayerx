@@ -124,8 +124,8 @@
 </template>
 <script lang="ts">
 import { isEqual } from 'lodash';
-import { TextCue, ITags, NOT_SELECTED_SUBTITLE } from '@/interfaces/ISubtitle';
-import { calculateTextSize } from '@/libs/utils';
+import { TextCue, ITags, NOT_SELECTED_SUBTITLE } from '@renderer/interfaces/ISubtitle';
+import { calculateTextSize } from '@renderer/libs/utils';
 import CueEditableRenderer from './CueEditableRenderer.vue';
 
 export default {

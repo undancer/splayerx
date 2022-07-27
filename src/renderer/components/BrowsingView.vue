@@ -71,26 +71,26 @@ import fs from 'fs';
 import urlParseLax from 'url-parse-lax';
 // @ts-ignore
 import getVideoId from 'get-video-id';
-import { windowRectService } from '@/services/window/WindowRectService';
+import { windowRectService } from '@renderer/services/window/WindowRectService';
 import {
   Browsing as browsingActions,
   UIStates as uiActions,
   Download as downloadActions,
-} from '@/store/actionTypes';
-import BrowsingHeader from '@/components/BrowsingView/BrowsingHeader.vue';
-import BrowsingContent from '@/components/BrowsingView/BrowsingContent.vue';
-import BrowsingChannelManager from '@/components/BrowsingView/BrowsingChannelManager.vue';
-import BrowsingHomePage from '@/components/BrowsingView/BrowsingHomePage.vue';
-import asyncStorage from '@/helpers/asyncStorage';
-import syncStorage from '@/helpers/syncStorage';
-import NotificationBubble from '@/components/NotificationBubble.vue';
-import { offListenersExceptWhiteList } from '@/libs/utils';
-import MenuService from '@/services/menu/MenuService';
-import { log } from '@/libs/Log';
-import { browsingHistory } from '@/services/browsing/BrowsingHistoryService';
-import browsingChannelManager from '@/services/browsing/BrowsingChannelManager';
-import BrowsingDownload from '@/services/browsing/BrowsingDownload';
-import { browserDownloadBlacklist } from '@/../shared/config';
+} from '@renderer/store/actionTypes';
+import BrowsingHeader from '@renderer/components/BrowsingView/BrowsingHeader.vue';
+import BrowsingContent from '@renderer/components/BrowsingView/BrowsingContent.vue';
+import BrowsingChannelManager from '@renderer/components/BrowsingView/BrowsingChannelManager.vue';
+import BrowsingHomePage from '@renderer/components/BrowsingView/BrowsingHomePage.vue';
+import asyncStorage from '@renderer/helpers/asyncStorage';
+import syncStorage from '@renderer/helpers/syncStorage';
+import NotificationBubble from '@renderer/components/NotificationBubble.vue';
+import { offListenersExceptWhiteList } from '@renderer/libs/utils';
+import MenuService from '@renderer/services/menu/MenuService';
+import { log } from '@renderer/libs/Log';
+import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
+import browsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
+import BrowsingDownload from '@renderer/services/browsing/BrowsingDownload';
+import { browserDownloadBlacklist } from '@renderer/../shared/config';
 import InjectJSManager from '../../shared/pip/InjectJSManager';
 import {
   isVideo, isAudio, checkVcRedistributablePackage, calcCurrentChannel,

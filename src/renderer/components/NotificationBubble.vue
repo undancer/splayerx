@@ -142,19 +142,19 @@
 
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
-import StatusBubble from '@/components/Bubbles/StatusBubble.vue';
-import ErrorBubble from '@/components/Bubbles/ErrorBubble.vue';
-import PendingBubble from '@/components/Bubbles/PendingBubble.vue';
-import AlertBubble from '@/components/Bubbles/AlertBubble.vue';
-import ConfirmBubble from '@/components/Bubbles/ConfirmBubble.vue';
-import NextVideo from '@/components/Bubbles/NextVideo.vue';
-import PrivacyBubble from '@/components/Bubbles/PrivacyConfirmBubble.vue';
-import TranslateBubble from '@/components/Bubbles/TranslateBubble.vue';
-import ResolvedBubble from '@/components/Bubbles/ResolvedBubble.vue';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
+import StatusBubble from '@renderer/components/Bubbles/StatusBubble.vue';
+import ErrorBubble from '@renderer/components/Bubbles/ErrorBubble.vue';
+import PendingBubble from '@renderer/components/Bubbles/PendingBubble.vue';
+import AlertBubble from '@renderer/components/Bubbles/AlertBubble.vue';
+import ConfirmBubble from '@renderer/components/Bubbles/ConfirmBubble.vue';
+import NextVideo from '@renderer/components/Bubbles/NextVideo.vue';
+import PrivacyBubble from '@renderer/components/Bubbles/PrivacyConfirmBubble.vue';
+import TranslateBubble from '@renderer/components/Bubbles/TranslateBubble.vue';
+import ResolvedBubble from '@renderer/components/Bubbles/ResolvedBubble.vue';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import {
   AudioTranslate as atActions,
-} from '@/store/actionTypes';
+} from '@renderer/store/actionTypes';
 import { skipCheckForUpdate } from '../libs/utils';
 
 export default {

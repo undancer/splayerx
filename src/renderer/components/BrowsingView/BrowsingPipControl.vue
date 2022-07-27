@@ -37,8 +37,8 @@
 </template>
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
-import Icon from '@/components/BaseIconContainer.vue';
-import { Browsing as browsingActions } from '@/store/actionTypes';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import { Browsing as browsingActions } from '@renderer/store/actionTypes';
 
 export default {
   components: {

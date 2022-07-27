@@ -1,12 +1,12 @@
 /* TOOD: fix these tests after npm update and under travis
 import { createLocalVue, mount } from '@vue/test-utils';
-import VideoCanvas from '@/components/PlayingView/VideoCanvas.vue';
+import VideoCanvas from '@renderer/components/PlayingView/VideoCanvas.vue';
 import sinon from 'sinon';
 import Vuex from 'vuex';
-import Video from '@/store/modules/Video';
-import Playlist from '@/store/modules/Playlist';
-import Window from '@/store/modules/Window';
-import { Video as videoActions } from '@/store/actionTypes';
+import Video from '@renderer/store/modules/Video';
+import Playlist from '@renderer/store/modules/Playlist';
+import Window from '@renderer/store/modules/Window';
+import { Video as videoActions } from '@renderer/store/actionTypes';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);

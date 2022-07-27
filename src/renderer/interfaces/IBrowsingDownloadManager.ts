@@ -1,4 +1,4 @@
-import BrowsingDownload from '@/services/browsing/BrowsingDownload';
+import BrowsingDownload from '@renderer/services/browsing/BrowsingDownload';
 
 export interface IBrowsingDownloadManager {
   addItem(id: string, item: BrowsingDownload): void,

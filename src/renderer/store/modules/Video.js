@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 import romanize from 'romanize';
 import isEqual from 'lodash/isEqual';
-import { mediaQuickHash } from '@/libs/utils';
+import { mediaQuickHash } from '@renderer/libs/utils';
 import { Video as videoMutations } from '../mutationTypes';
 import {
   Video as videoActions,

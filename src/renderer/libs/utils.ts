@@ -14,14 +14,14 @@ import { remote } from 'electron';
 import { promises as fsPromises } from 'fs';
 // @ts-ignore
 import nzh from 'nzh';
-import { version } from '@/../../package.json';
-import { ISubtitleControlListItem, Type } from '@/interfaces/ISubtitle';
+import { version } from '@renderer/../../package.json';
+import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
 import {
   DEFAULT_DIRNAME,
   VIDEO_DIRNAME, SUBTITLE_DIRNAME,
-} from '@/constants';
-import { IEmbeddedOrigin } from '@/services/subtitle/utils/loaders';
-import Fetcher from '@/../shared/Fetcher';
+} from '@renderer/constants';
+import { IEmbeddedOrigin } from '@renderer/services/subtitle/utils/loaders';
+import Fetcher from '@renderer/../shared/Fetcher';
 import { codeToLanguageName, LanguageCode } from './language';
 import { isBetaVersion } from '../../shared/common/platform';
 

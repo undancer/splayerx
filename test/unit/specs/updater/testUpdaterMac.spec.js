@@ -1,12 +1,12 @@
 import Vue from 'vue';
 import { mount, createLocalVue } from '@vue/test-utils';
 import VueI18n from 'vue-i18n';
-import messages from '@/locales';
-import UpdaterNotification from '@/components/UpdaterView/UpdaterNotification.vue';
+import messages from '@renderer/locales';
+import UpdaterNotification from '@renderer/components/UpdaterView/UpdaterNotification.vue';
+import { RendererHelperForMac } from '@main/update/RendererHelper';
+import Storage from '@main/update/Updatestorage';
 import ipcs from './ipcMock';
-import { RendererHelperForMac } from '../../../../src/main/update/RendererHelper';
 import MainHelper from './mainSimulator';
-import Storage from '../../../../src/main/update/Updatestorage';
 
 const storage = new Storage();
 let mainHelper;

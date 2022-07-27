@@ -1,8 +1,8 @@
 import { cloneDeep } from 'lodash';
-import { Type, IEntityGenerator, Format } from '@/interfaces/ISubtitle';
-import { LanguageCode } from '@/libs/language';
-import { mediaQuickHash } from '@/libs/utils';
-import { ISubtitleStream } from '@/plugins/mediaTasks';
+import { Type, IEntityGenerator, Format } from '@renderer/interfaces/ISubtitle';
+import { LanguageCode } from '@renderer/libs/language';
+import { mediaQuickHash } from '@renderer/libs/utils';
+import { ISubtitleStream } from '@renderer/plugins/mediaTasks';
 import { IEmbeddedOrigin } from '../utils/loaders';
 
 export class EmbeddedGenerator implements IEntityGenerator {

@@ -1,6 +1,6 @@
-import { downloadDB } from '@/helpers/downloadDB';
-import { IBrowsingDownloadManager } from '@/interfaces/IBrowsingDownloadManager';
-import { DOWNLOAD_OBJECT_STORE_NAME } from '@/constants';
+import { downloadDB } from '@renderer/helpers/downloadDB';
+import { IBrowsingDownloadManager } from '@renderer/interfaces/IBrowsingDownloadManager';
+import { DOWNLOAD_OBJECT_STORE_NAME } from '@renderer/constants';
 import BrowsingDownload from './BrowsingDownload';
 
 class BrowsingDownloadManager implements IBrowsingDownloadManager {

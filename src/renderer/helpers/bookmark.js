@@ -1,4 +1,4 @@
-import syncStorage from '@/helpers/syncStorage';
+import syncStorage from '@renderer/helpers/syncStorage';
 
 function resolveBookmarks(files, bookmarks) {
   const data = syncStorage.getSync('bookmark');

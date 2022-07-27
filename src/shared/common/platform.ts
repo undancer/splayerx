@@ -1,4 +1,4 @@
-import { version as packageVersion } from '@/../../package.json';
+import { version as packageVersion } from '@renderer/../../package.json';
 
 // OS detection
 export const version = packageVersion;

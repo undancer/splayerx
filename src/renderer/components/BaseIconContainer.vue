@@ -23,13 +23,13 @@ function importIcon(type: string, state: string, effect: string) {
   const activeIcon = `${type}-active-${effect}`;
   // svg-sprite-loader
   if (!document.getElementById(defaultIcon)) {
-    import(`@/assets/icon/${defaultIcon}.svg`).catch(err => console.error(err));
+    import(`@renderer/assets/icon/${defaultIcon}.svg`).catch(err => console.error(err));
   }
   if (!document.getElementById(hoverIcon)) {
-    import(`@/assets/icon/${hoverIcon}.svg`).catch(() => {});
+    import(`@renderer/assets/icon/${hoverIcon}.svg`).catch(() => {});
   }
   if (!document.getElementById(activeIcon)) {
-    import(`@/assets/icon/${activeIcon}.svg`).catch(() => {});
+    import(`@renderer/assets/icon/${activeIcon}.svg`).catch(() => {});
   }
 }
 

@@ -1,7 +1,7 @@
 import { Cue, parseSync as parse, parseTimestamp } from 'subtitle';
 import {
   Format, TextCue, IParser, IVideoSegments,
-} from '@/interfaces/ISubtitle';
+} from '@renderer/interfaces/ISubtitle';
 import { tagsGetter, getDialogues } from '../utils';
 import { LocalTextLoader } from '../utils/loaders';
 

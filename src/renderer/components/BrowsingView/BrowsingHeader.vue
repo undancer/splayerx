@@ -40,10 +40,10 @@
 
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import BrowsingInput from '@/components/BrowsingView/BrowsingInput.vue';
-import BrowsingControl from '@/components/BrowsingView/BrowsingControl.vue';
-import BrowsingPipControl from '@/components/BrowsingView/BrowsingPipControl.vue';
-import BrowsingTitleBar from '@/components/BrowsingView/BrowsingTitleBar.vue';
+import BrowsingInput from '@renderer/components/BrowsingView/BrowsingInput.vue';
+import BrowsingControl from '@renderer/components/BrowsingView/BrowsingControl.vue';
+import BrowsingPipControl from '@renderer/components/BrowsingView/BrowsingPipControl.vue';
+import BrowsingTitleBar from '@renderer/components/BrowsingView/BrowsingTitleBar.vue';
 
 export default {
   name: 'BrowsingHeader',

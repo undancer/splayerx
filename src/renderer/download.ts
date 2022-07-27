@@ -2,12 +2,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
-import { hookVue } from '@/kerning';
-import messages from '@/locales';
-import store from '@/store';
-import '@/css/style.scss';
+import { hookVue } from '@renderer/kerning';
+import messages from '@renderer/locales';
+import store from '@renderer/store';
+import '@renderer/css/style.scss';
 // @ts-ignore
-import DownloadPage from '@/components/DownloadPage.vue';
+import DownloadPage from '@renderer/components/DownloadPage.vue';
 
 Vue.use(VueI18n);
 Vue.use(Vuex);

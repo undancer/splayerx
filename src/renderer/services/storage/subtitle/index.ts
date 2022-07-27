@@ -1,11 +1,11 @@
 import { dirname } from 'path';
 import {
   IEntity, IEntityGenerator, Type, Format, IOrigin,
-} from '@/interfaces/ISubtitle';
-import { LanguageCode } from '@/libs/language';
-import { SelectedSubtitle, IStoredSubtitleItem } from '@/interfaces/ISubtitleStorage';
-import { SUBTITLE_FULL_DIRNAME } from '@/constants';
-import { sourceToFormat } from '@/services/subtitle/utils';
+} from '@renderer/interfaces/ISubtitle';
+import { LanguageCode } from '@renderer/libs/language';
+import { SelectedSubtitle, IStoredSubtitleItem } from '@renderer/interfaces/ISubtitleStorage';
+import { SUBTITLE_FULL_DIRNAME } from '@renderer/constants';
+import { sourceToFormat } from '@renderer/services/subtitle/utils';
 import { SubtitleDataBase } from './db';
 
 const db = new SubtitleDataBase();

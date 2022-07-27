@@ -19,7 +19,7 @@ import {
   StreamingTranslationRequest,
   StreamingTranslationRequestConfig,
 } from 'sagi-api/translation/v1/translation_pb';
-import { IAudioStream } from '@/plugins/mediaTasks/mediaInfoQueue';
+import { IAudioStream } from '@renderer/plugins/mediaTasks/mediaInfoQueue';
 import { getIP } from '../../shared/utils';
 import { apiOfSubtitleService } from '../../shared/config';
 

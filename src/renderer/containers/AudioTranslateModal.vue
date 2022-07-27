@@ -240,17 +240,17 @@ import {
   Input as inputActions,
   AudioTranslate as atActions,
   UserInfo as usActions,
-} from '@/store/actionTypes';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
-import { codeToLanguageName, normalizeCode } from '@/libs/language';
+} from '@renderer/store/actionTypes';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
+import { codeToLanguageName, normalizeCode } from '@renderer/libs/language';
 import {
   getUserBalance,
-} from '@/libs/apis';
-import Select from '@/components/PlayingView/Select.vue';
-import Icon from '@/components/BaseIconContainer.vue';
-import Progress from '@/components/PlayingView/Progress.vue';
-import { getJsonConfig, forceRefresh, isTranslateLimit } from '@/../shared/config';
-import { log } from '@/libs/Log';
+} from '@renderer/libs/apis';
+import Select from '@renderer/components/PlayingView/Select.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import Progress from '@renderer/components/PlayingView/Progress.vue';
+import { getJsonConfig, forceRefresh, isTranslateLimit } from '@renderer/../shared/config';
+import { log } from '@renderer/libs/Log';
 import { AudioTranslateStatus, AudioTranslateFailType } from '../store/modules/AudioTranslate';
 
 export default Vue.extend({

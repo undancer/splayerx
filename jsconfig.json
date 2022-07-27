@@ -3,7 +3,6 @@
     "esModuleInterop": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["renderer/*"],
       "@main/*": ["main/*"],
       "@renderer/*": ["renderer/*"],
       "@shared/*": ["shared/*"]

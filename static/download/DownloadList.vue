@@ -171,8 +171,8 @@
 <script>
 import electron from 'electron';
 import { get } from 'lodash';
-import Icon from '@/components/BaseIconContainer.vue';
-import bookmark from '@/helpers/bookmark';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import bookmark from '@renderer/helpers/bookmark';
 
 export default {
   name: 'DownloadList',
@@ -423,4 +423,6 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/css/darkmode/DownloadList.scss"></style>
+<style scoped lang="scss"
+       src="@renderer/css/darkmode/DownloadList.scss">
+</style>

@@ -1,4 +1,4 @@
-import { MediaItem } from '@/interfaces/IDB';
+import { MediaItem } from '@renderer/interfaces/IDB';
 
 export interface IPlaylistRequest {
   coverSrc: string,

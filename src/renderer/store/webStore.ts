@@ -6,7 +6,7 @@ Vue.use(Vuex);
 const modules = {
   // TODO:
   // eslint-disable-next-line import/extensions
-  UserInfo: require('@/store/modules/UserInfo.ts').default,
+  UserInfo: require('@renderer/store/modules/UserInfo.ts').default,
 };
 
 // @ts-ignore

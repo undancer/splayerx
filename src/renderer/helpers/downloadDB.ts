@@ -4,8 +4,8 @@ import {
   DOWNLOADDB_NAME,
   DOWNLOAD_OBJECT_STORE_NAME,
   DOWNLOADDB_VERSION,
-} from '@/constants';
-import { log } from '@/libs/Log';
+} from '@renderer/constants';
+import { log } from '@renderer/libs/Log';
 
 export type BrowsingDownloadItem = {
   id: string,

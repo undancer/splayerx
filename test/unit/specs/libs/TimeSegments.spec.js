@@ -1,4 +1,4 @@
-import { StreamTimeSegments, VideoTimeSegments } from '@/libs/TimeSegments';
+import { StreamTimeSegments, VideoTimeSegments } from '@renderer/libs/TimeSegments';
 
 describe('StreamTimeSegments', () => {
   let timeSeg = new StreamTimeSegments();

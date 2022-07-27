@@ -1,7 +1,7 @@
 import franc from 'franc';
 // @ts-ignore
 import { isSimplified } from 'traditional-or-simplified';
-import { normalizeCode, LanguageCode } from '@/libs/language';
+import { normalizeCode, LanguageCode } from '@renderer/libs/language';
 
 function dialogueTextToDialogues(dialogueText: string, textRegex: RegExp, identifierLocation: RegExp = /(?<=\S)\n{2,}(?=\S)/g) {
   const texts = dialogueText.replace(textRegex, '');

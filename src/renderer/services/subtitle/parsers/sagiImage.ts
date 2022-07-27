@@ -1,8 +1,8 @@
 import { isEqual } from 'lodash';
 import {
   IParser, Format, IVideoSegments, ImageCue, ILoader,
-} from '@/interfaces/ISubtitle';
-import { StreamTimeSegments } from '@/libs/TimeSegments';
+} from '@renderer/interfaces/ISubtitle';
+import { StreamTimeSegments } from '@renderer/libs/TimeSegments';
 
 interface IInternalImageCue {
   start: number,

@@ -302,9 +302,9 @@
 import electron from 'electron';
 import fs from 'fs';
 import Path from 'path';
-import Icon from '@/components/BaseIconContainer.vue';
-import BrowsingDownloadManager from '@/services/browsing/BrowsingDownloadManager';
-import BrowsingDownload from '@/services/browsing/BrowsingDownload';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import BrowsingDownloadManager from '@renderer/services/browsing/BrowsingDownloadManager';
+import BrowsingDownload from '@renderer/services/browsing/BrowsingDownload';
 
 export default {
   name: 'DownloadPage',

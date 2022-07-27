@@ -1,7 +1,7 @@
 import {
   ipcRenderer, remote, MenuItem, IpcRendererEvent,
 } from 'electron';
-import { ISubtitleControlListItem } from '@/interfaces/ISubtitle';
+import { ISubtitleControlListItem } from '@renderer/interfaces/ISubtitle';
 import { recentPlayService } from '../media/RecentPlayService';
 import { browsingHistory } from '../browsing/BrowsingHistoryService';
 

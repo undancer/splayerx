@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import VueI18n from 'vue-i18n';
-import { hookVue } from '@/kerning';
-import messages from '@/locales';
+import { hookVue } from '@renderer/kerning';
+import messages from '@renderer/locales';
 // @ts-ignore
-import OpenUrl from '@/containers/OpenUrl.vue';
-import '@/css/style.scss';
+import OpenUrl from '@renderer/containers/OpenUrl.vue';
+import '@renderer/css/style.scss';
 
 Vue.use(VueI18n);
 

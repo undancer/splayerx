@@ -1,10 +1,10 @@
 import { EventEmitter } from 'events';
-import { IPlaylistRequest } from '@/interfaces/IPlaylistRequest';
-import MediaStorageService from '@/services/storage/MediaStorageService';
-import { filePathToUrl } from '@/helpers/path';
-import { info } from '@/libs/DataBase';
-import { MediaItem } from '@/interfaces/IDB';
-import { getSnapshotPath, getFormat } from '@/plugins/mediaTasks';
+import { IPlaylistRequest } from '@renderer/interfaces/IPlaylistRequest';
+import MediaStorageService from '@renderer/services/storage/MediaStorageService';
+import { filePathToUrl } from '@renderer/helpers/path';
+import { info } from '@renderer/libs/DataBase';
+import { MediaItem } from '@renderer/interfaces/IDB';
+import { getSnapshotPath, getFormat } from '@renderer/plugins/mediaTasks';
 
 interface IPlaylistEvent {
   'image-loaded': Event,

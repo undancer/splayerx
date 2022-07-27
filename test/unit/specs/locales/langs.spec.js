@@ -2,7 +2,7 @@ import {
   fromPairs, mapValues, difference,
 } from 'lodash';
 
-const files = require.context('@/locales/lang/', false, /\.json$/);
+const files = require.context('@renderer/locales/lang/', false, /\.json$/);
 
 const langs = fromPairs(files.keys().map(file => [file.match(/[^/]+(?=\.json$)/)[0], files(file)]));
 const objectDeepKeys = obj => Object.keys(obj).filter(key => obj[key] instanceof Object)

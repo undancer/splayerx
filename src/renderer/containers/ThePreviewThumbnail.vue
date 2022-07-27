@@ -38,12 +38,12 @@
 
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import { log } from '@/libs/Log';
-import { filePathToUrl } from '@/helpers/path';
-import { thumbnailService } from '@/services/media/ThumbnailService';
-import ThumbnailDisplay from '@/components/PlayingView/ThumbnailDisplay.vue';
+import { log } from '@renderer/libs/Log';
+import { filePathToUrl } from '@renderer/helpers/path';
+import { thumbnailService } from '@renderer/services/media/ThumbnailService';
+import ThumbnailDisplay from '@renderer/components/PlayingView/ThumbnailDisplay.vue';
 // @ts-ignore
-import Icon from '@/components/BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import { getThumbnailPath } from '../plugins/mediaTasks';
 import { ThumbnailReplyType } from '../plugins/mediaTasks/thumbnailQueue';
 import { isVideo } from '../../shared/utils';

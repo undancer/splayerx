@@ -85,7 +85,7 @@
 
 <script lang="ts">
 import { mapActions } from 'vuex';
-import { SubtitleManager } from '@/store/actionTypes';
+import { SubtitleManager } from '@renderer/store/actionTypes';
 import Icon from '../../BaseIconContainer.vue';
 
 export default {

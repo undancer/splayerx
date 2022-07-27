@@ -66,8 +66,8 @@
 <script lang="ts">
 import Vue from 'vue';
 
-import Icon from '@/components/BaseIconContainer.vue';
-import { postMessage } from '@/../shared/utils';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import { postMessage } from '@renderer/../shared/utils';
 
 export default Vue.extend({
   name: 'Login',

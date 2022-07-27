@@ -1,7 +1,7 @@
-import infoDB, { InfoDB } from '@/helpers/infoDB';
+import infoDB, { InfoDB } from '@renderer/helpers/infoDB';
 import {
   IDB, MediaItem, PlaylistItem, SubtitleDataItem, RawMediaItem, RawPlaylistItem,
-} from '@/interfaces/IDB';
+} from '@renderer/interfaces/IDB';
 
 export default class DataBase implements IDB {
   private db: InfoDB;

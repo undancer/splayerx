@@ -10,37 +10,37 @@ import Vue from 'vue';
 import { remote, SaveDialogReturnValue } from 'electron';
 import { extname, basename, join } from 'path';
 import { existsSync } from 'fs';
-import store from '@/store';
-import { SubtitleManager as m } from '@/store/mutationTypes';
+import store from '@renderer/store';
+import { SubtitleManager as m } from '@renderer/store/mutationTypes';
 import {
   SubtitleManager as a,
   newSubtitle as subActions,
   Subtitle as legacyActions,
   AudioTranslate as atActions,
   // UserInfo as usActions,
-} from '@/store/actionTypes';
+} from '@renderer/store/actionTypes';
 import {
   ISubtitleControlListItem, Type, IEntityGenerator, IEntity, NOT_SELECTED_SUBTITLE, Cue,
-} from '@/interfaces/ISubtitle';
+} from '@renderer/interfaces/ISubtitle';
 import {
   TranscriptInfo,
   searchForLocalList, retrieveEmbeddedList, fetchOnlineList,
   OnlineGenerator, LocalGenerator, EmbeddedGenerator, TranslatedGenerator, PreTranslatedGenerator,
-} from '@/services/subtitle';
-import { generateHints, calculatedName } from '@/libs/utils';
-import { log } from '@/libs/Log';
-import { IStoredSubtitleItem, SelectedSubtitle } from '@/interfaces/ISubtitleStorage';
+} from '@renderer/services/subtitle';
+import { generateHints, calculatedName } from '@renderer/libs/utils';
+import { log } from '@renderer/libs/Log';
+import { IStoredSubtitleItem, SelectedSubtitle } from '@renderer/interfaces/ISubtitleStorage';
 import {
   retrieveSubtitlePreference, DatabaseGenerator,
   storeSubtitleLanguage, addSubtitleItemsToList, removeSubtitleItemsFromList,
   storeSelectedSubtitles, updateSubtitleList,
-} from '@/services/storage/subtitle';
-import { LanguageCode, codeToLanguageName } from '@/libs/language';
-import { ISubtitleStream } from '@/plugins/mediaTasks';
-import { isAIEnabled } from '@/../shared/config';
-import { IEmbeddedOrigin } from '@/services/subtitle/utils/loaders';
-import { sagiSubtitleToSRT } from '@/services/subtitle/utils/transcoders';
-import { write } from '@/libs/file';
+} from '@renderer/services/storage/subtitle';
+import { LanguageCode, codeToLanguageName } from '@renderer/libs/language';
+import { ISubtitleStream } from '@renderer/plugins/mediaTasks';
+import { isAIEnabled } from '@renderer/../shared/config';
+import { IEmbeddedOrigin } from '@renderer/services/subtitle/utils/loaders';
+import { sagiSubtitleToSRT } from '@renderer/services/subtitle/utils/transcoders';
+import { write } from '@renderer/libs/file';
 import { AudioTranslateBubbleOrigin } from './AudioTranslate';
 import {
   ONLINE_LOADING, REQUEST_TIMEOUT,

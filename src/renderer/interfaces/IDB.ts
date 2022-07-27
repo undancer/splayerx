@@ -1,4 +1,4 @@
-import { LanguageCode } from '@/libs/language';
+import { LanguageCode } from '@renderer/libs/language';
 import { Type } from './ISubtitle';
 
 export type RawPlaylistItem = {
