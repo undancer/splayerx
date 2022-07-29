@@ -3,13 +3,13 @@ import path from 'path';
 import storage from 'electron-json-storage';
 // @ts-ignore
 import { promises as fsPromises } from 'fs';
-import { log } from '@/libs/Log';
-import { addBubble } from '@/helpers/notificationControl';
+import { log } from '@renderer/libs/Log';
+import { addBubble } from '@renderer/helpers/notificationControl';
 
 /*
   使用说明：
     在需要使用的组件中
-    import asyncStorage from '@/helpers/asyncStorage';
+    import asyncStorage from '@renderer/helpers/asyncStorage';
 */
 function removeAll(): Promise<void[]> {
   const dirPath = storage.getDataPath();

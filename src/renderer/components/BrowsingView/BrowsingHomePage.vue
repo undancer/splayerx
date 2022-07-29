@@ -142,8 +142,8 @@
 
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import { version } from '@/../../package.json';
-import BrowsingHistory from '@/components/BrowsingView/BrowsingHistory.vue';
+import { version } from '@renderer/../../package.json';
+import BrowsingHistory from '@renderer/components/BrowsingView/BrowsingHistory.vue';
 import BrowsingAdv from './BrowsingAdv.vue';
 import BrowsingLocalPlaylist from './BrowsingLocalPlaylist.vue';
 import Icon from '../BaseIconContainer.vue';
@@ -319,5 +319,5 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/css/darkmode/BrowsingHomePage/BrowsingHomePage.scss">
+<style scoped lang="scss" src="@renderer/css/darkmode/BrowsingHomePage/BrowsingHomePage.scss">
 </style>

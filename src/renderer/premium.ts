@@ -2,19 +2,19 @@ import Vue from 'vue';
 import Vuex, { mapActions, mapGetters } from 'vuex';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
-import { hookVue } from '@/kerning';
-import store from '@/store/webStore';
-import messages from '@/locales';
+import { hookVue } from '@renderer/kerning';
+import store from '@renderer/store/webStore';
+import messages from '@renderer/locales';
 import {
   setToken, getGeoIP, getUserInfo, getUserBalance,
-} from '@/libs/webApis';
+} from '@renderer/libs/webApis';
 // @ts-ignore
-import Product from '@/containers/Premium/Product.vue';
+import Product from '@renderer/containers/Premium/Product.vue';
 import {
   UserInfo as uActions,
-} from '@/store/actionTypes';
-import '@/css/style.scss';
-import { PayStatus } from '@/store/modules/UserInfo';
+} from '@renderer/store/actionTypes';
+import '@renderer/css/style.scss';
+import { PayStatus } from '@renderer/store/modules/UserInfo';
 
 Vue.use(VueI18n);
 Vue.use(Vuex);
@@ -62,17 +62,17 @@ const routes = [
   {
     path: '/',
     name: 'Premium',
-    component: require('@/containers/Premium/Premium.vue').default,
+    component: require('@renderer/containers/Premium/Premium.vue').default,
   },
   {
     path: '/points',
     name: 'Points',
-    component: require('@/containers/Premium/Points.vue').default,
+    component: require('@renderer/containers/Premium/Points.vue').default,
   },
   {
     path: '/account',
     name: 'Account',
-    component: require('@/containers/Account/Account.vue').default,
+    component: require('@renderer/containers/Account/Account.vue').default,
   },
 ];
 

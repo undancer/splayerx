@@ -1,6 +1,6 @@
 import { mount } from '@vue/test-utils';
 import sinon from 'sinon';
-import ThumbnailDisplay from '@/components/PlayingView/ThumbnailDisplay.vue';
+import ThumbnailDisplay from '@renderer/components/PlayingView/ThumbnailDisplay.vue';
 
 describe('Component - ThumbnailDisplay', () => {
   let wrapper;

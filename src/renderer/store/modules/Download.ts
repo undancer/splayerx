@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ipcRenderer } from 'electron';
-import { Download as m } from '@/store/mutationTypes';
-import { Download as a } from '@/store/actionTypes';
-import asyncStorage from '@/helpers/asyncStorage';
+import { Download as m } from '@renderer/store/mutationTypes';
+import { Download as a } from '@renderer/store/actionTypes';
+import asyncStorage from '@renderer/helpers/asyncStorage';
 
 type downloadState = {
   resolution: number | string,

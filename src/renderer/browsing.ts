@@ -1,7 +1,7 @@
 import Vue from 'vue';
 // @ts-ignore
-import BrowsingPip from '@/components/BrowsingPip.vue';
-import '@/css/style.scss';
+import BrowsingPip from '@renderer/components/BrowsingPip.vue';
+import '@renderer/css/style.scss';
 
 new Vue({
   components: { BrowsingPip },

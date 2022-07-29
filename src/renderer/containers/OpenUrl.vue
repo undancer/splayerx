@@ -118,8 +118,8 @@
 </template>
 <script lang="ts">
 import electron from 'electron';
-import Icon from '@/components/BaseIconContainer.vue';
-import BaseCheckBox from '@/components/Preferences/BaseCheckBox.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import BaseCheckBox from '@renderer/components/Preferences/BaseCheckBox.vue';
 
 export default {
   components: {

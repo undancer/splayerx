@@ -1,9 +1,9 @@
 import { TranscriptInfo as TranscriptInfoPb } from 'sagi-api/translation/v1/translation_pb';
 import { cloneDeep } from 'lodash';
-import { LanguageCode, normalizeCode } from '@/libs/language';
+import { LanguageCode, normalizeCode } from '@renderer/libs/language';
 import {
   IOrigin, IEntityGenerator, Type, Format,
-} from '@/interfaces/ISubtitle';
+} from '@renderer/interfaces/ISubtitle';
 
 export type TranscriptInfo = TranscriptInfoPb.AsObject;
 

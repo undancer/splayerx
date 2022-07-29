@@ -1,5 +1,5 @@
-import bookmark from '@/helpers/bookmark';
-import syncStorage from '@/helpers/syncStorage';
+import bookmark from '@renderer/helpers/bookmark';
+import syncStorage from '@renderer/helpers/syncStorage';
 
 describe('bookmark', () => {
   const data = {

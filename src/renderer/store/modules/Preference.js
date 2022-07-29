@@ -1,8 +1,8 @@
 import path from 'path';
 import { remote } from 'electron';
 import fs from 'fs';
-import asyncStorage from '@/helpers/asyncStorage';
-import syncStorage from '@/helpers/syncStorage';
+import asyncStorage from '@renderer/helpers/asyncStorage';
+import syncStorage from '@renderer/helpers/syncStorage';
 
 const state = {
   nsfwProcessDone: false,

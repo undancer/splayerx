@@ -51,7 +51,7 @@
 </template>
 <script lang="ts">
 import electron from 'electron';
-import Icon from '@/components/BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import BaseCheckBox from './BaseCheckBox.vue';
 
 export default {

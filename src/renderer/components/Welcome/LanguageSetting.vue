@@ -30,8 +30,8 @@
 </template>
 <script lang="ts">
 import { concat } from 'lodash';
-import Dropdown from '@/components/Welcome/Dropdown.vue';
-import { codeToLanguageName, LanguageCode } from '@/libs/language';
+import Dropdown from '@renderer/components/Welcome/Dropdown.vue';
+import { codeToLanguageName, LanguageCode } from '@renderer/libs/language';
 
 export default {
   components: {

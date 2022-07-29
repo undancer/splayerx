@@ -87,8 +87,8 @@
             :style="{
               flex: '1',
               height: '100%',
-              backgroundImage: isDarkMode ? `url(${require('@/assets/historyDark.png')})`
-                : `url(${require('@/assets/history.png')})`,
+              backgroundImage: isDarkMode ? `url(${require('@renderer/assets/historyDark.png')})`
+                : `url(${require('@renderer/assets/history.png')})`,
               backgroundSize: '100% 100%',
               backgroundRepeat: 'no-repeat',
             }"
@@ -113,11 +113,11 @@
 </template>
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
-import BrowsingHistoryItem from '@/components/BrowsingView/BrowsingHistoryItem.vue';
-import { browsingHistory } from '@/services/browsing/BrowsingHistoryService';
+import BrowsingHistoryItem from '@renderer/components/BrowsingView/BrowsingHistoryItem.vue';
+import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
 import {
   Browsing as browsingActions,
-} from '@/store/actionTypes';
+} from '@renderer/store/actionTypes';
 
 export default {
   components: {
@@ -229,4 +229,6 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped src="@/css/darkmode/BrowsingHomePage/BrowsingHistory.scss"></style>
+<style lang="scss" scoped
+       src="@renderer/css/darkmode/BrowsingHomePage/BrowsingHistory.scss">
+</style>

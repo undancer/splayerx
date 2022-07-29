@@ -5,13 +5,13 @@ import {
 import { EventEmitter } from 'events';
 import {
   ILoader, IOrigin, Type, Format,
-} from '@/interfaces/ISubtitle';
-import { SUBTITLE_FULL_DIRNAME } from '@/constants';
-import { mediaQuickHash } from '@/libs/utils';
-import Sagi from '@/libs/sagi';
+} from '@renderer/interfaces/ISubtitle';
+import { SUBTITLE_FULL_DIRNAME } from '@renderer/constants';
+import { mediaQuickHash } from '@renderer/libs/utils';
+import Sagi from '@renderer/libs/sagi';
 import {
   getSubtitleMetadata, cacheSubtitle, getSubtitleFragment, finishSubtitleExtraction,
-} from '@/plugins/mediaTasks';
+} from '@renderer/plugins/mediaTasks';
 import { SagiTextSubtitlePayload } from '../parsers';
 import { sagiSubtitleToWebVTT } from './transcoders';
 import { loadLocalFile, formatToExtension } from '.';

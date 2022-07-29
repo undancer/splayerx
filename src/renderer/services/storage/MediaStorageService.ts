@@ -1,5 +1,5 @@
 import { join } from 'path';
-import { IMediaStorable, AITaskInfo } from '@/interfaces/IMediaStorable';
+import { IMediaStorable, AITaskInfo } from '@renderer/interfaces/IMediaStorable';
 import CacheFile, { cacheFile as cacheFileInstance } from '../../libs/CacheFile';
 
 /** 视频元数据 */

@@ -6,7 +6,7 @@
 import { throttle } from 'lodash';
 import electron from 'electron';
 // @ts-ignore
-import asyncStorage from '@/helpers/asyncStorage';
+import asyncStorage from '@renderer/helpers/asyncStorage';
 
 export default {
   name: 'BrowsingPip',

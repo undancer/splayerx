@@ -7,14 +7,14 @@ import { v4 as uuidv4 } from 'uuid';
 import { extname, join } from 'path';
 import {
   ITags, IOrigin, Type, Format, IParser, ILoader, Cue, IVideoSegments, IMetadata, TextCue,
-} from '@/interfaces/ISubtitle';
-import { LanguageCode } from '@/libs/language';
+} from '@renderer/interfaces/ISubtitle';
+import { LanguageCode } from '@renderer/libs/language';
 
 import {
   AssParser, SrtParser, SagiTextParser, VttParser, ModifiedParser,
-} from '@/services/subtitle';
+} from '@renderer/services/subtitle';
 
-import { SUBTITLE_FULL_DIRNAME } from '@/constants';
+import { SUBTITLE_FULL_DIRNAME } from '@renderer/constants';
 import { assFragmentLanguageLoader, srtFragmentLanguageLoader, vttFragmentLanguageLoader } from './languageLoader';
 import {
   IEmbeddedOrigin,

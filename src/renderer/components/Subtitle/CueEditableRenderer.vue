@@ -28,8 +28,8 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
-import { Editor as editorMutations } from '@/store/mutationTypes';
-import { EVENT_BUS_COLLECTIONS as bus } from '@/constants';
+import { Editor as editorMutations } from '@renderer/store/mutationTypes';
+import { EVENT_BUS_COLLECTIONS as bus } from '@renderer/constants';
 
 export default {
   name: 'CueEditableRenderer',

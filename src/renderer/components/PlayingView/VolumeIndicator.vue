@@ -70,7 +70,7 @@
 </template>
 
 <script lang="ts">
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import BaseIcon from '../BaseIconContainer.vue';
 
 export default {

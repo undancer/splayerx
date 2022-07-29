@@ -1,4 +1,4 @@
-import sortVideoFile from '@/helpers/sort';
+import sortVideoFile from '@renderer/helpers/sort';
 
 describe('helper sort', () => {
   it('set & get correct data', () => {

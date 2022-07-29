@@ -4,18 +4,18 @@ import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import electron, { ipcRenderer, remote } from 'electron';
 import osLocale from 'os-locale';
-import { hookVue } from '@/kerning';
-import messages from '@/locales';
-import store from '@/store';
-import Preference from '@/components/Preference.vue';
+import { hookVue } from '@renderer/kerning';
+import messages from '@renderer/locales';
+import store from '@renderer/store';
+import Preference from '@renderer/components/Preference.vue';
 import {
   UserInfo as uActions,
-} from '@/store/actionTypes';
-import '@/css/style.scss';
+} from '@renderer/store/actionTypes';
+import '@renderer/css/style.scss';
 import {
   getUserInfo, getProductList, setToken, getGeoIP, getUserBalance,
-} from '@/libs/apis';
-import drag from '@/helpers/drag';
+} from '@renderer/libs/apis';
+import drag from '@renderer/helpers/drag';
 
 Vue.use(VueI18n);
 Vue.use(Vuex);
@@ -76,42 +76,42 @@ const routes = [
   {
     path: '/',
     name: 'General',
-    component: require('@/components/Preferences/General.vue').default,
+    component: require('@renderer/components/Preferences/General.vue').default,
   },
   {
     path: '/privacy',
     name: 'Privacy',
-    component: require('@/components/Preferences/Privacy.vue').default,
+    component: require('@renderer/components/Preferences/Privacy.vue').default,
   },
   {
     path: '/translate',
     name: 'Translate',
-    component: require('@/components/Preferences/Translate.vue').default,
+    component: require('@renderer/components/Preferences/Translate.vue').default,
   },
   {
     path: '/account',
     name: 'Account',
-    component: require('@/components/Preferences/Account.vue').default,
+    component: require('@renderer/components/Preferences/Account.vue').default,
   },
   {
     path: '/premium',
     name: 'Premium',
-    component: require('@/components/Preferences/Premium.vue').default,
+    component: require('@renderer/components/Preferences/Premium.vue').default,
   },
   {
     path: '/points',
     name: 'Points',
-    component: require('@/components/Preferences/Points.vue').default,
+    component: require('@renderer/components/Preferences/Points.vue').default,
   },
   {
     path: '/video',
     name: 'Video',
-    component: require('@/components/Preferences/Video.vue').default,
+    component: require('@renderer/components/Preferences/Video.vue').default,
   },
   {
     path: '/whatsnew',
     name: 'Whatsnew',
-    component: require('@/components/Preferences/Whatsnew.vue').default,
+    component: require('@renderer/components/Preferences/Whatsnew.vue').default,
   },
 ];
 

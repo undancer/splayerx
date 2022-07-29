@@ -1,7 +1,7 @@
 import { ipcRenderer } from 'electron';
 import { camelCase } from 'lodash';
-import { LanguageCode, normalizeCode } from '@/libs/language';
-import { mediaQuickHash } from '@/libs/utils';
+import { LanguageCode, normalizeCode } from '@renderer/libs/language';
+import { mediaQuickHash } from '@renderer/libs/utils';
 import BaseMediaTaskQueue, { IMediaTask } from './baseMediaTaskQueue';
 
 type EntryOf<T> = [keyof T, T[keyof T]];

@@ -4,12 +4,12 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
-import { hookVue } from '@/kerning';
-import messages from '@/locales';
+import { hookVue } from '@renderer/kerning';
+import messages from '@renderer/locales';
 // @ts-ignore
-import Login from '@/containers/Login/Login.vue';
-import '@/css/style.scss';
-import { getSystemLocale } from '@/../shared/utils';
+import Login from '@renderer/containers/Login/Login.vue';
+import '@renderer/css/style.scss';
+import { getSystemLocale } from '@shared/utils';
 
 Vue.use(VueI18n);
 Vue.use(Vuex);
@@ -36,7 +36,7 @@ const routes = [
   {
     path: '/sms',
     name: 'sms',
-    component: require('@/containers/Login/SMS.vue').default,
+    component: require('@renderer/containers/Login/SMS.vue').default,
   },
   {
     path: '*',

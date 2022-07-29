@@ -137,10 +137,10 @@
 
 <script lang="ts">
 import { mapActions, mapGetters } from 'vuex';
-import BrowsingChannelManager from '@/services/browsing/BrowsingChannelManager';
-import Icon from '@/components/BaseIconContainer.vue';
-import { Browsing as browsingActions } from '@/store/actionTypes';
-import { channelDetails } from '@/interfaces/IBrowsingChannelManager';
+import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
 import BrowsingCustomizedChannel from './BrowsingCustomizedChannel.vue';
 
 export default {
@@ -267,4 +267,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/css/darkmode/BrowsingChannelManager.scss"></style>
+<style scoped lang="scss" src="@renderer/css/darkmode/BrowsingChannelManager.scss"></style>

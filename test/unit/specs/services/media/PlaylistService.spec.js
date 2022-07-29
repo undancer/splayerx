@@ -1,7 +1,7 @@
 import sinon from 'sinon';
-import RecentPlayService from '@/services/media/PlaylistService';
-import { mediaStorageService } from '@/services/storage/MediaStorageService';
-import { info } from '@/libs/DataBase';
+import RecentPlayService from '@renderer/services/media/PlaylistService';
+import { mediaStorageService } from '@renderer/services/storage/MediaStorageService';
+import { info } from '@renderer/libs/DataBase';
 
 
 describe('RecentPlayService', () => {

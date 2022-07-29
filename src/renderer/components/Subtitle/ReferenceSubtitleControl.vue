@@ -67,13 +67,13 @@ import { AnimationItem } from 'lottie-web';
 import {
   Input as InputActions,
   Editor as edActions,
-} from '@/store/actionTypes';
-import { ISubtitleControlListItem, Type } from '@/interfaces/ISubtitle';
-// import lottie from '@/components/lottie.vue';
-// import animationData from '@/assets/playlist.json';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
-import ReferenceSubtitleList from '@/components/Subtitle/ReferenceSubtitleList.vue';
-import Icon from '@/components/BaseIconContainer.vue';
+} from '@renderer/store/actionTypes';
+import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
+// import lottie from '@renderer/components/lottie.vue';
+// import animationData from '@renderer/assets/playlist.json';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
+import ReferenceSubtitleList from '@renderer/components/Subtitle/ReferenceSubtitleList.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'ReferenceSubtitleControl',

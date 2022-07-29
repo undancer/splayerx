@@ -1,5 +1,5 @@
 import sinon from 'sinon';
-import TimerManager from '@/helpers/timerManager';
+import TimerManager from '@renderer/helpers/timerManager';
 
 describe('Helper - TimerManager Unit Tests', () => {
   it('Sanity test', () => {

@@ -1,5 +1,5 @@
 import { stringifySync as stringify, NodeList } from 'subtitle';
-import { TextCue } from '@/interfaces/ISubtitle';
+import { TextCue } from '@renderer/interfaces/ISubtitle';
 import { SagiTextSubtitlePayload } from '../parsers';
 
 export function sagiSubtitleToWebVTT(subtitlePayload: SagiTextSubtitlePayload): string {

@@ -93,7 +93,7 @@
 
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import { isBetaVersion } from '@/../shared/common/platform';
+import { isBetaVersion } from '@shared/common/platform';
 import Icon from '../BaseIconContainer.vue';
 import adv1 from '../../assets/adv-1.png';
 import adv2 from '../../assets/adv-2.png';

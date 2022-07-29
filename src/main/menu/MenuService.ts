@@ -1,5 +1,5 @@
 import { app, ipcMain } from 'electron';
-import { IBrowsingHistoryMenuInfo } from '@/interfaces/IBrowsingHistory';
+import { IBrowsingHistoryMenuInfo } from '@renderer/interfaces/IBrowsingHistory';
 import Menu from './Menu';
 import { IMenuDisplayInfo } from '../../renderer/interfaces/IRecentPlay';
 import { ISubtitleControlListItem } from '../../renderer/interfaces/ISubtitle';

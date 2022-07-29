@@ -20,13 +20,13 @@ import AsyncComputed from 'vue-async-computed';
 // @ts-ignore
 import { EventEmitter } from 'events';
 // @ts-ignore
-import App from '@/App.vue';
-import router from '@/router';
-import store from '@/store';
-import messages from '@/locales';
-import { windowRectService } from '@/services/window/WindowRectService';
-import helpers from '@/helpers';
-import { hookVue } from '@/kerning';
+import App from '@renderer/App.vue';
+import router from '@renderer/router';
+import store from '@renderer/store';
+import messages from '@renderer/locales';
+import { windowRectService } from '@renderer/services/window/WindowRectService';
+import helpers from '@renderer/helpers';
+import { hookVue } from '@renderer/kerning';
 import {
   Video as videoActions,
   Subtitle as subtitleActions,
@@ -37,18 +37,18 @@ import {
   UIStates as uiActions,
   Download as downloadActions,
   Editor as seActions,
-} from '@/store/actionTypes';
-import { log } from '@/libs/Log';
-import { checkForUpdate } from '@/libs/utils';
-import asyncStorage from '@/helpers/asyncStorage';
-import { videodata } from '@/store/video';
-import { addBubble } from '@/helpers/notificationControl';
-import { isAccountEnabled } from '@/../shared/config';
-import { EVENT_BUS_COLLECTIONS as bus, MAX_VOLUME, MAX_AMPLIFY_VOLUME } from '@/constants';
-import InputPlugin, { getterTypes as iGT } from '@/plugins/input';
-import { browsingHistory } from '@/services/browsing/BrowsingHistoryService';
-import { channelDetails } from '@/interfaces/IBrowsingChannelManager';
-import { downloadDB } from '@/helpers/downloadDB';
+} from '@renderer/store/actionTypes';
+import { log } from '@renderer/libs/Log';
+import { checkForUpdate } from '@renderer/libs/utils';
+import asyncStorage from '@renderer/helpers/asyncStorage';
+import { videodata } from '@renderer/store/video';
+import { addBubble } from '@renderer/helpers/notificationControl';
+import { isAccountEnabled } from '@renderer/../shared/config';
+import { EVENT_BUS_COLLECTIONS as bus, MAX_VOLUME, MAX_AMPLIFY_VOLUME } from '@renderer/constants';
+import InputPlugin, { getterTypes as iGT } from '@renderer/plugins/input';
+import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
+import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
+import { downloadDB } from '@renderer/helpers/downloadDB';
 import BrowsingChannelMenu from './services/browsing/BrowsingChannelMenu';
 import MenuService from './services/menu/MenuService';
 import { isWindowsExE, isMacintoshDMG } from '../shared/common/platform';

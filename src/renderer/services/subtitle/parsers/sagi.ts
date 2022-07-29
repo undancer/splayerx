@@ -1,7 +1,7 @@
 import { TranscriptResponse } from 'sagi-api/translation/v1/translation_pb';
 import {
   Format, TextCue, IParser, IVideoSegments,
-} from '@/interfaces/ISubtitle';
+} from '@renderer/interfaces/ISubtitle';
 import { tagsGetter, getDialogues } from '../utils';
 import { SagiLoader } from '../utils/loaders';
 

@@ -8,7 +8,7 @@ import {
   crc32,
   getNumbersFromVersion,
   compareVersions,
-} from '@/libs/utils';
+} from '@renderer/libs/utils';
 
 describe('libs utils', () => {
   let fontSize = '';

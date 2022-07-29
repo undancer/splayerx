@@ -78,7 +78,7 @@ import Vue from 'vue';
 import { ipcRenderer, remote } from 'electron';
 import path from 'path';
 import qs from 'querystring';
-import Icon from '@/components/BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default Vue.extend({
   name: 'LosslessStreamingInfoModal',

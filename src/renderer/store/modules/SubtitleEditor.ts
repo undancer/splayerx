@@ -8,23 +8,23 @@ import { v4 as uuidv4 } from 'uuid';
 import { event } from 'vue-analytics';
 import {
   ISubtitleControlListItem, Cue, ModifiedCues, Type, IMetadata, ModifiedSubtitle, TextCue,
-} from '@/interfaces/ISubtitle';
-import { addBubble } from '@/helpers/notificationControl';
+} from '@renderer/interfaces/ISubtitle';
+import { addBubble } from '@renderer/helpers/notificationControl';
 import {
   MODIFIED_SUBTITLE_TYPE,
-} from '@/constants';
+} from '@renderer/constants';
 import {
   megreSameTime, generateTrack, storeModified,
-} from '@/services/subtitle/utils';
-import { log } from '@/libs/Log';
-import { ModifiedGenerator, IModifiedOrigin } from '@/services/subtitle/loaders/modified';
-import { addSubtitleItemsToList, updateSubtitleList } from '@/services/storage/subtitle';
-import { LocalGenerator } from '@/services/subtitle/loaders/local';
+} from '@renderer/services/subtitle/utils';
+import { log } from '@renderer/libs/Log';
+import { ModifiedGenerator, IModifiedOrigin } from '@renderer/services/subtitle/loaders/modified';
+import { addSubtitleItemsToList, updateSubtitleList } from '@renderer/services/storage/subtitle';
+import { LocalGenerator } from '@renderer/services/subtitle/loaders/local';
 import {
   SUBTITLE_EDITOR_REFERENCE_LOAD_FAIL,
   SUBTITLE_EDITOR_REFERENCE_LOADING,
   SUBTITLE_EDITOR_SAVED,
-} from '@/helpers/notificationcodes';
+} from '@renderer/helpers/notificationcodes';
 import {
   Editor as editorMutations,
   newSubtitle as subMutations,

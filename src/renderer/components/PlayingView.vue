@@ -21,13 +21,13 @@
 import { Route } from 'vue-router';
 import { mapActions, mapGetters, mapMutations } from 'vuex';
 import { basename } from 'path';
-import { Subtitle as subtitleActions, SubtitleManager as smActions, AudioTranslate as atActions } from '@/store/actionTypes';
-import SubtitleImageRenderer from '@/components/SubtitleImageRenderer.vue';
-import thumbnailPost from '@/components/PlayingView/ThumbnailPost/ThumbnailPost.vue';
-import VideoCanvas from '@/containers/VideoCanvas.vue';
-import TheVideoController from '@/containers/TheVideoController.vue';
-import { AudioTranslateBubbleType } from '@/store/modules/AudioTranslate';
-import { offListenersExceptWhiteList } from '@/libs/utils';
+import { Subtitle as subtitleActions, SubtitleManager as smActions, AudioTranslate as atActions } from '@renderer/store/actionTypes';
+import SubtitleImageRenderer from '@renderer/components/SubtitleImageRenderer.vue';
+import thumbnailPost from '@renderer/components/PlayingView/ThumbnailPost/ThumbnailPost.vue';
+import VideoCanvas from '@renderer/containers/VideoCanvas.vue';
+import TheVideoController from '@renderer/containers/TheVideoController.vue';
+import { AudioTranslateBubbleType } from '@renderer/store/modules/AudioTranslate';
+import { offListenersExceptWhiteList } from '@renderer/libs/utils';
 import { videodata } from '../store/video';
 import { getStreams } from '../plugins/mediaTasks';
 

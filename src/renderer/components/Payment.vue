@@ -77,8 +77,8 @@
 
 <script lang="ts">
 import { remote, ipcRenderer, DidFailLoadEvent } from 'electron';
-import Icon from '@/components/BaseIconContainer.vue';
-import { polling } from '@/libs/apis';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import { polling } from '@renderer/libs/apis';
 
 export default {
   name: 'Payment',

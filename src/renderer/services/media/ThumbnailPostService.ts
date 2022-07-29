@@ -1,9 +1,9 @@
 import path from 'path';
 import filesize from 'filesize';
-import { getThumbnailPath } from '@/plugins/mediaTasks';
-import { getMediaInfo } from '@/plugins/mediaTasks/index';
-import { timecodeFromSeconds } from '@/libs/utils';
-import { IVideoStream } from '@/plugins/mediaTasks/mediaInfoQueue';
+import { getThumbnailPath } from '@renderer/plugins/mediaTasks';
+import { getMediaInfo } from '@renderer/plugins/mediaTasks/index';
+import { timecodeFromSeconds } from '@renderer/libs/utils';
+import { IVideoStream } from '@renderer/plugins/mediaTasks/mediaInfoQueue';
 
 interface IPostInfo {
   name: string,

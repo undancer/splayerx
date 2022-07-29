@@ -6,7 +6,7 @@
  */
 
 import { writeFileSync } from 'fs';
-import { mediaQuickHash } from '@/libs/utils';
+import { mediaQuickHash } from '@renderer/libs/utils';
 import {
   getVideoInfoByMediaHash,
   generateThumbnailPathByMediaHash,

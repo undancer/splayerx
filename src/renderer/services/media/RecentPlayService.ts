@@ -1,10 +1,10 @@
 import { basename, extname } from 'path';
-import { IRecentPlay, ILandingViewDisplayInfo, IMenuDisplayInfo } from '@/interfaces/IRecentPlay';
-import { mediaStorageService } from '@/services/storage/MediaStorageService';
-import { playInfoStorageService } from '@/services/storage/PlayInfoStorageService';
-import { info } from '@/libs/DataBase';
-import { mediaQuickHash } from '@/libs/utils';
-import { filePathToUrl } from '@/helpers/path';
+import { IRecentPlay, ILandingViewDisplayInfo, IMenuDisplayInfo } from '@renderer/interfaces/IRecentPlay';
+import { mediaStorageService } from '@renderer/services/storage/MediaStorageService';
+import { playInfoStorageService } from '@renderer/services/storage/PlayInfoStorageService';
+import { info } from '@renderer/libs/DataBase';
+import { mediaQuickHash } from '@renderer/libs/utils';
+import { filePathToUrl } from '@renderer/helpers/path';
 
 type coverViedoItem = {
   lastPlayedTime: number,

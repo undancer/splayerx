@@ -1,8 +1,8 @@
 import { remote } from 'electron';
-import { log } from '@/libs/Log';
-import { apiOfAccountService } from '@/../shared/config';
-import Fetcher from '@/../shared/Fetcher';
-import { crossThreadCache, getEnvironmentName } from '../../shared/utils';
+import { log } from '@renderer/libs/Log';
+import { apiOfAccountService } from '@shared/config';
+import Fetcher from '@shared/Fetcher';
+import { crossThreadCache, getEnvironmentName } from '@shared/utils';
 
 export class ApiError extends Error {
   /** HTTP status */

@@ -1,4 +1,4 @@
-import { info } from '@/libs/DataBase';
+import { info } from '@renderer/libs/DataBase';
 
 describe('DataBase', () => {
   const playlistItemData1 = {

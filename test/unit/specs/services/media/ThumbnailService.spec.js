@@ -1,4 +1,4 @@
-import ThumbnailService from '../../../../../src/renderer/services/media/ThumbnailService';
+import ThumbnailService from '@renderer/services/media/ThumbnailService';
 
 describe('thumbnaiService logic service', () => {
   let thumbnailService;

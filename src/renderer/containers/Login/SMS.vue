@@ -60,8 +60,8 @@ import qs from 'querystring';
 // @ts-ignore
 import metadata from 'libphonenumber-js/metadata.mobile.json';
 import { parsePhoneNumberFromString, getCountryCallingCode, CountryCode } from 'libphonenumber-js/mobile';
-import { getSMSCode, signIn, getGeoIP } from '@/libs/webApis';
-import { postMessage } from '@/../shared/utils';
+import { getSMSCode, signIn, getGeoIP } from '@renderer/libs/webApis';
+import { postMessage } from '@renderer/../shared/utils';
 
 const ALI_CAPTCHA_APP_KEY = 'FFFF0N0000000000858A';
 const ALI_CAPTCHA_SCENE = 'nvc_message';

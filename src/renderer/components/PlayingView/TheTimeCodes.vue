@@ -30,7 +30,7 @@
   </div>
 </template>
 <script lang="ts">
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import Labels from './Labels.vue';
 
 export default {

@@ -3,7 +3,7 @@ import {
   getValidVideoExtensions,
   isSubtitle,
   isVideo,
-} from '@/../shared/utils';
+} from '@shared/utils';
 
 describe('shared/utils', () => {
   it('should contains proper subtitle extensions', () => {

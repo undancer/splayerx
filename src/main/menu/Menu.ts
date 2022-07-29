@@ -2,7 +2,7 @@ import {
   app, Menu, MenuItem, shell, nativeImage, nativeTheme,
 } from 'electron';
 import { cloneDeep } from 'lodash';
-import { IBrowsingHistoryMenuInfo } from '@/interfaces/IBrowsingHistory';
+import { IBrowsingHistoryMenuInfo } from '@renderer/interfaces/IBrowsingHistory';
 import {
   IMenubarMenu,
   IMenubarMenuItemAction,

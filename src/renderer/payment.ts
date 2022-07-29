@@ -2,12 +2,12 @@ import Vue from 'vue';
 import { ipcRenderer, remote } from 'electron';
 import VueI18n from 'vue-i18n';
 import osLocale from 'os-locale';
-import messages from '@/locales';
-import { hookVue } from '@/kerning';
-import { setToken } from '@/libs/apis';
+import messages from '@renderer/locales';
+import { hookVue } from '@renderer/kerning';
+import { setToken } from '@renderer/libs/apis';
 // @ts-ignore
-import Payment from '@/components/Payment.vue';
-import '@/css/style.scss';
+import Payment from '@renderer/components/Payment.vue';
+import '@renderer/css/style.scss';
 
 hookVue(Vue);
 Vue.use(VueI18n);

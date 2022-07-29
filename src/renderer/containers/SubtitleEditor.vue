@@ -199,19 +199,19 @@ import { cloneDeep } from 'lodash';
 import {
   EVENT_BUS_COLLECTIONS as bus,
   MODIFIED_SUBTITLE_TYPE,
-} from '@/constants';
-import { videodata } from '@/store/video';
+} from '@renderer/constants';
+import { videodata } from '@renderer/store/video';
 import {
   SubtitleManager as smActions,
   Editor as seActions,
-} from '@/store/actionTypes';
-import { Editor as editorMutations, Input as inputMutations } from '@/store/mutationTypes';
+} from '@renderer/store/actionTypes';
+import { Editor as editorMutations, Input as inputMutations } from '@renderer/store/mutationTypes';
 import {
   Cue, TextCue, EditCue, ModifiedSubtitle,
-} from '@/interfaces/ISubtitle';
-import SubtitleRenderer from '@/components/Subtitle/SubtitleRenderer.vue';
-import Icon from '@/components/BaseIconContainer.vue';
-import Labels from '@/components/PlayingView/Labels.vue';
+} from '@renderer/interfaces/ISubtitle';
+import SubtitleRenderer from '@renderer/components/Subtitle/SubtitleRenderer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import Labels from '@renderer/components/PlayingView/Labels.vue';
 
 export default Vue.extend({
   name: 'SubtitleEditor',

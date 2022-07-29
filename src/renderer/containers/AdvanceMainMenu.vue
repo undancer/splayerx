@@ -240,17 +240,17 @@
 
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
-import { Subtitle as subtitleActions, Video as videoActions } from '@/store/actionTypes';
-import { calculateTextSize } from '@/libs/utils';
-import AdvanceRowItems from '@/components/PlayingView/AdvanceControlFunctionalities/AdvanceRowItems.vue';
+import { Subtitle as subtitleActions, Video as videoActions } from '@renderer/store/actionTypes';
+import { calculateTextSize } from '@renderer/libs/utils';
+import AdvanceRowItems from '@renderer/components/PlayingView/AdvanceControlFunctionalities/AdvanceRowItems.vue';
 // @ts-ignore
-import BaseInfoCard from '@/components/PlayingView/InfoCard.vue';
+import BaseInfoCard from '@renderer/components/PlayingView/InfoCard.vue';
 // @ts-ignore
-import Icon from '@/components/BaseIconContainer.vue';
-import AdvanceColorItems from '@/components/PlayingView/AdvanceControlFunctionalities/AdvanceColorItems.vue';
-import AdvanceSelectedItemts from '@/components/PlayingView/AdvanceControlFunctionalities/AdvanceSelectItems.vue';
-import AdvanceColumnItems from '@/components/PlayingView/AdvanceControlFunctionalities/AdvanceColumnItems.vue';
-import { NOT_SELECTED_SUBTITLE } from '@/interfaces/ISubtitle';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import AdvanceColorItems from '@renderer/components/PlayingView/AdvanceControlFunctionalities/AdvanceColorItems.vue';
+import AdvanceSelectedItemts from '@renderer/components/PlayingView/AdvanceControlFunctionalities/AdvanceSelectItems.vue';
+import AdvanceColumnItems from '@renderer/components/PlayingView/AdvanceControlFunctionalities/AdvanceColumnItems.vue';
+import { NOT_SELECTED_SUBTITLE } from '@renderer/interfaces/ISubtitle';
 
 export default {
   name: 'AdvanceMainMenu',

@@ -6,8 +6,8 @@ import {
 } from 'ass-compiler';
 import {
   Format, IParser, ILoader, IMetadata, TextCue, IVideoSegments,
-} from '@/interfaces/ISubtitle';
-import { StreamTimeSegments } from '@/libs/TimeSegments';
+} from '@renderer/interfaces/ISubtitle';
+import { StreamTimeSegments } from '@renderer/libs/TimeSegments';
 import { getDialogues } from '../utils';
 
 export class AssParser implements IParser {

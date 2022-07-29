@@ -6,9 +6,9 @@ import {
   difference,
   remove,
 } from 'lodash';
-import store from '@/store';
-import { Subtitle as subtitleMutations } from '@/store/mutationTypes';
-import { Subtitle as subtitleActions, SubtitleManager as realSubtitleActions } from '@/store/actionTypes';
+import store from '@renderer/store';
+import { Subtitle as subtitleMutations } from '@renderer/store/mutationTypes';
+import { Subtitle as subtitleActions, SubtitleManager as realSubtitleActions } from '@renderer/store/actionTypes';
 import { metaInfoUpdate } from './rank';
 
 const state = {

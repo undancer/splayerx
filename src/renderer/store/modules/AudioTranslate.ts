@@ -9,27 +9,27 @@
 import { event } from 'vue-analytics';
 import { ipcRenderer, remote } from 'electron';
 import { v4 as uuidv4 } from 'uuid';
-import { AudioTranslate as m } from '@/store/mutationTypes';
-import store from '@/store';
-import { AudioTranslate as a, SubtitleManager as smActions, UserInfo as uActions } from '@/store/actionTypes';
-import { AITaskInfo } from '@/interfaces/IMediaStorable';
-import { TranscriptInfo } from '@/services/subtitle';
-import { ISubtitleControlListItem, Type } from '@/interfaces/ISubtitle';
-import { mediaStorageService } from '@/services/storage/MediaStorageService';
-import { PreTranslatedGenerator } from '@/services/subtitle/loaders/preTranslated';
-import { isAudioCenterChannelEnabled, isAccountEnabled } from '@/../shared/config';
-import { addBubble } from '@/helpers/notificationControl';
+import { AudioTranslate as m } from '@renderer/store/mutationTypes';
+import store from '@renderer/store';
+import { AudioTranslate as a, SubtitleManager as smActions, UserInfo as uActions } from '@renderer/store/actionTypes';
+import { AITaskInfo } from '@renderer/interfaces/IMediaStorable';
+import { TranscriptInfo } from '@renderer/services/subtitle';
+import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
+import { mediaStorageService } from '@renderer/services/storage/MediaStorageService';
+import { PreTranslatedGenerator } from '@renderer/services/subtitle/loaders/preTranslated';
+import { isAudioCenterChannelEnabled, isAccountEnabled } from '@shared/config';
+import { addBubble } from '@renderer/helpers/notificationControl';
 import {
   TRANSLATE_SERVER_ERROR_FAIL, TRANSLATE_SUCCESS,
   TRANSLATE_SUCCESS_WHEN_VIDEO_CHANGE, TRANSLATE_REQUEST_TIMEOUT,
   TRANSLATE_REQUEST_FORBIDDEN, TRANSLATE_REQUEST_PERMISSION, TRANSLATE_REQUEST_PERMISSION_APPX,
   TRANSLATE_REQUEST_ALREADY_EXISTS, TRANSLATE_REQUEST_RESOURCE_EXHAUSTED,
-} from '@/helpers/notificationcodes';
-import { log } from '@/libs/Log';
-import { LanguageCode } from '@/libs/language';
-import { addSubtitleItemsToList } from '@/services/storage/subtitle';
-import { getStreams } from '@/plugins/mediaTasks';
-import { getUserBalance } from '@/libs/apis';
+} from '@renderer/helpers/notificationcodes';
+import { log } from '@renderer/libs/Log';
+import { LanguageCode } from '@renderer/libs/language';
+import { addSubtitleItemsToList } from '@renderer/services/storage/subtitle';
+import { getStreams } from '@renderer/plugins/mediaTasks';
+import { getUserBalance } from '@renderer/libs/apis';
 
 let taskTimer: number;
 let timerCount: number;
@@ -138,7 +138,7 @@ const taskCallback = async (taskInfo: AITaskInfo) => {
   if (taskInfo.mediaHash !== store.getters.mediaHash) {
     return;
   }
-  const audioTranslateService = (await import('@/services/media/AudioTranslateService')).audioTranslateService;
+  const audioTranslateService = (await import('@renderer/services/media/AudioTranslateService')).audioTranslateService;
   audioTranslateService.taskInfo = taskInfo;
   // const estimateTime = taskInfo.estimateTime * 1;
   // @ts-ignore
@@ -308,7 +308,7 @@ const actions = {
       return;
     }
     commit(m.AUDIO_TRANSLATE_SAVE_KEY, `${getters.mediaHash}`);
-    const audioTranslateService = (await import('@/services/media/AudioTranslateService')).audioTranslateService;
+    const audioTranslateService = (await import('@renderer/services/media/AudioTranslateService')).audioTranslateService;
     audioTranslateService.stop();
     // audio index in audio streams
     const audioInfo = await getCurrentAudioInfo(getters.currentAudioTrackId, getters.originSrc);
@@ -705,7 +705,7 @@ const actions = {
       clearInterval(taskTimer);
     }
     // 丢弃service
-    const audioTranslateService = (await import('@/services/media/AudioTranslateService')).audioTranslateService;
+    const audioTranslateService = (await import('@renderer/services/media/AudioTranslateService')).audioTranslateService;
     audioTranslateService.stop();
     // 丢弃任务，执行用户强制操作
     const selectId = state.selectedTargetSubtitleId;
@@ -722,7 +722,7 @@ const actions = {
     dispatch(a.AUDIO_TRANSLATE_RELOAD_BALANCE);
   },
   async [a.AUDIO_TRANSLATE_BACKSATGE]({ commit, dispatch }: any) {
-    const audioTranslateService = (await import('@/services/media/AudioTranslateService')).audioTranslateService;
+    const audioTranslateService = (await import('@renderer/services/media/AudioTranslateService')).audioTranslateService;
     // 保存当前进度
     if (state.status === AudioTranslateStatus.Translating) {
       audioTranslateService.saveTask();

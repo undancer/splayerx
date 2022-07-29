@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import { log } from '@/libs/Log';
+import { log } from '@renderer/libs/Log';
 
 export default {
   name: 'UpdaterProgressIndicator',
