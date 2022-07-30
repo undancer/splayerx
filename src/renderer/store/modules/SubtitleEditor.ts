@@ -4,8 +4,6 @@ import path from 'path';
 import { remote, OpenDialogReturnValue } from 'electron';
 import Vue from 'vue';
 import { v4 as uuidv4 } from 'uuid';
-// @ts-ignore
-import { event } from 'vue-analytics';
 import {
   ISubtitleControlListItem, Cue, ModifiedCues, Type, IMetadata, ModifiedSubtitle, TextCue,
 } from '@renderer/interfaces/ISubtitle';
@@ -276,9 +274,11 @@ const actions = {
     if (!payload) {
       const count = state.currentIndex + 1;
       // ga 本次修改数量
-      event('app', 'editingview-updated-subtitle', count);
+      this.$gtag.event('editingview-updated-subtitle',
+        { event_category: 'app', value: count });
       // ga 进入高级模式使用了参考字幕
-      event('app', 'editingview-reference-used', state.didUseReference);
+      this.$gtag.event('editingview-reference-used',
+        { event_category: 'app', value: state.didUseReference });
       dispatch(editorActions.SUBTITLE_EDITOR_SAVE);
       commit(editorMutations.UPDATE_CURRENT_EDITED_SUBTITLE, undefined);
       commit(editorMutations.SWITCH_REFERENCE_SUBTITLE, undefined);
@@ -367,7 +367,8 @@ const actions = {
           log.error('storeModified', error);
         }
         // ga 进入高级编辑
-        event('app', 'subtitle-created-by-user', 'professional-edit');
+        this.$gtag.event('subtitle-created-by-user',
+          { event_category: 'app', event_label: 'professional-edit' });
       }
       // refresh cues
       const dialogues = megreSameTime(cues.dialogues);
@@ -644,7 +645,8 @@ const actions = {
         log.error('storeModified', error);
       }
       // ga 快捷方式编辑
-      event('app', 'subtitle-created-by-user', 'quick-edit');
+      this.$gtag.event('subtitle-created-by-user',
+        { event_category: 'app', event_label: 'quick-edit' });
     } else {
       try {
         const tmpCues = await dispatch(`${subtitleId}/${subActions.getDialogues}`, undefined);
@@ -821,7 +823,8 @@ const actions = {
   }: any) {
     dispatch(smActions.exportSubtitle, state.currentEditedSubtitle);
     // Menu导出字幕按钮
-    event('app', 'export-subtitle', '');
+    this.$gtag.event('export-subtitle',
+      { event_category: 'app', event_label: '' });
   },
 };
 

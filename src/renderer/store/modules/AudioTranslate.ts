@@ -5,13 +5,15 @@
  * @Last Modified time: 2020-01-10 14:46:27
  */
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// @ts-ignore
-import { event } from 'vue-analytics';
 import { ipcRenderer, remote } from 'electron';
 import { v4 as uuidv4 } from 'uuid';
 import { AudioTranslate as m } from '@renderer/store/mutationTypes';
 import store from '@renderer/store';
-import { AudioTranslate as a, SubtitleManager as smActions, UserInfo as uActions } from '@renderer/store/actionTypes';
+import {
+  AudioTranslate as a,
+  SubtitleManager as smActions,
+  UserInfo as uActions,
+} from '@renderer/store/actionTypes';
 import { AITaskInfo } from '@renderer/interfaces/IMediaStorable';
 import { TranscriptInfo } from '@renderer/services/subtitle';
 import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
@@ -20,10 +22,15 @@ import { PreTranslatedGenerator } from '@renderer/services/subtitle/loaders/preT
 import { isAudioCenterChannelEnabled, isAccountEnabled } from '@shared/config';
 import { addBubble } from '@renderer/helpers/notificationControl';
 import {
-  TRANSLATE_SERVER_ERROR_FAIL, TRANSLATE_SUCCESS,
-  TRANSLATE_SUCCESS_WHEN_VIDEO_CHANGE, TRANSLATE_REQUEST_TIMEOUT,
-  TRANSLATE_REQUEST_FORBIDDEN, TRANSLATE_REQUEST_PERMISSION, TRANSLATE_REQUEST_PERMISSION_APPX,
-  TRANSLATE_REQUEST_ALREADY_EXISTS, TRANSLATE_REQUEST_RESOURCE_EXHAUSTED,
+  TRANSLATE_SERVER_ERROR_FAIL,
+  TRANSLATE_SUCCESS,
+  TRANSLATE_SUCCESS_WHEN_VIDEO_CHANGE,
+  TRANSLATE_REQUEST_TIMEOUT,
+  TRANSLATE_REQUEST_FORBIDDEN,
+  TRANSLATE_REQUEST_PERMISSION,
+  TRANSLATE_REQUEST_PERMISSION_APPX,
+  TRANSLATE_REQUEST_ALREADY_EXISTS,
+  TRANSLATE_REQUEST_RESOURCE_EXHAUSTED,
 } from '@renderer/helpers/notificationcodes';
 import { log } from '@renderer/libs/Log';
 import { LanguageCode } from '@renderer/libs/language';
@@ -445,7 +452,8 @@ const actions = {
         try {
           // TODO 目前grabAudioFrame出错直接继续提取，需要确认错误类型
           // ga 翻译过程(第二步)失败的次数
-          event('app', 'ai-translate-server-translate-fail', failReason);
+          this.$gtag.event('ai-translate-server-translate-fail',
+            { event_category: 'app', event_label: failReason });
         } catch (error) {
           // empty
         }
@@ -483,7 +491,8 @@ const actions = {
         }, 1000);
         // ga 提取(第一步)成功的次数
         try {
-          event('app', 'ai-translate-extract-audio-success');
+          this.$gtag.event('ai-translate-extract-audio-success',
+            { event_category: 'app' });
         } catch (error) {
           // empty
         }
@@ -576,7 +585,8 @@ const actions = {
         commit(m.AUDIO_TRANSLATE_RECOVERY);
         // ga 翻译过程(第二步)成功次数
         try {
-          event('app', 'ai-translate-server-translate-success');
+          this.$gtag.event('ai-translate-server-translate-success',
+            { event_category: 'app' });
         } catch (error) {
           // empty
         }
@@ -586,7 +596,8 @@ const actions = {
       grab.on('grab-audio', () => {
         // 第一步请求返回, 需要提取音频
         try {
-          event('app', 'ai-translate-server-if-audio-need', 'audio-need');
+          this.$gtag.event('ai-translate-server-if-audio-need',
+            { event_category: 'app', event_label: 'audio-need' });
         } catch (error) {
           // empty
         }
@@ -594,7 +605,8 @@ const actions = {
       grab.on('skip-audio', () => {
         // 第一步请求返回， 不需要提取音频
         try {
-          event('app', 'ai-translate-server-if-audio-need', 'audio-not-need');
+          this.$gtag.event('ai-translate-server-if-audio-need',
+            { event_category: 'app', event_label: 'audio-not-need' });
         } catch (error) {
           // empty
         }
@@ -672,7 +684,8 @@ const actions = {
             discardFromWhere = 'other';
         }
         // ga 提取(第一步)中退出的次数 (切换视频、关闭播放、切换语言、取消、刷新、其他)
-        event('app', 'ai-translate-extract-audio-abort', discardFromWhere);
+        this.$gtag.event('ai-translate-extract-audio-abort',
+          { event_category: 'app', event_label: discardFromWhere });
       } else if (state.status === AudioTranslateStatus.Translating) {
         switch (state.bubbleType) {
           case AudioTranslateBubbleType.Default:
@@ -695,7 +708,8 @@ const actions = {
             discardFromWhere = 'other';
         }
         // ga 翻译过程(第二步)中退出的次数 (切换视频、关闭播放、切换语言、取消、刷新、其他)
-        event('app', 'ai-translate-server-translate-exit', discardFromWhere);
+        this.$gtag.event('ai-translate-server-translate-exit',
+          { event_category: 'app', event_label: discardFromWhere });
       }
     } catch (error) {
       // empty
