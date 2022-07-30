@@ -71,6 +71,11 @@ module.exports = {
         // 7
         'vue/order-in-components': ['off'],
         'vue/this-in-template': ['off'],
+        // 8
+        'vue/v-on-event-hyphenation': ['off'],
+        // 9
+        'vue/no-reserved-component-names': ['off'],
+        'vue/html-closing-bracket-newline': ['off'],
         // "eslint-config-airbnb-base": "^14.0.0",
         'arrow-parens': ['off'],
         'prefer-object-spread': ['off'],
