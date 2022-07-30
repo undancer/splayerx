@@ -260,13 +260,13 @@ if (process.env.NODE_ENV === 'production') {
   rendererConfig.devtool = '#source-map';
 
   rendererConfig.plugins.push(
-    new CopyWebpackPlugin([
+    new CopyWebpackPlugin({ patterns:[
       {
         from: path.join(__dirname, '../static'),
         to: path.join(__dirname, '../dist/electron/static'),
-        ignore: ['.*'],
+        // ignore: ['.*'],
       },
-    ]),
+    ]}),
     new webpack.DefinePlugin(
       Object.assign(sharedDefinedVariables, {
         'process.env.SAGI_API': `"${process.env.SAGI_API || 'apis.sagittarius.ai:8443'}"`,
