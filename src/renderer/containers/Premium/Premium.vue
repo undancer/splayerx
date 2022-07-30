@@ -37,12 +37,12 @@ import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
 import {
   createOrder, ApiError,
-} from '@/libs/webApis';
-import Icon from '@/components/BaseIconContainer.vue';
+} from '@renderer/libs/webApis';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import {
   UserInfo as uActions,
-} from '@/store/actionTypes';
-import { PayStatus } from '@/store/modules/UserInfo';
+} from '@renderer/store/actionTypes';
+import { PayStatus } from '@renderer/store/modules/UserInfo';
 
 export default Vue.extend({
   name: 'Premium',

@@ -2,11 +2,11 @@ import Vue from 'vue';
 import osLocale from 'os-locale';
 import VueI18n from 'vue-i18n';
 import electron, { ipcRenderer } from 'electron';
-import messages from '@/locales';
-import { hookVue } from '@/kerning';
-import About from '@/components/About.vue';
-import asyncStorage from '@/helpers/asyncStorage';
-import '@/css/style.scss';
+import messages from '@renderer/locales';
+import { hookVue } from '@renderer/kerning';
+import About from '@renderer/components/About.vue';
+import asyncStorage from '@renderer/helpers/asyncStorage';
+import '@renderer/css/style.scss';
 
 
 Vue.use(VueI18n);

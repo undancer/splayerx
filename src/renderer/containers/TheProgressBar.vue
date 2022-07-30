@@ -79,12 +79,12 @@
 </template>
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import { videodata } from '@/store/video';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
+import { videodata } from '@renderer/store/video';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import {
   EVENT_BUS_COLLECTIONS as bus,
-} from '@/constants';
-import ThePreviewThumbnail from '@/containers/ThePreviewThumbnail.vue';
+} from '@renderer/constants';
+import ThePreviewThumbnail from '@renderer/containers/ThePreviewThumbnail.vue';
 
 export default {
   name: 'TheProgressBar',

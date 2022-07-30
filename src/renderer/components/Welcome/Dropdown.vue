@@ -36,8 +36,8 @@
   </div>
 </template>
 <script lang="ts">
-import { log } from '@/libs/Log';
-import Icon from '@/components/BaseIconContainer.vue';
+import { log } from '@renderer/libs/Log';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   components: {

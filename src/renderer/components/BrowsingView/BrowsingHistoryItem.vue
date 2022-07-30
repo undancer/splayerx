@@ -49,7 +49,7 @@
   </div>
 </template>
 <script lang="ts">
-import Icon from '@/components/BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   components: {
@@ -138,4 +138,6 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped src="@/css/darkmode/BrowsingHomePage/BrowsingHistoryItem.scss"></style>
+<style lang="scss" scoped
+       src="@renderer/css/darkmode/BrowsingHomePage/BrowsingHistoryItem.scss">
+</style>

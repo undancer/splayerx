@@ -140,29 +140,29 @@ import {
   mapState, mapGetters, mapActions,
   createNamespacedHelpers,
 } from 'vuex';
-import { log } from '@/libs/Log';
+import { log } from '@renderer/libs/Log';
 import {
   Input as inputActions,
   Video as videoActions,
   Subtitle as legacySubtitleActions,
   AudioTranslate as atActions,
   UIStates as uiActions,
-} from '@/store/actionTypes';
-import { INPUT_COMPONENT_TYPE, getterTypes as iGT } from '@/plugins/input';
-import PlayButton from '@/components/PlayingView/PlayButton.vue';
-import VolumeIndicator from '@/components/PlayingView/VolumeIndicator.vue';
-import AdvanceControl from '@/components/PlayingView/AdvanceControl.vue';
-import SubtitleControl from '@/components/PlayingView/SubtitleControl.vue';
-import PlaylistControl from '@/components/PlayingView/PlaylistControl.vue';
-import TheTimeCodes from '@/components/PlayingView/TheTimeCodes.vue';
-import TheProgressBar from '@/containers/TheProgressBar.vue';
-import RecentPlaylist from '@/containers/RecentPlaylist.vue';
-import NotificationBubble from '@/components/NotificationBubble.vue';
-import AudioTranslateModal from '@/containers/AudioTranslateModal.vue';
-import ForbiddenModal from '@/containers/ForbiddenModal.vue';
-import SubtitleEditor from '@/containers/SubtitleEditor.vue';
-import ReferenceSubtitleControl from '@/components/Subtitle/ReferenceSubtitleControl.vue';
-import { videodata } from '@/store/video';
+} from '@renderer/store/actionTypes';
+import { INPUT_COMPONENT_TYPE, getterTypes as iGT } from '@renderer/plugins/input';
+import PlayButton from '@renderer/components/PlayingView/PlayButton.vue';
+import VolumeIndicator from '@renderer/components/PlayingView/VolumeIndicator.vue';
+import AdvanceControl from '@renderer/components/PlayingView/AdvanceControl.vue';
+import SubtitleControl from '@renderer/components/PlayingView/SubtitleControl.vue';
+import PlaylistControl from '@renderer/components/PlayingView/PlaylistControl.vue';
+import TheTimeCodes from '@renderer/components/PlayingView/TheTimeCodes.vue';
+import TheProgressBar from '@renderer/containers/TheProgressBar.vue';
+import RecentPlaylist from '@renderer/containers/RecentPlaylist.vue';
+import NotificationBubble from '@renderer/components/NotificationBubble.vue';
+import AudioTranslateModal from '@renderer/containers/AudioTranslateModal.vue';
+import ForbiddenModal from '@renderer/containers/ForbiddenModal.vue';
+import SubtitleEditor from '@renderer/containers/SubtitleEditor.vue';
+import ReferenceSubtitleControl from '@renderer/components/Subtitle/ReferenceSubtitleControl.vue';
+import { videodata } from '@renderer/store/video';
 import { AudioTranslateStatus } from '../store/modules/AudioTranslate';
 
 const { mapGetters: inputMapGetters } = createNamespacedHelpers('InputPlugin');

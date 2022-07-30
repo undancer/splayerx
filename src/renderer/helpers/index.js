@@ -2,31 +2,31 @@ import path from 'path';
 import fs, { promises as fsPromises } from 'fs';
 import lolex from 'lolex';
 import { get } from 'lodash';
-import { mediaQuickHash } from '@/libs/utils';
-import bookmark from '@/helpers/bookmark';
-import syncStorage from '@/helpers/syncStorage';
-import infoDB from '@/helpers/infoDB';
-import { log } from '@/libs/Log';
+import { mediaQuickHash } from '@renderer/libs/utils';
+import bookmark from '@renderer/helpers/bookmark';
+import syncStorage from '@renderer/helpers/syncStorage';
+import infoDB from '@renderer/helpers/infoDB';
+import { log } from '@renderer/libs/Log';
 import {
   getAllValidExtensions,
   isSubtitle,
   isVideo,
   isAudio,
   isValidFile,
-} from '@/../shared/utils';
+} from '@renderer/../shared/utils';
 import {
   Video as videoActions,
   AudioTranslate as atActions,
-} from '@/store/actionTypes';
-import { videodata } from '@/store/video';
+} from '@renderer/store/actionTypes';
+import { videodata } from '@renderer/store/video';
 import {
   EMPTY_FOLDER, OPEN_FAILED, ADD_NO_VIDEO,
   SNAPSHOT_FAILED, SNAPSHOT_SUCCESS, FILE_NON_EXIST_IN_PLAYLIST, PLAYLIST_NON_EXIST,
   THUMBNAIL_GENERATE_FAILED, THUMBNAIL_GENERATE_SUCCESS,
-} from '@/helpers/notificationcodes';
+} from '@renderer/helpers/notificationcodes';
 
 import { ipcRenderer, remote } from 'electron'; // eslint-disable-line
-import sortVideoFile from '@/helpers/sort';
+import sortVideoFile from '@renderer/helpers/sort';
 import { addBubble } from './notificationControl';
 
 const clock = lolex.createClock();
@@ -603,7 +603,7 @@ export default {
       if (this.$store.getters.isTranslating) {
         // 如果正在进行智能翻译，就阻止切换视频,
         // 并且提示是否终止智能翻译
-        import('@/store/modules/AudioTranslate').then(({ AudioTranslateBubbleOrigin }) => {
+        import('@renderer/store/modules/AudioTranslate').then(({ AudioTranslateBubbleOrigin }) => {
           if (Math.ceil(videodata.time) === Math.ceil(this.$store.getters.duration)) {
             this.$store.dispatch(atActions.AUDIO_TRANSLATE_SHOW_BUBBLE,
               AudioTranslateBubbleOrigin.NextVideoChange);

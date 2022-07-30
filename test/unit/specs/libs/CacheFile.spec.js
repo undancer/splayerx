@@ -1,4 +1,4 @@
-import { mediaQuickHash } from '@/libs/utils';
+import { mediaQuickHash } from '@renderer/libs/utils';
 import CacheFile from '../../../../src/renderer/libs/CacheFile';
 
 describe('CacheFile libs', () => {

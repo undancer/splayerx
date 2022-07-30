@@ -1,6 +1,6 @@
 import {
   Format, IParser, IVideoSegments, IMetadata, TextCue,
-} from '@/interfaces/ISubtitle';
+} from '@renderer/interfaces/ISubtitle';
 import { getDialogues } from '../utils';
 import { ModifiedLoader } from '../utils/loaders';
 

@@ -2,8 +2,8 @@ import { cloneDeep } from 'lodash';
 
 import {
   IOrigin, Type, IEntityGenerator, Format,
-} from '@/interfaces/ISubtitle';
-import { mediaQuickHash } from '@/libs/utils';
+} from '@renderer/interfaces/ISubtitle';
+import { mediaQuickHash } from '@renderer/libs/utils';
 import { pathToFormat, inferLanguageFromPath } from '../utils';
 
 interface ILocalOrigin extends IOrigin {

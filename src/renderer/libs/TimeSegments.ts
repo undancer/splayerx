@@ -1,4 +1,4 @@
-import { ITimeSegments, IVideoSegments } from '@/interfaces/ISubtitle';
+import { ITimeSegments, IVideoSegments } from '@renderer/interfaces/ISubtitle';
 
 /** basic time segments, used to check whether a given time is in range */
 export class StreamTimeSegments implements ITimeSegments {

@@ -1,5 +1,5 @@
 import sinon from 'sinon';
-import { info } from '@/libs/DataBase';
+import { info } from '@renderer/libs/DataBase';
 import PlayInfoStorageService from '../../../../../src/renderer/services/storage/PlayInfoStorageService';
 
 describe('PlayInfoStorageService logic service', () => {

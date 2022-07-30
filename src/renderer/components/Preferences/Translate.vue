@@ -116,8 +116,8 @@
 <script>
 import { concat } from 'lodash';
 import electron from 'electron';
-import { codeToLanguageName, LanguageCode } from '@/libs/language';
-import Icon from '@/components/BaseIconContainer.vue';
+import { codeToLanguageName, LanguageCode } from '@renderer/libs/language';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import BaseCheckBox from './BaseCheckBox.vue';
 
 export default {

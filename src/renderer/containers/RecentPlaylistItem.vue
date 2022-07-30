@@ -149,12 +149,12 @@
 <script lang="ts">
 import path from 'path';
 import { mapGetters } from 'vuex';
-import { parseNameFromPath } from '@/libs/utils';
+import { parseNameFromPath } from '@renderer/libs/utils';
 // @ts-ignore
-import Icon from '@/components/BaseIconContainer.vue';
-import RecentPlayService from '@/services/media/PlaylistService';
-import { mediaStorageService } from '@/services/storage/MediaStorageService';
-import { setElementStyle } from '@/libs/dom';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import RecentPlayService from '@renderer/services/media/PlaylistService';
+import { mediaStorageService } from '@renderer/services/storage/MediaStorageService';
+import { setElementStyle } from '@renderer/libs/dom';
 import { MediaItem } from '../interfaces/IDB';
 
 export default {

@@ -12,10 +12,10 @@
 <script lang="ts">
 import { mapGetters } from 'vuex';
 import _ from 'lodash';
-import { DEFAULT_VIDEO_EVENTS, MAX_AMPLIFY_VOLUME } from '@/constants';
-import { addBubble } from '@/helpers/notificationControl';
-import { ENOENT } from '@/helpers/notificationcodes';
-import { log } from '@/libs/Log';
+import { DEFAULT_VIDEO_EVENTS, MAX_AMPLIFY_VOLUME } from '@renderer/constants';
+import { addBubble } from '@renderer/helpers/notificationControl';
+import { ENOENT } from '@renderer/helpers/notificationcodes';
+import { log } from '@renderer/libs/Log';
 import { videodata } from '../../store/video';
 
 export default {

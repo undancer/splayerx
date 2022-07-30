@@ -43,15 +43,25 @@ const packageJson = JSON.parse(
 );
 const electronVersion = packageJson.version;
 // packageJson.devDependencies['electron'].split('-')[0];
+
+/**
+ * @type {import('electron-builder').WindowsConfiguration}
+ * */
 const win = {
   icon: 'build/icons/icon.ico',
   fileAssociations: generateFileAssociations('win'),
 };
+
+/**
+ * @type {import('electron-builder').MacConfiguration}
+ * */
 const mac = {
   category: 'public.app-category.entertainment',
-  target: 'dmg',
-  hardenedRuntime: true,
-  asarUnpack: ['node_modules/**/*.node'],
+  // target: 'dmg',
+  target: ['dir'],
+  // hardenedRuntime: true,
+  asar: false,
+  // asarUnpack: ['node_modules/**/*.node'],
   icon: 'icons/icon.icns',
   fileAssociations: generateFileAssociations('mac'),
 };

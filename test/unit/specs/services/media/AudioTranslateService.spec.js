@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-07-26 15:15:45
  */
 
-import AudioTranslateService from '@/services/media/AudioTranslateService';
+import AudioTranslateService from '@renderer/services/media/AudioTranslateService';
 
 describe('AudioTranslateService', () => {
   const audioTranslateService = new AudioTranslateService();

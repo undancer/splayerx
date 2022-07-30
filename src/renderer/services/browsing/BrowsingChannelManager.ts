@@ -5,8 +5,8 @@ import {
   channelInfo,
   channelDetails,
   category,
-} from '@/interfaces/IBrowsingChannelManager';
-import { getGeoIP } from '@/libs/apis';
+} from '@renderer/interfaces/IBrowsingChannelManager';
+import { getGeoIP } from '@renderer/libs/apis';
 import { calcCurrentChannel } from '../../../shared/utils';
 
 class BrowsingChannelManager implements IBrowsingChannelManager {

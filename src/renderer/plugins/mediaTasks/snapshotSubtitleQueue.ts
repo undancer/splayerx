@@ -1,6 +1,6 @@
 import { ipcRenderer } from 'electron';
 import { join } from 'path';
-import { timecodeFromSeconds, mediaQuickHash, getVideoDir } from '@/libs/utils';
+import { timecodeFromSeconds, mediaQuickHash, getVideoDir } from '@renderer/libs/utils';
 import BaseMediaTaskQueue, { IMediaTask } from './baseMediaTaskQueue';
 
 class SnapshotTask implements IMediaTask<string> {

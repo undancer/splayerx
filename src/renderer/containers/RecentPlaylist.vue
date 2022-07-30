@@ -192,17 +192,17 @@ import path from 'path';
 import {
   mapState, mapGetters, mapActions, mapMutations,
 } from 'vuex';
-import { filePathToUrl } from '@/helpers/path';
-import { mediaQuickHash } from '@/libs/utils';
-import { Input as inputMutations } from '@/store/mutationTypes';
-import { Input as InputActions, Subtitle as subtitleActions } from '@/store/actionTypes';
-import RecentPlaylistItem from '@/containers/RecentPlaylistItem.vue';
-import Add from '@/components/PlayingView/Add.vue';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
-import RecentPlayService from '@/services/media/PlaylistService';
-import { playInfoStorageService } from '@/services/storage/PlayInfoStorageService';
-import { PlaylistItem } from '@/interfaces/IDB';
-import Icon from '@/components/BaseIconContainer.vue';
+import { filePathToUrl } from '@renderer/helpers/path';
+import { mediaQuickHash } from '@renderer/libs/utils';
+import { Input as inputMutations } from '@renderer/store/mutationTypes';
+import { Input as InputActions, Subtitle as subtitleActions } from '@renderer/store/actionTypes';
+import RecentPlaylistItem from '@renderer/containers/RecentPlaylistItem.vue';
+import Add from '@renderer/components/PlayingView/Add.vue';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
+import RecentPlayService from '@renderer/services/media/PlaylistService';
+import { playInfoStorageService } from '@renderer/services/storage/PlayInfoStorageService';
+import { PlaylistItem } from '@renderer/interfaces/IDB';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'RecentPlaylist',

@@ -1,8 +1,8 @@
 import path from 'path';
 import fs from 'fs';
 import _ from 'lodash';
-import { log } from '@/libs/Log';
-import { addBubble } from '@/helpers/notificationControl';
+import { log } from '@renderer/libs/Log';
+import { addBubble } from '@renderer/helpers/notificationControl';
 
 /* eslint-disable */
 const electron = require('electron');

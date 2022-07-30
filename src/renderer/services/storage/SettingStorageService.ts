@@ -1,5 +1,5 @@
-import { ISettingStorable, SubtitleStyle, PlaybackStates } from '@/interfaces/ISettingStorable';
-import JsonStorage, { jsonStorage } from '@/libs/JsonStorage';
+import { ISettingStorable, SubtitleStyle, PlaybackStates } from '@renderer/interfaces/ISettingStorable';
+import JsonStorage, { jsonStorage } from '@renderer/libs/JsonStorage';
 
 /** 字幕设置存储的KEY
  * @constant

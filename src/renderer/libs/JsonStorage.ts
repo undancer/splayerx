@@ -1,7 +1,7 @@
 import path from 'path';
 // @ts-ignore
 import storage from 'electron-json-storage';
-import { IStorage } from '@/interfaces/IStorage';
+import { IStorage } from '@renderer/interfaces/IStorage';
 import { readDir } from './file';
 
 export default class JsonStorage implements IStorage {

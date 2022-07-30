@@ -107,10 +107,10 @@
 import { mapGetters, mapActions } from 'vuex';
 // @ts-ignore
 import urlParseLax from 'url-parse-lax';
-import { log } from '@/libs/Log';
-import { Browsing as browsingActions } from '@/store/actionTypes';
-import BrowsingChannelManager from '@/services/browsing/BrowsingChannelManager';
-import Icon from '@/components/BaseIconContainer.vue';
+import { log } from '@renderer/libs/Log';
+import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'BrowsingCustomizedChannel',
@@ -372,4 +372,4 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" src="@/css/darkmode/BrowsingCustomizedChannel.scss"></style>
+<style scoped lang="scss" src="@renderer/css/darkmode/BrowsingCustomizedChannel.scss"></style>

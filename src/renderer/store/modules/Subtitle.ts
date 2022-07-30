@@ -4,18 +4,18 @@ import {
 } from 'vuex';
 import {
   IEntityGenerator, IParser, Format, IOrigin, ILoader, IEntity, Cue, IMetadata, TextCue, Type,
-} from '@/interfaces/ISubtitle';
-import { LanguageCode } from '@/libs/language';
-import { storeSubtitle } from '@/services/storage/subtitle';
-import { newSubtitle as m } from '@/store/mutationTypes';
-import { newSubtitle as a } from '@/store/actionTypes';
-import { getParser, getLoader } from '@/services/subtitle/utils';
-import { SubtitleUploadParameter, ModifiedParser } from '@/services/subtitle';
-import { generateHints } from '@/libs/utils';
-import upload from '@/services/subtitle/upload';
-import { VideoTimeSegments } from '@/libs/TimeSegments';
-import { log } from '@/libs/Log';
-import { IEmbeddedOrigin, EmbeddedStreamLoader } from '@/services/subtitle/utils/loaders';
+} from '@renderer/interfaces/ISubtitle';
+import { LanguageCode } from '@renderer/libs/language';
+import { storeSubtitle } from '@renderer/services/storage/subtitle';
+import { newSubtitle as m } from '@renderer/store/mutationTypes';
+import { newSubtitle as a } from '@renderer/store/actionTypes';
+import { getParser, getLoader } from '@renderer/services/subtitle/utils';
+import { SubtitleUploadParameter, ModifiedParser } from '@renderer/services/subtitle';
+import { generateHints } from '@renderer/libs/utils';
+import upload from '@renderer/services/subtitle/upload';
+import { VideoTimeSegments } from '@renderer/libs/TimeSegments';
+import { log } from '@renderer/libs/Log';
+import { IEmbeddedOrigin, EmbeddedStreamLoader } from '@renderer/services/subtitle/utils/loaders';
 
 enum ErrorCodes {
   REAL_SOURCE_MISSING = 'REAL_SOURCE_MISSING',

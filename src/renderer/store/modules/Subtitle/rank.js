@@ -1,5 +1,5 @@
 import camelCase from 'lodash/camelCase';
-import { codeIndex } from '@/libs/language';
+import { codeIndex } from '@renderer/libs/language';
 
 export function metaInfoToWeight(subtitleType, infoType, value, subtitleList, primaryLanguage) {
   const result = { existed: subtitleList.filter(({ rank }) => !!rank).length * (subtitleType === 'local' ? -1 : 1) };

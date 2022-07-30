@@ -40,11 +40,11 @@
 <script lang="ts">
 import { mapActions, mapGetters, mapState } from 'vuex';
 import { AnimationItem } from 'lottie-web';
-import lottie from '@/components/lottie.vue';
-import animationData from '@/assets/advance.json';
-import { Input as InputActions } from '@/store/actionTypes';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
-import AdvanceMainMenu from '@/containers/AdvanceMainMenu.vue';
+import lottie from '@renderer/components/lottie.vue';
+import animationData from '@renderer/assets/advance.json';
+import { Input as InputActions } from '@renderer/store/actionTypes';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
+import AdvanceMainMenu from '@renderer/containers/AdvanceMainMenu.vue';
 
 export default {
   name: 'AdvanceControl',

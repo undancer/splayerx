@@ -28,7 +28,7 @@
 </template>
 <script lang="ts">
 import fs from 'fs';
-import Icon from '@/components/BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   components: {

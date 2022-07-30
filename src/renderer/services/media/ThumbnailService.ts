@@ -1,4 +1,4 @@
-import { IThumbnailRequest } from '@/interfaces/IThumbnailRequest';
+import { IThumbnailRequest } from '@renderer/interfaces/IThumbnailRequest';
 
 export default class ThumbnailService implements IThumbnailRequest {
   /** 根据当前时间信息和缩略图总数获取缩略图的backgroundPosition

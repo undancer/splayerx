@@ -1,4 +1,4 @@
-// import infoDB from '@/helpers/infoDB';
+// import infoDB from '@renderer/helpers/infoDB';
 
 // describe('helper infoDB', () => {
 //   const quickHash1 = '11-22-33-44';

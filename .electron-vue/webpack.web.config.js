@@ -6,11 +6,11 @@ const path = require('path');
 const childProcess = require('child_process');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+// const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { dependencies, optionalDependencies } = require('../package.json');
 
 let release = '';
@@ -73,17 +73,6 @@ let webConfig = {
   ],
   module: {
     rules: [
-      {
-        test: /\.(js)$/,
-        enforce: 'pre',
-        exclude: /node_modules/,
-        use: {
-          loader: 'eslint-loader',
-          options: {
-            formatter: require('eslint-friendly-formatter'),
-          },
-        },
-      },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -217,7 +206,6 @@ let webConfig = {
   },
   resolve: {
     alias: {
-      '@': path.join(__dirname, '../src/renderer'),
       vue$: 'vue/dist/vue.esm.js',
       '@main': path.join(__dirname, '../src/main'),
       '@renderer': path.join(__dirname, '../src/renderer'),
@@ -235,7 +223,7 @@ const sharedDefinedVariables = {};
  */
 if (process.env.NODE_ENV !== 'production') {
   webConfig.plugins.push(
-    new ForkTsCheckerWebpackPlugin({ eslint: true, vue: true }),
+    // new ForkTsCheckerWebpackPlugin(),
     new webpack.DefinePlugin(
       Object.assign(sharedDefinedVariables, {
         'process.env.SAGI_API': `"${process.env.SAGI_API || 'apis.stage.sagittarius.ai:8443'}"`,
@@ -296,10 +284,10 @@ if (process.env.NODE_ENV === 'production') {
     },
   };
 
-  if (process.platform === 'darwin') {
-    // only check on mac, to speed up Windows build
-    webConfig.plugins.push(new ForkTsCheckerWebpackPlugin({ eslint: true, vue: true }));
-  }
+  // if (process.platform === 'darwin') {
+  //   // only check on Mac, to speed up Windows build
+  //   webConfig.plugins.push(new ForkTsCheckerWebpackPlugin());
+  // }
 }
 
 module.exports = webConfig;

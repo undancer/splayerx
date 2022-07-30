@@ -131,12 +131,12 @@
 
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
-import { INPUT_COMPONENT_TYPE } from '@/plugins/input';
-import Icon from '@/components/BaseIconContainer.vue';
-import SidebarIcon from '@/components/LandingView/SidebarIcon.vue';
-import Badge from '@/components/LandingView/Badge.vue';
-import { Input as inputActions } from '@/store/actionTypes';
-import { isBrowserEnabled } from '@/../shared/config';
+import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import SidebarIcon from '@renderer/components/LandingView/SidebarIcon.vue';
+import Badge from '@renderer/components/LandingView/Badge.vue';
+import { Input as inputActions } from '@renderer/store/actionTypes';
+import { isBrowserEnabled } from '@renderer/../shared/config';
 
 export default {
   name: 'Titlebar',

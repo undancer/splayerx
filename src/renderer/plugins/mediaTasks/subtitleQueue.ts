@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { ipcRenderer } from 'electron';
-import { mediaQuickHash, getSubtitleDir } from '@/libs/utils';
-import { Format } from '@/interfaces/ISubtitle';
+import { mediaQuickHash, getSubtitleDir } from '@renderer/libs/utils';
+import { Format } from '@renderer/interfaces/ISubtitle';
 import BaseMediaTaskQueue, { IMediaTask } from './baseMediaTaskQueue';
 
 

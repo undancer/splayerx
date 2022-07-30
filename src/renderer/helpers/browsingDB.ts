@@ -4,8 +4,8 @@ import {
   BROWSINGDB_NAME,
   HISTORY_OBJECT_STORE_NAME,
   BROWSINGDB_VERSION,
-} from '@/constants';
-import { log } from '@/libs/Log';
+} from '@renderer/constants';
+import { log } from '@renderer/libs/Log';
 
 export type BrowsingHistoryItem = {
   url: string,

@@ -1,7 +1,7 @@
 // @ts-ignore
 import PQueue from 'p-queue';
 import { TrainingData } from 'sagi-api/training/v1/training_pb';
-import Sagi from '@/libs/sagi';
+import Sagi from '@renderer/libs/sagi';
 
 export type SubtitleUploadParameter = TrainingData.AsObject;
 

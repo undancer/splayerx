@@ -1,10 +1,10 @@
 import path from 'path';
-import { IBrowsingHistory, HistoryDisplayItem } from '@/interfaces/IBrowsingHistory';
-import { HISTORY_OBJECT_STORE_NAME } from '@/constants';
-import { browsingDB, BrowsingHistoryItem } from '@/helpers/browsingDB';
-import BrowsingChannelManager from '@/services/browsing/BrowsingChannelManager';
-import { channelDetails } from '@/interfaces/IBrowsingChannelManager';
-import { menuService } from '@/services/menu/MenuService';
+import { IBrowsingHistory, HistoryDisplayItem } from '@renderer/interfaces/IBrowsingHistory';
+import { HISTORY_OBJECT_STORE_NAME } from '@renderer/constants';
+import { browsingDB, BrowsingHistoryItem } from '@renderer/helpers/browsingDB';
+import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
+import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
+import { menuService } from '@renderer/services/menu/MenuService';
 
 export default class BrowsingHistory implements IBrowsingHistory {
   private channels: channelDetails[];

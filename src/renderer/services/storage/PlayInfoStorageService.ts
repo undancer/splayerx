@@ -1,7 +1,7 @@
-import { IPlayInfoStorable } from '@/interfaces/IPlayInfoStorable';
-import { info } from '@/libs/DataBase';
-import { MediaItem, PlaylistItem } from '@/interfaces/IDB';
-import { VIDEO_OBJECT_STORE_NAME, RECENT_OBJECT_STORE_NAME } from '@/constants';
+import { IPlayInfoStorable } from '@renderer/interfaces/IPlayInfoStorable';
+import { info } from '@renderer/libs/DataBase';
+import { MediaItem, PlaylistItem } from '@renderer/interfaces/IDB';
+import { VIDEO_OBJECT_STORE_NAME, RECENT_OBJECT_STORE_NAME } from '@renderer/constants';
 
 export default class PlayInfoStorageService implements IPlayInfoStorable {
   /**

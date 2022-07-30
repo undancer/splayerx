@@ -1,6 +1,6 @@
-import { log } from '@/libs/Log';
-import { Format } from '@/interfaces/ISubtitle';
-import { isVideo } from '@/../shared/utils';
+import { log } from '@renderer/libs/Log';
+import { Format } from '@renderer/interfaces/ISubtitle';
+import { isVideo } from '@renderer/../shared/utils';
 import MediaInfoQueue, { CodecType, ISubtitleStream, Stream } from './mediaInfoQueue';
 import SnapshotQueue from './snapshotSubtitleQueue';
 import SubtitleQueue from './subtitleQueue';

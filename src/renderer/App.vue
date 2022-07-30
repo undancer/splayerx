@@ -46,20 +46,20 @@ import {
   UserInfo as uActions,
   AudioTranslate as atActions,
   UIStates as uiActions,
-} from '@/store/actionTypes';
-import Titlebar from '@/components/Titlebar.vue';
-import Sidebar from '@/components/Sidebar.vue';
-import '@/css/style.scss';
-import drag from '@/helpers/drag';
+} from '@renderer/store/actionTypes';
+import Titlebar from '@renderer/components/Titlebar.vue';
+import Sidebar from '@renderer/components/Sidebar.vue';
+import '@renderer/css/style.scss';
+import drag from '@renderer/helpers/drag';
 import {
   setToken,
   getUserInfo,
   checkToken,
   getUserBalance,
-} from '@/libs/apis';
-import sagi from '@/libs/sagi';
-import { apiOfAccountService, siteOfAccountService, forceRefresh } from '@/../shared/config';
-import { AudioTranslateBubbleOrigin, AudioTranslateStatus } from '@/store/modules/AudioTranslate';
+} from '@renderer/libs/apis';
+import sagi from '@renderer/libs/sagi';
+import { apiOfAccountService, siteOfAccountService, forceRefresh } from '@renderer/../shared/config';
+import { AudioTranslateBubbleOrigin, AudioTranslateStatus } from '@renderer/store/modules/AudioTranslate';
 import { log } from './libs/Log';
 
 export default {

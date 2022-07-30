@@ -1,6 +1,6 @@
 import { createSandbox } from 'sinon';
 
-import ProceduralQueue from '@/helpers/proceduralQueue';
+import ProceduralQueue from '@renderer/helpers/proceduralQueue';
 import { randStr } from '../../helpers';
 
 describe('helper - proceduralQueue', () => {

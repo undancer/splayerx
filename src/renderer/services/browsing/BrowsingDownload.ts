@@ -10,8 +10,8 @@ import request from 'request';
 import progress from 'request-progress';
 // @ts-ignore
 import streamify from 'streamify';
-import { log } from '@/libs/Log';
-import { IBrowsingDownload } from '@/interfaces/IBrowsingDownload';
+import { log } from '@renderer/libs/Log';
+import { IBrowsingDownload } from '@renderer/interfaces/IBrowsingDownload';
 
 class BrowsingDownload implements IBrowsingDownload {
   private url: string;

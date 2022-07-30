@@ -160,7 +160,7 @@
 
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import Icon from '@/components/BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'BrowsingInput',

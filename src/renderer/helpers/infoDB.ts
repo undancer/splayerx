@@ -5,10 +5,10 @@ import {
   INFODB_VERSION,
   RECENT_OBJECT_STORE_NAME,
   VIDEO_OBJECT_STORE_NAME,
-} from '@/constants';
-import { mediaQuickHash } from '@/libs/utils';
-import { RawPlaylistItem, PlaylistItem, MediaItem } from '@/interfaces/IDB';
-import { log } from '@/libs/Log';
+} from '@renderer/constants';
+import { mediaQuickHash } from '@renderer/libs/utils';
+import { RawPlaylistItem, PlaylistItem, MediaItem } from '@renderer/interfaces/IDB';
+import { log } from '@renderer/libs/Log';
 
 /**
  * You can change schema info in 'constants.js'

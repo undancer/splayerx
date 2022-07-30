@@ -1,4 +1,4 @@
-import { LanguageCode } from '@/libs/language';
+import { LanguageCode } from '@renderer/libs/language';
 import {
   Format, IRawVideoSegment, IOrigin,
 } from './ISubtitle';

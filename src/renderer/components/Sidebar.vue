@@ -126,15 +126,15 @@ import { difference } from 'lodash';
 // @ts-ignore
 import urlParseLax from 'url-parse-lax';
 import { mapGetters, mapActions } from 'vuex';
-import { Browsing as browsingActions } from '@/store/actionTypes';
-import { channelDetails } from '@/interfaces/IBrowsingChannelManager';
-import asyncStorage from '@/helpers/asyncStorage';
-import Icon from '@/components/BaseIconContainer.vue';
-import SidebarIcon from '@/components/SidebarIcon.vue';
-import BrowsingChannelManager from '@/services/browsing/BrowsingChannelManager';
-import { log } from '@/libs/Log';
-import BrowsingChannelMenu from '@/services/browsing/BrowsingChannelMenu';
-import { BrowsingHistoryItem } from '@/helpers/browsingDB';
+import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
+import asyncStorage from '@renderer/helpers/asyncStorage';
+import Icon from '@renderer/components/BaseIconContainer.vue';
+import SidebarIcon from '@renderer/components/SidebarIcon.vue';
+import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
+import { log } from '@renderer/libs/Log';
+import BrowsingChannelMenu from '@renderer/services/browsing/BrowsingChannelMenu';
+import { BrowsingHistoryItem } from '@renderer/helpers/browsingDB';
 import { calcCurrentChannel } from '../../shared/utils';
 
 export default {

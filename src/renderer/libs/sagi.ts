@@ -13,10 +13,10 @@ import {
 import { TranslationClient } from 'sagi-api/translation/v1/translation_grpc_pb';
 import { TrainingData } from 'sagi-api/training/v1/training_pb';
 import { TrainngClient } from 'sagi-api/training/v1/training_grpc_pb';
-import { SagiTextSubtitlePayload } from '@/services/subtitle';
-import { getClientUUID } from '@/../shared/utils';
-import { getGeoIP } from '@/libs/apis';
-import { apiOfSubtitleService } from '@/../shared/config';
+import { SagiTextSubtitlePayload } from '@renderer/services/subtitle';
+import { getClientUUID } from '@renderer/../shared/utils';
+import { getGeoIP } from '@renderer/libs/apis';
+import { apiOfSubtitleService } from '@renderer/../shared/config';
 import { log } from './Log';
 
 export class Sagi {

@@ -1,8 +1,8 @@
 import { cloneDeep } from 'lodash';
-import { LanguageCode } from '@/libs/language';
+import { LanguageCode } from '@renderer/libs/language';
 import {
   IOrigin, IEntityGenerator, Type, Format, ModifiedCues,
-} from '@/interfaces/ISubtitle';
+} from '@renderer/interfaces/ISubtitle';
 import { vttFragmentLanguageLoader } from '../utils/languageLoader';
 
 

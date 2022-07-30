@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { mount, shallowMount } from '@vue/test-utils';
 import sinon from 'sinon';
-import BaseVideoPlayer from '@/components/PlayingView/BaseVideoPlayer.vue';
+import BaseVideoPlayer from '@renderer/components/PlayingView/BaseVideoPlayer.vue';
 
 describe('Component - BaseVideoPlayer', () => {
   const propsData = {
