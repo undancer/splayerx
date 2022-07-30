@@ -8,7 +8,12 @@ module.exports = {
     browser: true,
     node: true,
   },
-  extends: ['plugin:vue/recommended', 'plugin:@typescript-eslint/recommended', 'airbnb-base'],
+  extends: [
+    // '@antfu',
+    'plugin:vue/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'airbnb-base',
+  ],
   globals: {
     __static: true,
   },
@@ -54,24 +59,54 @@ module.exports = {
     'no-await-in-loop': 0,
     indent: 'off',
     '@typescript-eslint/indent': ['error', 2],
-    'vue/attributes-order': [
-      'error',
-      {
-        order: [
-          'DEFINITION',
-          'LIST_RENDERING',
-          'CONDITIONALS',
-          'RENDER_MODIFIERS',
-          'GLOBAL',
-          'UNIQUE',
-          'TWO_WAY_BINDING',
-          'OTHER_DIRECTIVES',
-          'OTHER_ATTR',
-          'EVENTS',
-          'CONTENT',
-        ],
-      },
-    ],
+    // 'vue/attributes-order': [
+    //   'warn',
+    //   {
+    //     order: [
+    //       'DEFINITION',
+    //       'LIST_RENDERING',
+    //       'CONDITIONALS',
+    //       'RENDER_MODIFIERS',
+    //       'GLOBAL',
+    //       ['UNIQUE', 'SLOT'],
+    //       'TWO_WAY_BINDING',
+    //       'OTHER_DIRECTIVES',
+    //       'OTHER_ATTR',
+    //       'EVENTS',
+    //       'CONTENT',
+    //     ],
+    //   },
+    // ],
+    // 6
+    'vue/html-indent': ['off'],
+    'vue/no-v-html': ['off'],
+    'vue/attributes-order': ['off'],
+    'vue/attribute-hyphenation': ['off'],
+    // 7
+    'vue/order-in-components': ['off'],
+    'vue/this-in-template': ['off'],
+    //
+    // "eslint-config-airbnb-base": "^14.0.0",
+    'arrow-parens': ['off'],
+    'prefer-object-spread': ['off'],
+    'no-multiple-empty-lines': ['off'],
+    'max-classes-per-file': ['off'],
+    'no-async-promise-executor': ['off'],
+    'no-mixed-operators': ['off'],
+    // "eslint-config-airbnb-base": "^15.0.0",
+    'function-call-argument-newline': ['off'],
+    'function-paren-newline': ['off'],
+    'no-promise-executor-return': ['off'],
+    'prefer-regex-literals': ['off'],
+    'default-case-last': ['off'],
+    'default-param-last': ['off'],
+    'no-restricted-exports': ['off'],
+    'no-constructor-return': ['off'],
+    'no-dupe-else-if': ['off'],
+    // end
+    // "vue/attribute-hyphenation": ["error", "always" | "never", {
+    //   "ignore": []
+    // }],
     // temp disable as upgrade to new version
     'no-undef': 0,
     'no-redeclare': 0,
