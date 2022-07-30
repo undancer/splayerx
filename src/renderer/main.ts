@@ -12,8 +12,6 @@ import { mapGetters, mapActions, createNamespacedHelpers } from 'vuex';
 import osLocale from 'os-locale';
 import { throttle, isEmpty } from 'lodash';
 // @ts-ignore
-import VueAnalytics from 'vue-analytics';
-// @ts-ignore
 import VueElectron from 'vue-electron';
 // @ts-ignore
 import AsyncComputed from 'vue-async-computed';
@@ -49,25 +47,26 @@ import InputPlugin, { getterTypes as iGT } from '@renderer/plugins/input';
 import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
 import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
 import { downloadDB } from '@renderer/helpers/downloadDB';
-import BrowsingChannelMenu from './services/browsing/BrowsingChannelMenu';
-import MenuService from './services/menu/MenuService';
-import { isWindowsExE, isMacintoshDMG } from '../shared/common/platform';
+import { isWindowsExE, isMacintoshDMG } from '@shared/common/platform';
 import {
   isSubtitle, getSystemLocale, getClientUUID, getEnvironmentName, getIP,
-} from '../shared/utils';
-import {
-  ISubtitleControlListItem, Type, NOT_SELECTED_SUBTITLE, ModifiedSubtitle,
-} from './interfaces/ISubtitle';
+} from '@shared/utils';
 // import { VueDevtools } from './plugins/vueDevtools.dev';
+
+// causing callbacks-registry.js 404 error. disable temporarily
+// require('source-map-support').install();
+import VueGtag from 'vue-gtag';
 import {
   CHECK_FOR_UPDATES_OFFLINE, REQUEST_TIMEOUT,
   SNAPSHOT_FAILED, SNAPSHOT_SUCCESS, LOAD_SUBVIDEO_FAILED,
   BUG_UPLOAD_FAILED, BUG_UPLOAD_SUCCESS, BUG_UPLOADING,
   LOSSLESS_STREAMING_START, LOSSLESS_STREAMING_STOP,
 } from './helpers/notificationcodes';
-
-// causing callbacks-registry.js 404 error. disable temporarily
-// require('source-map-support').install();
+import {
+  ISubtitleControlListItem, Type, NOT_SELECTED_SUBTITLE, ModifiedSubtitle,
+} from './interfaces/ISubtitle';
+import BrowsingChannelMenu from './services/browsing/BrowsingChannelMenu';
+import MenuService from './services/menu/MenuService';
 
 Vue.config.productionTip = false;
 Vue.config.warnHandler = (warn) => {
@@ -105,16 +104,18 @@ Vue.directive('fade-in', {
 Vue.use(VueElectron);
 Vue.use(VueI18n);
 Vue.use(AsyncComputed);
-Vue.use(VueAnalytics, {
-  id: (process.env.NODE_ENV === 'production') ? 'UA-2468227-6' : 'UA-2468227-5',
-  router,
-  set: [
-    { field: 'dimension1', value: electron.remote.app.getVersion() },
-    { field: 'dimension2', value: getEnvironmentName() },
-    { field: 'checkProtocolTask', value: null }, // fix ga not work from file:// url
-    { field: 'checkStorageTask', value: null }, // fix ga not work from file:// url
-    { field: 'historyImportTask', value: null }, // fix ga not work from file:// url
-  ],
+Vue.use(VueGtag, {
+  config: {
+    id: (process.env.NODE_ENV === 'production') ? 'UA-2468227-6' : 'UA-2468227-5',
+    params: {
+      dimension1: electron.remote.app.getVersion(),
+      dimension2: getEnvironmentName(),
+      checkProtocolTask: null, // fix ga not work from file:// url
+      checkStorageTask: null, // fix ga not work from file:// url
+      historyImportTask: null, // fix ga not work from file:// url
+    },
+  },
+  // router,
 });
 
 // Custom plugin area
