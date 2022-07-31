@@ -1,6 +1,12 @@
-const fs = require('fs');
-const path = require('path');
-const { videos, audios, subtitles } = require('../config/fileAssociations');
+#!/usr/bin/env node
+
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import { audios, subtitles, videos } from '../config/fileAssociations.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function generateFileAssociations(platform) {
   const fileAssociations = [];

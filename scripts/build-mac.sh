@@ -23,7 +23,7 @@ set -e
 #    exit 418
 #fi
 
-node scripts/gen-electron-builder-config.js
+node scripts/gen-electron-builder-config.mjs
 node .electron-vue/build.js
 
 if ((MAS)) ; then

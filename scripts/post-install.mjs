@@ -7,7 +7,7 @@ EventEmitter.prototype._maxListeners = 10000;
 
 const commands = [
   'patch-package',
-  'node scripts/gen-electron-builder-config.js',
+  'node scripts/gen-electron-builder-config.mjs',
   // 'npm run lint:fix',
   'npm run lint',
   'npm run install-app-deps',
