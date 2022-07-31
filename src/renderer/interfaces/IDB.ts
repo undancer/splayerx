@@ -95,14 +95,14 @@ export interface IDB {
    * @returns {Promise<undefined>}
    * 删除 database -> objectStore 中主键为key的记录
    */
-  delete(objectStore: string, key: number): Promise<undefined>,
+  delete(objectStore: string, key: number): Promise<void>,
   /**
    * @param  {string} database
    * @param  {string} objectStore
    * @returns {Promise<undefined>}
    * 清除 database -> objectStore 中的所有记录
    */
-  clear(objectStore: string): Promise<undefined>,
+  clear(objectStore: string): Promise<void>,
   /**
    * @param  {string} database
    * @param  {string} objectStore

@@ -1,7 +1,7 @@
 import { remote, ipcRenderer } from 'electron';
 import { IBrowsingChannelMenu } from '@renderer/interfaces/IBrowsingChannelMenu';
 import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
-import Locale from '../../../shared/common/localize';
+import Locale from '@shared/common/localize';
 
 class BrowsingChannelMenu implements IBrowsingChannelMenu {
   private channelMenu: Electron.Menu;

@@ -16,8 +16,8 @@ import {
 import { AITaskInfo } from '@renderer/interfaces/IMediaStorable';
 import sagi from '@renderer/libs/sagi';
 import { Stream } from '@renderer/plugins/mediaTasks/mediaInfoQueue';
-import { isAccountEnabled } from '@renderer/../shared/config';
-import { getClientUUID } from '@renderer/../shared/utils';
+import { isAccountEnabled } from '@shared/config';
+import { getClientUUID } from '@shared/utils';
 import { log } from '@renderer/libs/Log';
 import { TranscriptInfo } from '../subtitle';
 import MediaStorageService, { mediaStorageService } from '../storage/MediaStorageService';

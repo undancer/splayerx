@@ -71,14 +71,14 @@
 
 <script lang="ts">
 import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
-import BaseIcon from '../BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'VolumeIndicator',
   // @ts-ignore
   type: INPUT_COMPONENT_TYPE,
   components: {
-    'base-icon': BaseIcon,
+    'base-icon': Icon,
   },
   props: {
     showAllWidgets: Boolean,

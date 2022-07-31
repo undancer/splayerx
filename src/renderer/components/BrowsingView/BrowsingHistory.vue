@@ -117,7 +117,7 @@ import BrowsingHistoryItem from '@renderer/components/BrowsingView/BrowsingHisto
 import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
 import {
   Browsing as browsingActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 
 export default {
   components: {

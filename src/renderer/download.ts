@@ -4,10 +4,12 @@ import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import { hookVue } from '@renderer/kerning';
 import messages from '@renderer/locales';
-import store from '@renderer/store';
+import store from '@renderer/stores/vuex';
 import '@renderer/css/style.scss';
 // @ts-ignore
 import DownloadPage from '@renderer/components/DownloadPage.vue';
+import pinia from '@renderer/stores/pinia';
+
 
 Vue.use(VueI18n);
 Vue.use(Vuex);
@@ -24,6 +26,7 @@ hookVue(Vue);
 new Vue({
   i18n,
   store,
+  pinia,
   components: { DownloadPage },
   data: {},
   mounted() {

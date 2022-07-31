@@ -28,7 +28,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex';
-import { Editor as editorMutations } from '@renderer/store/mutationTypes';
+import { Editor as editorMutations } from '@renderer/stores/vuex/mutationTypes';
 import { EVENT_BUS_COLLECTIONS as bus } from '@renderer/constants';
 
 export default {

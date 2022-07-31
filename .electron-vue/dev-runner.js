@@ -57,13 +57,15 @@ function startRenderer() {
     });
 
     compiler.hooks.compilation.tap('compilation', compilation => {
-      HtmlWebpackPlugin.getHooks(compilation).afterEmit.tapAsync(
-        'html-webpack-plugin-after-emit',
-        (data, cb) => {
-          hotMiddleware.publish({ action: 'reload' });
-          cb();
-        },
-      );
+      HtmlWebpackPlugin.getHooks(compilation)
+        .afterEmit
+        .tapAsync(
+          'html-webpack-plugin-after-emit',
+          (data, cb) => {
+            hotMiddleware.publish({ action: 'reload' });
+            cb();
+          },
+        );
     });
 
     compiler.hooks.done.tap('done', stats => {
@@ -85,8 +87,6 @@ function startRenderer() {
   });
 }
 
-
-
 function startWeb() {
   return new Promise((resolve, reject) => {
     webConfig.entry.index = [path.join(__dirname, 'dev-client')].concat(
@@ -100,13 +100,15 @@ function startWeb() {
     });
 
     compiler.hooks.compilation.tap('compilation', compilation => {
-      HtmlWebpackPlugin.getHooks(compilation).afterEmit.tapAsync(
-        'html-webpack-plugin-after-emit',
-        (data, cb) => {
-          hotMiddleware.publish({ action: 'reload' });
-          cb();
-        },
-      );
+      HtmlWebpackPlugin.getHooks(compilation)
+        .afterEmit
+        .tapAsync(
+          'html-webpack-plugin-after-emit',
+          (data, cb) => {
+            hotMiddleware.publish({ action: 'reload' });
+            cb();
+          },
+        );
     });
 
     compiler.hooks.done.tap('done', stats => {
@@ -199,17 +201,18 @@ function startElectron() {
 
 function electronLog(data, color) {
   let log = '';
-  data = data.toString().split(/\r?\n/);
+  data = data.toString()
+    .split(/\r?\n/);
   data.forEach(line => {
     log += `  ${line}\n`;
   });
   if (/[0-9A-z]+/.test(log)) {
     console.log(
       chalk[color].bold('┏ Electron -------------------') +
-        '\n\n' +
-        log +
-        chalk[color].bold('┗ ----------------------------') +
-        '\n',
+      '\n\n' +
+      log +
+      chalk[color].bold('┗ ----------------------------') +
+      '\n',
     );
   }
 }
@@ -218,8 +221,11 @@ function greeting() {
   const cols = process.stdout.columns;
   let text = '';
 
-  if (cols > 76) text = 'SPlayer';
-  else text = false;
+  if (cols > 76) {
+    text = 'SPlayer';
+  } else {
+    text = false;
+  }
 
   if (text) {
     say(text, {
@@ -227,7 +233,9 @@ function greeting() {
       font: 'simple3d',
       space: false,
     });
-  } else console.log(chalk.yellow.bold('\n  SPlayer'));
+  } else {
+    console.log(chalk.yellow.bold('\n  SPlayer'));
+  }
   console.log(chalk.blue('  getting ready...') + '\n');
 }
 

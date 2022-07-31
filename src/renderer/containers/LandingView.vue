@@ -137,7 +137,7 @@ import PlaylistItem from '@renderer/components/LandingView/PlaylistItem.vue';
 import VideoItem from '@renderer/components/LandingView/VideoItem.vue';
 import { log } from '@renderer/libs/Log';
 import Sagi from '@renderer/libs/sagi';
-import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { Browsing as browsingActions } from '@renderer/stores/vuex/actionTypes';
 import { windowRectService } from '../services/window/WindowRectService';
 
 Vue.component('PlaylistItem', PlaylistItem);

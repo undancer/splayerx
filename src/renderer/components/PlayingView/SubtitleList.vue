@@ -283,7 +283,7 @@
 <script lang="ts">
 import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
-import Icon from '../BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import Progress from './Progress.vue';
 
 export default {

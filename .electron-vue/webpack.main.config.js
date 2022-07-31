@@ -5,9 +5,11 @@ process.env.BABEL_ENV = 'main';
 const path = require('path');
 const childProcess = require('child_process');
 const webpack = require('webpack');
-const { dependencies, optionalDependencies, _moduleAliases } = require('../package.json');
+const {
+  dependencies,
+  optionalDependencies,
+} = require('../package.json');
 const TerserPlugin = require('terser-webpack-plugin');
-// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 let release = '';
 try {
@@ -18,7 +20,8 @@ try {
     '--abbrev=0',
   ]);
   if (result.status === 0) {
-    const tag = result.stdout.toString('utf8').replace(/^\s+|\s+$/g, '');
+    const tag = result.stdout.toString('utf8')
+      .replace(/^\s+|\s+$/g, '');
     if (tag) release = `SPlayer${tag}`;
   }
 } catch (ex) {
@@ -38,24 +41,39 @@ let mainConfig = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'ts-loader',
-          options: {
-            transpileOnly: true,
-          },
+        test: /\.js$/,
+        // use: 'babel-loader',
+        exclude: file => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        ),
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'js',
+          target: 'es2015',
+          //   loader: 'jsx',  // Remove this if you're not using JSX
+          //   target: 'es2015',  // Syntax to compile to (see options below for possible values)
         },
       },
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+        test: /\.ts$/,
+        // use: 'babel-loader',
+        exclude: file => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        ),
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'ts',
+          target: 'es2015',
+          //   loader: 'jsx',  // Remove this if you're not using JSX
+          //   target: 'es2015',  // Syntax to compile to (see options below for possible values)
+        },
       },
-      {
-        test: /\.node$/,
-        use: 'node-loader',
-      },
+      // {
+      //   test: /\.node$/,
+      //   use: 'node-loader',
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|ico|icns)(\?.*)?$/,
         use: {
@@ -78,7 +96,7 @@ let mainConfig = {
   },
   plugins: [],
   resolve: {
-    extensions: ['.ts', '.js', '.json', '.node'],
+    extensions: ['.ts', '.js', '.json'],
     alias: {
       '@main': path.join(__dirname, '../src/main'),
       '@renderer': path.join(__dirname, '../src/renderer'),
@@ -99,7 +117,8 @@ if (process.env.NODE_ENV !== 'production') {
       'process.env.SAGI_API': `"${process.env.SAGI_API || 'apis.stage.sagittarius.ai:8443'}"`,
       'process.env.ACCOUNT_API': `"${process.env.ACCOUNT_API || 'http://stage.account.splayer.work'}"`,
       'process.env.ACCOUNT_SITE': `"${process.env.ACCOUNT_SITE || 'http://stage.account.splayer.work'}"`,
-      __static: `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`,
+      __static: `"${path.join(__dirname, '../static')
+        .replace(/\\/g, '\\\\')}"`,
     })),
   );
 }

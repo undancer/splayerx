@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ipcRenderer } from 'electron';
-import { Download as m } from '@renderer/store/mutationTypes';
-import { Download as a } from '@renderer/store/actionTypes';
+import { Download as m } from '@renderer/stores/vuex/mutationTypes';
+import { Download as a } from '@renderer/stores/vuex/actionTypes';
 import asyncStorage from '@renderer/helpers/asyncStorage';
 
 type downloadState = {

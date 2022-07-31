@@ -51,12 +51,12 @@ import { windowRectService } from '@renderer/services/window/WindowRectService';
 import { playInfoStorageService } from '@renderer/services/storage/PlayInfoStorageService';
 import { settingStorageService } from '@renderer/services/storage/SettingStorageService';
 import { generateShortCutImageBy, ShortCut } from '@renderer/libs/utils';
-import { Video as videoMutations } from '@renderer/store/mutationTypes';
-import { Video as videoActions, AudioTranslate as atActions } from '@renderer/store/actionTypes';
-import { videodata } from '@renderer/store/video';
+import { Video as videoMutations } from '@renderer/stores/vuex/mutationTypes';
+import { Video as videoActions, AudioTranslate as atActions } from '@renderer/stores/vuex/actionTypes';
+import { videodata } from '@renderer/stores/vuex/video';
 import BaseVideoPlayer from '@renderer/components/PlayingView/BaseVideoPlayer.vue';
 import { MediaItem } from '../interfaces/IDB';
-import { AudioTranslateBubbleOrigin } from '../store/modules/AudioTranslate';
+import { AudioTranslateBubbleOrigin } from '../stores/vuex/modules/AudioTranslate';
 
 export default {
   name: 'VideoCanvas',

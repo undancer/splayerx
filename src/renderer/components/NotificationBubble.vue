@@ -154,8 +154,8 @@ import ResolvedBubble from '@renderer/components/Bubbles/ResolvedBubble.vue';
 import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import {
   AudioTranslate as atActions,
-} from '@renderer/store/actionTypes';
-import { skipCheckForUpdate } from '../libs/utils';
+} from '@renderer/stores/vuex/actionTypes';
+import { skipCheckForUpdate } from '@renderer/libs/utils';
 
 export default {
   name: 'NotificationBubble',

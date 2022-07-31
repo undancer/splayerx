@@ -6,16 +6,18 @@ import electron, { ipcRenderer, remote } from 'electron';
 import osLocale from 'os-locale';
 import { hookVue } from '@renderer/kerning';
 import messages from '@renderer/locales';
-import store from '@renderer/store';
+import store from '@renderer/stores/vuex';
 import Preference from '@renderer/components/Preference.vue';
 import {
   UserInfo as uActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import '@renderer/css/style.scss';
 import {
   getUserInfo, getProductList, setToken, getGeoIP, getUserBalance,
 } from '@renderer/libs/apis';
 import drag from '@renderer/helpers/drag';
+import pinia from '@renderer/stores/pinia';
+
 
 Vue.use(VueI18n);
 Vue.use(Vuex);
@@ -136,6 +138,7 @@ new Vue({
     didGetUserBalance: false,
   },
   store,
+  pinia,
   computed: {
     ...mapGetters([
       'signInCallback',

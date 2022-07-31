@@ -61,7 +61,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { AudioTranslateBubbleType } from '../../store/modules/AudioTranslate';
+import { AudioTranslateBubbleType } from '@renderer/stores/vuex/modules/AudioTranslate';
 
 export default Vue.extend({
   name: 'TanslateBubble',

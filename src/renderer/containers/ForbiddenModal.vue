@@ -46,8 +46,8 @@ import { ipcRenderer, remote } from 'electron';
 import { mapGetters, mapActions } from 'vuex';
 import {
   UserInfo as usActions,
-} from '@renderer/store/actionTypes';
-import { getJsonConfig } from '@renderer/../shared/config';
+} from '@renderer/stores/vuex/actionTypes';
+import { getJsonConfig } from '@shared/config';
 import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default Vue.extend({

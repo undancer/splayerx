@@ -7,7 +7,7 @@ import {
   category,
 } from '@renderer/interfaces/IBrowsingChannelManager';
 import { getGeoIP } from '@renderer/libs/apis';
-import { calcCurrentChannel } from '../../../shared/utils';
+import { calcCurrentChannel } from '@shared/utils';
 
 class BrowsingChannelManager implements IBrowsingChannelManager {
   private allChannels: Map<string, channelInfo>;

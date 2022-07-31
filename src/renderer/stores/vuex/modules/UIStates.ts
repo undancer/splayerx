@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UIStates as m } from '@renderer/store/mutationTypes';
-import { UIStates as a } from '@renderer/store/actionTypes';
+import { UIStates as m } from '@renderer/stores/vuex/mutationTypes';
+import { UIStates as a } from '@renderer/stores/vuex/actionTypes';
 
 type UIStates = {
   showSidebar: boolean,

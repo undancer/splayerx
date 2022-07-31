@@ -7,8 +7,8 @@ import {
 } from '@renderer/interfaces/ISubtitle';
 import { LanguageCode } from '@renderer/libs/language';
 import { storeSubtitle } from '@renderer/services/storage/subtitle';
-import { newSubtitle as m } from '@renderer/store/mutationTypes';
-import { newSubtitle as a } from '@renderer/store/actionTypes';
+import { newSubtitle as m } from '@renderer/stores/vuex/mutationTypes';
+import { newSubtitle as a } from '@renderer/stores/vuex/actionTypes';
 import { getParser, getLoader } from '@renderer/services/subtitle/utils';
 import { SubtitleUploadParameter, ModifiedParser } from '@renderer/services/subtitle';
 import { generateHints } from '@renderer/libs/utils';

@@ -1,6 +1,6 @@
-import Fetcher from '@renderer/../shared/Fetcher';
-import { postMessage } from '@renderer/../shared/utils';
-import { apiOfAccountService } from '@renderer/../shared/config';
+import Fetcher from '@shared/Fetcher';
+import { postMessage } from '@shared/utils';
+import { apiOfAccountService } from '@shared/config';
 
 
 export class ApiError extends Error {

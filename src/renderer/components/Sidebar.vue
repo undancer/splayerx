@@ -126,7 +126,7 @@ import { difference } from 'lodash';
 // @ts-ignore
 import urlParseLax from 'url-parse-lax';
 import { mapGetters, mapActions } from 'vuex';
-import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { Browsing as browsingActions } from '@renderer/stores/vuex/actionTypes';
 import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
 import asyncStorage from '@renderer/helpers/asyncStorage';
 import Icon from '@renderer/components/BaseIconContainer.vue';
@@ -135,7 +135,7 @@ import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelM
 import { log } from '@renderer/libs/Log';
 import BrowsingChannelMenu from '@renderer/services/browsing/BrowsingChannelMenu';
 import { BrowsingHistoryItem } from '@renderer/helpers/browsingDB';
-import { calcCurrentChannel } from '../../shared/utils';
+import { calcCurrentChannel } from '@shared/utils';
 
 export default {
   name: 'Sidebar',

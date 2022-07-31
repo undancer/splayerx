@@ -85,8 +85,8 @@
 
 <script lang="ts">
 import { mapActions } from 'vuex';
-import { SubtitleManager } from '@renderer/store/actionTypes';
-import Icon from '../../BaseIconContainer.vue';
+import { SubtitleManager } from '@renderer/stores/vuex/actionTypes';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'AdvanceSelectItems',

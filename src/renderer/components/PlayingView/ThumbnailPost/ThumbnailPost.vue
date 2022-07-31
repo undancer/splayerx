@@ -59,11 +59,11 @@ import { writeFile } from 'fs';
 import { mapGetters } from 'vuex';
 import { log } from '@renderer/libs/Log';
 import { thumbnailPostService } from '@renderer/services/media/ThumbnailPostService';
-import splayer from '../../../assets/splayer.png';
+import { timecodeFromSeconds } from '@renderer/libs/utils';
+import { addBubble } from '@renderer/helpers/notificationControl';
+import { THUMBNAIL_GENERATE, THUMBNAIL_GENERATE_SUCCESS, THUMBNAIL_GENERATE_FAILED } from '@renderer/helpers/notificationcodes';
 import splayerEng from '../../../assets/splayer-eng.png';
-import { timecodeFromSeconds } from '../../../libs/utils';
-import { addBubble } from '../../../helpers/notificationControl';
-import { THUMBNAIL_GENERATE, THUMBNAIL_GENERATE_SUCCESS, THUMBNAIL_GENERATE_FAILED } from '../../../helpers/notificationcodes';
+import splayer from '../../../assets/splayer.png';
 
 export default {
   props: {

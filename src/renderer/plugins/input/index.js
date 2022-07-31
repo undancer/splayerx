@@ -1,4 +1,4 @@
-import VuexStore from '@renderer/store';
+import VuexStore from '@renderer/stores/vuex';
 import { INPUT_COMPONENT_TYPE, nameDefaultOption } from './constants';
 import { addComponent, removeComponent } from './helpers/componentStore';
 import module from './vuex';

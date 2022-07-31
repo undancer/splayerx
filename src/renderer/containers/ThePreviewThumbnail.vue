@@ -44,9 +44,9 @@ import { thumbnailService } from '@renderer/services/media/ThumbnailService';
 import ThumbnailDisplay from '@renderer/components/PlayingView/ThumbnailDisplay.vue';
 // @ts-ignore
 import Icon from '@renderer/components/BaseIconContainer.vue';
+import { isVideo } from '@shared/utils';
 import { getThumbnailPath } from '../plugins/mediaTasks';
 import { ThumbnailReplyType } from '../plugins/mediaTasks/thumbnailQueue';
-import { isVideo } from '../../shared/utils';
 
 export default {
   components: {

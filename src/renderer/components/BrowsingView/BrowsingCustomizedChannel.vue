@@ -108,7 +108,7 @@ import { mapGetters, mapActions } from 'vuex';
 // @ts-ignore
 import urlParseLax from 'url-parse-lax';
 import { log } from '@renderer/libs/Log';
-import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { Browsing as browsingActions } from '@renderer/stores/vuex/actionTypes';
 import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
 import Icon from '@renderer/components/BaseIconContainer.vue';
 

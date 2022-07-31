@@ -147,7 +147,7 @@ import {
   Subtitle as legacySubtitleActions,
   AudioTranslate as atActions,
   UIStates as uiActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import { INPUT_COMPONENT_TYPE, getterTypes as iGT } from '@renderer/plugins/input';
 import PlayButton from '@renderer/components/PlayingView/PlayButton.vue';
 import VolumeIndicator from '@renderer/components/PlayingView/VolumeIndicator.vue';
@@ -162,8 +162,8 @@ import AudioTranslateModal from '@renderer/containers/AudioTranslateModal.vue';
 import ForbiddenModal from '@renderer/containers/ForbiddenModal.vue';
 import SubtitleEditor from '@renderer/containers/SubtitleEditor.vue';
 import ReferenceSubtitleControl from '@renderer/components/Subtitle/ReferenceSubtitleControl.vue';
-import { videodata } from '@renderer/store/video';
-import { AudioTranslateStatus } from '../store/modules/AudioTranslate';
+import { videodata } from '@renderer/stores/vuex/video';
+import { AudioTranslateStatus } from '../stores/vuex/modules/AudioTranslate';
 
 const { mapGetters: inputMapGetters } = createNamespacedHelpers('InputPlugin');
 /** dom wrapper */

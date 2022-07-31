@@ -26,17 +26,17 @@ export default class DataBase implements IDB {
     return this.db.update(objectStore, data, key);
   }
 
-  public async delete(objectStore: string, key: number): Promise<undefined> {
+  public async delete(objectStore: string, key: number): Promise<void> {
     return this.db.delete(objectStore, key);
   }
 
-  public async clear(objectStore: string): Promise<undefined> {
+  public async clear(objectStore: string): Promise<void> {
     return this.db.clear(objectStore);
   }
 
   public async getAll(objectStore: string, keyRange?: IDBKeyRange) {
     if (keyRange) return this.db.getAll(objectStore, keyRange);
-    return this.db.getAll(objectStore, undefined);
+    return this.db.getAll(objectStore);
   }
 
   public async getValueByKey(objectStore: string, key: number) {

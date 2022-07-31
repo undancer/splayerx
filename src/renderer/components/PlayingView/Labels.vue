@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts">
-import Icon from '../BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'SpeedLabel',

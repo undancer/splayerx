@@ -16,7 +16,7 @@ import { DEFAULT_VIDEO_EVENTS, MAX_AMPLIFY_VOLUME } from '@renderer/constants';
 import { addBubble } from '@renderer/helpers/notificationControl';
 import { ENOENT } from '@renderer/helpers/notificationcodes';
 import { log } from '@renderer/libs/Log';
-import { videodata } from '../../store/video';
+import { videodata } from '@renderer/stores/vuex/video';
 
 export default {
   name: 'BaseVideoPlayer',

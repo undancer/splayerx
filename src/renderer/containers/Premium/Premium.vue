@@ -41,8 +41,8 @@ import {
 import Icon from '@renderer/components/BaseIconContainer.vue';
 import {
   UserInfo as uActions,
-} from '@renderer/store/actionTypes';
-import { PayStatus } from '@renderer/store/modules/UserInfo';
+} from '@renderer/stores/vuex/actionTypes';
+import { PayStatus } from '@renderer/stores/vuex/modules/UserInfo';
 
 export default Vue.extend({
   name: 'Premium',

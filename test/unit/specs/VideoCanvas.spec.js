@@ -3,10 +3,10 @@ import { createLocalVue, mount } from '@vue/test-utils';
 import VideoCanvas from '@renderer/components/PlayingView/VideoCanvas.vue';
 import sinon from 'sinon';
 import Vuex from 'vuex';
-import Video from '@renderer/store/modules/Video';
-import Playlist from '@renderer/store/modules/Playlist';
-import Window from '@renderer/store/modules/Window';
-import { Video as videoActions } from '@renderer/store/actionTypes';
+import Video from '@renderer/stores/vuex/modules/Video';
+import Playlist from '@renderer/stores/vuex/modules/Playlist';
+import Window from '@renderer/stores/vuex/modules/Window';
+import { Video as videoActions } from '@renderer/stores/vuex/actionTypes';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);

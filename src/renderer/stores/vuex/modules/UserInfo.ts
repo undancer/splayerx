@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { UserInfo as m } from '@renderer/store/mutationTypes';
-import { UserInfo as a } from '@renderer/store/actionTypes';
+import { UserInfo as m } from '@renderer/stores/vuex/mutationTypes';
+import { UserInfo as a } from '@renderer/stores/vuex/actionTypes';
 
 function toDateString(d: string): string {
   const date = new Date(d).toISOString();

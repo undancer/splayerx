@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { ILog } from '@renderer/interfaces/ILog';
-import Sentry from '../../shared/sentry';
+import Sentry from '@shared/sentry';
 
 export default class Log implements ILog {
   private log(label: string, level: string, message: string | Error) {

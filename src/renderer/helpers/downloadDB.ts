@@ -65,13 +65,13 @@ export default class DownloadDB {
     return db.put(objectStore, data);
   }
 
-  public async delete(objectStore: 'download', key: string): Promise<undefined> {
+  public async delete(objectStore: 'download', key: string): Promise<void> {
     log.info('DownloadDB', `deleting ${key} from ${objectStore}`);
     const db = await this.getDB();
     return db.delete(objectStore, key);
   }
 
-  public async clear(objectStore: 'download'): Promise<undefined> {
+  public async clear(objectStore: 'download'): Promise<void> {
     const db = await this.getDB();
     const tx = db.transaction(objectStore, 'readwrite');
     tx.store.clear();

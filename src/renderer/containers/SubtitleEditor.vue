@@ -200,12 +200,12 @@ import {
   EVENT_BUS_COLLECTIONS as bus,
   MODIFIED_SUBTITLE_TYPE,
 } from '@renderer/constants';
-import { videodata } from '@renderer/store/video';
+import { videodata } from '@renderer/stores/vuex/video';
 import {
   SubtitleManager as smActions,
   Editor as seActions,
-} from '@renderer/store/actionTypes';
-import { Editor as editorMutations, Input as inputMutations } from '@renderer/store/mutationTypes';
+} from '@renderer/stores/vuex/actionTypes';
+import { Editor as editorMutations, Input as inputMutations } from '@renderer/stores/vuex/mutationTypes';
 import {
   Cue, TextCue, EditCue, ModifiedSubtitle,
 } from '@renderer/interfaces/ISubtitle';

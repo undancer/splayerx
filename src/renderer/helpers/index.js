@@ -13,12 +13,12 @@ import {
   isVideo,
   isAudio,
   isValidFile,
-} from '@renderer/../shared/utils';
+} from '@shared/utils';
 import {
   Video as videoActions,
   AudioTranslate as atActions,
-} from '@renderer/store/actionTypes';
-import { videodata } from '@renderer/store/video';
+} from '@renderer/stores/vuex/actionTypes';
+import { videodata } from '@renderer/stores/vuex/video';
 import {
   EMPTY_FOLDER, OPEN_FAILED, ADD_NO_VIDEO,
   SNAPSHOT_FAILED, SNAPSHOT_SUCCESS, FILE_NON_EXIST_IN_PLAYLIST, PLAYLIST_NON_EXIST,
@@ -603,7 +603,7 @@ export default {
       if (this.$store.getters.isTranslating) {
         // 如果正在进行智能翻译，就阻止切换视频,
         // 并且提示是否终止智能翻译
-        import('@renderer/store/modules/AudioTranslate').then(({ AudioTranslateBubbleOrigin }) => {
+        import('@renderer/stores/vuex/modules/AudioTranslate').then(({ AudioTranslateBubbleOrigin }) => {
           if (Math.ceil(videodata.time) === Math.ceil(this.$store.getters.duration)) {
             this.$store.dispatch(atActions.AUDIO_TRANSLATE_SHOW_BUBBLE,
               AudioTranslateBubbleOrigin.NextVideoChange);

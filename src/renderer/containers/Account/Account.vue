@@ -136,7 +136,7 @@ import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
 import {
   UserInfo as uActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import Icon from '@renderer/components/BaseIconContainer.vue';
 import { getUserInfo, getUserBalance } from '@renderer/libs/webApis';
 

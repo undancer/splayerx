@@ -126,8 +126,8 @@ import {
   SubtitleManager as smActions,
   AudioTranslate as atActions,
   Editor as edActions,
-} from '@renderer/store/actionTypes';
-import { Editor as editorMutations } from '@renderer/store/mutationTypes';
+} from '@renderer/stores/vuex/actionTypes';
+import { Editor as editorMutations } from '@renderer/stores/vuex/mutationTypes';
 import { ISubtitleControlListItem, Type, NOT_SELECTED_SUBTITLE } from '@renderer/interfaces/ISubtitle';
 import lottie from '@renderer/components/lottie.vue';
 import animationData from '@renderer/assets/subtitle.json';
@@ -135,7 +135,7 @@ import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import SubtitleList from '@renderer/components/PlayingView/SubtitleList.vue';
 import { addBubble } from '@renderer/helpers/notificationControl';
 import { SUBTITLE_OFFLINE, TRANSLATE_NO_LINE } from '@renderer/helpers/notificationcodes';
-import Icon from '../BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'SubtitleControl',

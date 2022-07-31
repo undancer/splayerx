@@ -33,6 +33,7 @@ export default class BrowsingDB {
       BROWSINGDB_NAME, BROWSINGDB_VERSION, {
         upgrade(db) {
           const historyStore = db.createObjectStore(
+            // @ts-ignore
             HISTORY_OBJECT_STORE_NAME, { keyPath: 'url' },
           );
           historyStore.createIndex('openTime', 'openTime');
@@ -66,13 +67,13 @@ export default class BrowsingDB {
     return db.put(objectStore, data);
   }
 
-  public async delete(objectStore: 'history', key: string): Promise<undefined> {
+  public async delete(objectStore: 'history', key: string): Promise<void> {
     log.info('BrowsingDB', `deleting ${key} from ${objectStore}`);
     const db = await this.getDB();
     return db.delete(objectStore, key);
   }
 
-  public async clear(objectStore: 'history'): Promise<undefined> {
+  public async clear(objectStore: 'history'): Promise<void> {
     const db = await this.getDB();
     const tx = db.transaction(objectStore, 'readwrite');
     tx.store.clear();

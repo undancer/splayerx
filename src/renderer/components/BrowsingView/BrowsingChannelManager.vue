@@ -139,7 +139,7 @@
 import { mapActions, mapGetters } from 'vuex';
 import BrowsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
 import Icon from '@renderer/components/BaseIconContainer.vue';
-import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { Browsing as browsingActions } from '@renderer/stores/vuex/actionTypes';
 import { channelDetails } from '@renderer/interfaces/IBrowsingChannelManager';
 import BrowsingCustomizedChannel from './BrowsingCustomizedChannel.vue';
 

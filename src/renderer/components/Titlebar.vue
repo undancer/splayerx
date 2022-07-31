@@ -135,8 +135,8 @@ import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import Icon from '@renderer/components/BaseIconContainer.vue';
 import SidebarIcon from '@renderer/components/LandingView/SidebarIcon.vue';
 import Badge from '@renderer/components/LandingView/Badge.vue';
-import { Input as inputActions } from '@renderer/store/actionTypes';
-import { isBrowserEnabled } from '@renderer/../shared/config';
+import { Input as inputActions } from '@renderer/stores/vuex/actionTypes';
+import { isBrowserEnabled } from '@shared/config';
 
 export default {
   name: 'Titlebar',

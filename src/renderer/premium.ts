@@ -3,7 +3,7 @@ import Vuex, { mapActions, mapGetters } from 'vuex';
 import VueRouter from 'vue-router';
 import VueI18n from 'vue-i18n';
 import { hookVue } from '@renderer/kerning';
-import store from '@renderer/store/webStore';
+import store from '@renderer/stores/vuex/webStore';
 import messages from '@renderer/locales';
 import {
   setToken, getGeoIP, getUserInfo, getUserBalance,
@@ -12,9 +12,10 @@ import {
 import Product from '@renderer/containers/Premium/Product.vue';
 import {
   UserInfo as uActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import '@renderer/css/style.scss';
-import { PayStatus } from '@renderer/store/modules/UserInfo';
+import { PayStatus } from '@renderer/stores/vuex/modules/UserInfo';
+import pinia from '@renderer/stores/pinia';
 
 Vue.use(VueI18n);
 Vue.use(Vuex);
@@ -93,6 +94,7 @@ new Vue({
   i18n,
   router,
   store,
+  pinia,
   components: { Product },
   data: {
     didGetUserInfo: false,

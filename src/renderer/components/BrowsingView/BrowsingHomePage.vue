@@ -144,9 +144,9 @@
 import { mapGetters } from 'vuex';
 import { version } from '@renderer/../../package.json';
 import BrowsingHistory from '@renderer/components/BrowsingView/BrowsingHistory.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import BrowsingAdv from './BrowsingAdv.vue';
 import BrowsingLocalPlaylist from './BrowsingLocalPlaylist.vue';
-import Icon from '../BaseIconContainer.vue';
 
 export default {
   name: 'BrowsingHomePage',

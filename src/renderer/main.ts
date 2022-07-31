@@ -1,5 +1,5 @@
 // Be sure to call Sentry function as early as possible in the main process
-import Sentry from '../shared/sentry'; // eslint-disable-line import/order
+import Sentry from '@shared/sentry'; // eslint-disable-line import/order
 
 import path from 'path';
 import os from 'os';
@@ -20,7 +20,7 @@ import { EventEmitter } from 'events';
 // @ts-ignore
 import App from '@renderer/App.vue';
 import router from '@renderer/router';
-import store from '@renderer/store';
+import store from '@renderer/stores/vuex';
 import messages from '@renderer/locales';
 import { windowRectService } from '@renderer/services/window/WindowRectService';
 import helpers from '@renderer/helpers';
@@ -35,13 +35,13 @@ import {
   UIStates as uiActions,
   Download as downloadActions,
   Editor as seActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import { log } from '@renderer/libs/Log';
 import { checkForUpdate } from '@renderer/libs/utils';
 import asyncStorage from '@renderer/helpers/asyncStorage';
-import { videodata } from '@renderer/store/video';
+import { videodata } from '@renderer/stores/vuex/video';
 import { addBubble } from '@renderer/helpers/notificationControl';
-import { isAccountEnabled } from '@renderer/../shared/config';
+import { isAccountEnabled } from '@shared/config';
 import { EVENT_BUS_COLLECTIONS as bus, MAX_VOLUME, MAX_AMPLIFY_VOLUME } from '@renderer/constants';
 import InputPlugin, { getterTypes as iGT } from '@renderer/plugins/input';
 import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
@@ -56,17 +56,18 @@ import {
 // causing callbacks-registry.js 404 error. disable temporarily
 // require('source-map-support').install();
 import VueGtag from 'vue-gtag';
+import pinia from '@renderer/stores/pinia';
+import MenuService from './services/menu/MenuService';
+import BrowsingChannelMenu from './services/browsing/BrowsingChannelMenu';
+import {
+  ISubtitleControlListItem, Type, NOT_SELECTED_SUBTITLE, ModifiedSubtitle,
+} from './interfaces/ISubtitle';
 import {
   CHECK_FOR_UPDATES_OFFLINE, REQUEST_TIMEOUT,
   SNAPSHOT_FAILED, SNAPSHOT_SUCCESS, LOAD_SUBVIDEO_FAILED,
   BUG_UPLOAD_FAILED, BUG_UPLOAD_SUCCESS, BUG_UPLOADING,
   LOSSLESS_STREAMING_START, LOSSLESS_STREAMING_STOP,
 } from './helpers/notificationcodes';
-import {
-  ISubtitleControlListItem, Type, NOT_SELECTED_SUBTITLE, ModifiedSubtitle,
-} from './interfaces/ISubtitle';
-import BrowsingChannelMenu from './services/browsing/BrowsingChannelMenu';
-import MenuService from './services/menu/MenuService';
 
 Vue.config.productionTip = false;
 Vue.config.warnHandler = (warn) => {
@@ -158,6 +159,7 @@ new Vue({
   components: { App },
   router,
   store,
+  pinia,
   data() {
     return {
       menu: null,
@@ -756,6 +758,8 @@ new Vue({
       e.preventDefault();
       if (this.currentRouteName !== 'landing-view' && this.currentRouteName !== 'playing-view') return;
       if (this.isProfessional) return;
+      // TODO:
+      // @ts-ignore
       e.dataTransfer!.dropEffect = process.platform === 'darwin' ? 'copy' : '';
       this.$bus.$emit('drag-over');
     });

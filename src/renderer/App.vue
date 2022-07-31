@@ -46,7 +46,7 @@ import {
   UserInfo as uActions,
   AudioTranslate as atActions,
   UIStates as uiActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import Titlebar from '@renderer/components/Titlebar.vue';
 import Sidebar from '@renderer/components/Sidebar.vue';
 import '@renderer/css/style.scss';
@@ -58,8 +58,8 @@ import {
   getUserBalance,
 } from '@renderer/libs/apis';
 import sagi from '@renderer/libs/sagi';
-import { apiOfAccountService, siteOfAccountService, forceRefresh } from '@renderer/../shared/config';
-import { AudioTranslateBubbleOrigin, AudioTranslateStatus } from '@renderer/store/modules/AudioTranslate';
+import { apiOfAccountService, siteOfAccountService, forceRefresh } from '@shared/config';
+import { AudioTranslateBubbleOrigin, AudioTranslateStatus } from '@renderer/stores/vuex/modules/AudioTranslate';
 import { log } from './libs/Log';
 
 export default {

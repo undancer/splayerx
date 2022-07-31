@@ -67,7 +67,7 @@
 import Vue from 'vue';
 
 import Icon from '@renderer/components/BaseIconContainer.vue';
-import { postMessage } from '@renderer/../shared/utils';
+import { postMessage } from '@shared/utils';
 
 export default Vue.extend({
   name: 'Login',

@@ -67,7 +67,7 @@ import { AnimationItem } from 'lottie-web';
 import {
   Input as InputActions,
   Editor as edActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';
 // import lottie from '@renderer/components/lottie.vue';
 // import animationData from '@renderer/assets/playlist.json';

@@ -48,7 +48,7 @@
 <script lang="ts">
 import { mapGetters } from 'vuex';
 import path from 'path';
-import Icon from '../BaseIconContainer.vue';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 
 export default {
   name: 'NextVideo',

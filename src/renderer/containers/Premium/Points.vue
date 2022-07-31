@@ -183,7 +183,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import { mapGetters, mapActions } from 'vuex';
-import { getClientUUID, openExternal } from '@renderer/../shared/utils';
+import { getClientUUID, openExternal } from '@shared/utils';
 import {
   getGeoIP, getProductList, createOrder, ApiError, signIn,
 } from '@renderer/libs/webApis';
@@ -191,8 +191,8 @@ import Icon from '@renderer/components/BaseIconContainer.vue';
 import BaseRadio from '@renderer/components/Preferences/BaseRadio.vue';
 import {
   UserInfo as uActions,
-} from '@renderer/store/actionTypes';
-import { PayStatus } from '@renderer/store/modules/UserInfo';
+} from '@renderer/stores/vuex/actionTypes';
+import { PayStatus } from '@renderer/stores/vuex/modules/UserInfo';
 
 export default Vue.extend({
   name: 'Points',

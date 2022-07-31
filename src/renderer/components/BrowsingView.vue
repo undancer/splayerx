@@ -76,7 +76,7 @@ import {
   Browsing as browsingActions,
   UIStates as uiActions,
   Download as downloadActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import BrowsingHeader from '@renderer/components/BrowsingView/BrowsingHeader.vue';
 import BrowsingContent from '@renderer/components/BrowsingView/BrowsingContent.vue';
 import BrowsingChannelManager from '@renderer/components/BrowsingView/BrowsingChannelManager.vue';
@@ -90,11 +90,11 @@ import { log } from '@renderer/libs/Log';
 import { browsingHistory } from '@renderer/services/browsing/BrowsingHistoryService';
 import browsingChannelManager from '@renderer/services/browsing/BrowsingChannelManager';
 import BrowsingDownload from '@renderer/services/browsing/BrowsingDownload';
-import { browserDownloadBlacklist } from '@renderer/../shared/config';
-import InjectJSManager from '../../shared/pip/InjectJSManager';
+import { browserDownloadBlacklist } from '@shared/config';
+import InjectJSManager from '@shared/pip/InjectJSManager';
 import {
   isVideo, isAudio, checkVcRedistributablePackage, calcCurrentChannel,
-} from '../../shared/utils';
+} from '@shared/utils';
 
 export default {
   name: 'BrowsingView',

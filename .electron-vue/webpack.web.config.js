@@ -6,12 +6,13 @@ const path = require('path');
 const childProcess = require('child_process');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
-// const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const { dependencies, optionalDependencies } = require('../package.json');
+const {
+  dependencies,
+  optionalDependencies,
+} = require('../package.json');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 let release = '';
 try {
@@ -22,7 +23,8 @@ try {
     '--abbrev=0',
   ]);
   if (result.status === 0) {
-    const tag = result.stdout.toString('utf8').replace(/^\s+|\s+$/g, '');
+    const tag = result.stdout.toString('utf8')
+      .replace(/^\s+|\s+$/g, '');
     if (tag) release = `SPlayer${tag}`;
   }
 } catch (ex) {
@@ -66,60 +68,70 @@ let webConfig = {
   devtool: '#module-eval-source-map',
   entry,
   externals: [
-    ...Object.keys(Object.assign({}, dependencies, optionalDependencies)).filter(
-      d => !whiteListedModules.includes(d),
-    ),
+    ...Object.keys(Object.assign({}, dependencies, optionalDependencies))
+      .filter(module => !whiteListedModules.includes(module)),
     'electron',
   ],
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: 'css-loader',
-        }),
+        test: /\.vue$/,
+        loader: 'vue-loader',
       },
       {
         test: /\.html$/,
         use: 'vue-html-loader',
       },
       {
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-              appendTsSuffixTo: [/\.vue$/],
-            },
-          },
-        ],
-      },
-      {
         test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/,
+        // use: 'babel-loader',
+        // exclude: /node_modules/,
+        exclude: file => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        ),
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'js',
+          target: 'es2015',
+          //   loader: 'jsx',  // Remove this if you're not using JSX
+          //   target: 'es2015',  // Syntax to compile to (see options below for possible values)
+        },
       },
       {
-        test: /\.vue$/,
-        use: {
-          loader: 'vue-loader',
-          options: {
-            extractCSS: process.env.NODE_ENV === 'production',
-            loaders: {
-              i18n: 'vue-i18n-loader',
-            },
-          },
+        test: /\.ts$/,
+        // use: 'babel-loader',
+        // exclude: /node_modules/,
+        exclude: file => (
+          /node_modules/.test(file) &&
+          !/\.vue\.js/.test(file)
+        ),
+        loader: 'esbuild-loader',
+        options: {
+          loader: 'ts',
+          target: 'es2015',
+          //   loader: 'jsx',  // Remove this if you're not using JSX
+          //   target: 'es2015',  // Syntax to compile to (see options below for possible values)
         },
+      },
+      {
+        test: /\.mjs$/,
+        include: /node_modules/,
+        type: 'javascript/auto',
+      },
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
       {
         test: /\.sass$/,
         use: [
           'vue-style-loader',
           'css-loader',
-          { loader: 'sass-loader', options: { indentedSyntax: 1 } },
+          {
+            loader: 'sass-loader',
+            options: { indentedSyntax: 1 },
+          },
           {
             loader: 'sass-resources-loader',
             options: { resources: path.join(__dirname, '../src/renderer/css/global.scss') },
@@ -191,7 +203,7 @@ let webConfig = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new ExtractTextPlugin('styles.css'),
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
     new HtmlWebpackPlugin(generateHtmlWebpackPluginConfig('login')),
     new HtmlWebpackPlugin(generateHtmlWebpackPluginConfig('premium')),
     new webpack.HotModuleReplacementPlugin(),
@@ -211,7 +223,7 @@ let webConfig = {
       '@renderer': path.join(__dirname, '../src/renderer'),
       '@shared': path.join(__dirname, '../src/shared'),
     },
-    extensions: ['.web.ts', '.web.js', '.ts', '.tsx', '.js', '.json'],
+    extensions: ['.web.ts', '.web.js', '.ts', '.tsx', '.js', '.vue', '.json'],
   },
   target: 'web',
 };
@@ -228,10 +240,11 @@ if (process.env.NODE_ENV !== 'production') {
       Object.assign(sharedDefinedVariables, {
         'process.env.SAGI_API': `"${process.env.SAGI_API || 'apis.stage.sagittarius.ai:8443'}"`,
         'process.env.ACCOUNT_API': `"${process.env.ACCOUNT_API ||
-          'https://account.stage.splayer.org'}"`,
+        'https://account.stage.splayer.org'}"`,
         'process.env.ACCOUNT_SITE': `"${process.env.ACCOUNT_SITE ||
-          'https://account.stage.splayer.org'}"`,
-        __static: `"${path.join(__dirname, '../static').replace(/\\/g, '\\\\')}"`,
+        'https://account.stage.splayer.org'}"`,
+        __static: `"${path.join(__dirname, '../static')
+          .replace(/\\/g, '\\\\')}"`,
       }),
     ),
   );

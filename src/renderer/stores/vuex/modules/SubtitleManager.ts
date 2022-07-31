@@ -10,15 +10,15 @@ import Vue from 'vue';
 import { remote, SaveDialogReturnValue } from 'electron';
 import { extname, basename, join } from 'path';
 import { existsSync } from 'fs';
-import store from '@renderer/store';
-import { SubtitleManager as m } from '@renderer/store/mutationTypes';
+import store from '@renderer/stores/vuex';
+import { SubtitleManager as m } from '@renderer/stores/vuex/mutationTypes';
 import {
   SubtitleManager as a,
   newSubtitle as subActions,
   Subtitle as legacyActions,
   AudioTranslate as atActions,
   // UserInfo as usActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import {
   ISubtitleControlListItem, Type, IEntityGenerator, IEntity, NOT_SELECTED_SUBTITLE, Cue,
 } from '@renderer/interfaces/ISubtitle';
@@ -37,19 +37,19 @@ import {
 } from '@renderer/services/storage/subtitle';
 import { LanguageCode, codeToLanguageName } from '@renderer/libs/language';
 import { ISubtitleStream } from '@renderer/plugins/mediaTasks';
-import { isAIEnabled } from '@renderer/../shared/config';
+import { isAIEnabled } from '@shared/config';
 import { IEmbeddedOrigin } from '@renderer/services/subtitle/utils/loaders';
 import { sagiSubtitleToSRT } from '@renderer/services/subtitle/utils/transcoders';
 import { write } from '@renderer/libs/file';
-import { AudioTranslateBubbleOrigin } from './AudioTranslate';
 import {
   ONLINE_LOADING, REQUEST_TIMEOUT,
   SUBTITLE_UPLOAD, UPLOAD_SUCCESS, UPLOAD_FAILED,
   CANNOT_UPLOAD,
   LOCAL_SUBTITLE_REMOVED,
   // APPX_EXPORT_NOT_WORK,
-} from '../../helpers/notificationcodes';
-import { addBubble } from '../../helpers/notificationControl';
+} from '@renderer/helpers/notificationcodes';
+import { addBubble } from '@renderer/helpers/notificationControl';
+import { AudioTranslateBubbleOrigin } from './AudioTranslate';
 import SubtitleModule from './Subtitle';
 
 const sortOfTypes = {

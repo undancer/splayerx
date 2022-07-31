@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import helpers from '@renderer/helpers/index';
+import helpers from '@renderer/helpers';
 
 const state = {
   source: '', // 'drop' or '', used on mas version

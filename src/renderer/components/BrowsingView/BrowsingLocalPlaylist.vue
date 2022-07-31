@@ -127,8 +127,8 @@
 import { mapGetters } from 'vuex';
 import { recentPlayService } from '@renderer/services/media/RecentPlayService';
 import { playInfoStorageService } from '@renderer/services/storage/PlayInfoStorageService';
+import Icon from '@renderer/components/BaseIconContainer.vue';
 import blankPlaylist from '../../assets/blankPlaylist.png';
-import Icon from '../BaseIconContainer.vue';
 
 export default {
   name: 'BrowsingLocalPlaylist',

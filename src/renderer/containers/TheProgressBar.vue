@@ -79,7 +79,7 @@
 </template>
 <script lang="ts">
 import { mapGetters } from 'vuex';
-import { videodata } from '@renderer/store/video';
+import { videodata } from '@renderer/stores/vuex/video';
 import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';
 import {
   EVENT_BUS_COLLECTIONS as bus,

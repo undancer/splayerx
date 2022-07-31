@@ -1,6 +1,6 @@
 import { shell, remote } from 'electron';
 import { basename } from 'path';
-import store from '@renderer/store';
+import store from '@renderer/stores/vuex';
 import {
   FILE_NON_EXIST_IN_PLAYLIST,
   PLAYLIST_NON_EXIST,

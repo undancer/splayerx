@@ -194,8 +194,8 @@ import {
 } from 'vuex';
 import { filePathToUrl } from '@renderer/helpers/path';
 import { mediaQuickHash } from '@renderer/libs/utils';
-import { Input as inputMutations } from '@renderer/store/mutationTypes';
-import { Input as InputActions, Subtitle as subtitleActions } from '@renderer/store/actionTypes';
+import { Input as inputMutations } from '@renderer/stores/vuex/mutationTypes';
+import { Input as InputActions, Subtitle as subtitleActions } from '@renderer/stores/vuex/actionTypes';
 import RecentPlaylistItem from '@renderer/containers/RecentPlaylistItem.vue';
 import Add from '@renderer/components/PlayingView/Add.vue';
 import { INPUT_COMPONENT_TYPE } from '@renderer/plugins/input';

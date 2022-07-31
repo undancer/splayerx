@@ -21,9 +21,9 @@ import {
   VIDEO_DIRNAME, SUBTITLE_DIRNAME,
 } from '@renderer/constants';
 import { IEmbeddedOrigin } from '@renderer/services/subtitle/utils/loaders';
-import Fetcher from '@renderer/../shared/Fetcher';
+import Fetcher from '@shared/Fetcher';
+import { isBetaVersion } from '@shared/common/platform';
 import { codeToLanguageName, LanguageCode } from './language';
-import { isBetaVersion } from '../../shared/common/platform';
 
 /**
  * @description 获取electron应用用户目录下的设定的缓存路径
@@ -59,6 +59,7 @@ export function calculateTextSize(
   span.style.fontWeight = '700';
   span.style.letterSpacing = '0.2px';
   span.style.lineHeight = lineHeight;
+  // @ts-ignore
   span.style.zoom = zoom;
   document.body.appendChild(span);
   if (typeof span.textContent !== 'undefined') {

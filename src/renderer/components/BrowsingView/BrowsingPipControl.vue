@@ -38,7 +38,7 @@
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
 import Icon from '@renderer/components/BaseIconContainer.vue';
-import { Browsing as browsingActions } from '@renderer/store/actionTypes';
+import { Browsing as browsingActions } from '@renderer/stores/vuex/actionTypes';
 
 export default {
   components: {

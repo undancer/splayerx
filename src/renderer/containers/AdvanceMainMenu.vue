@@ -240,7 +240,7 @@
 
 <script lang="ts">
 import { mapGetters, mapActions } from 'vuex';
-import { Subtitle as subtitleActions, Video as videoActions } from '@renderer/store/actionTypes';
+import { Subtitle as subtitleActions, Video as videoActions } from '@renderer/stores/vuex/actionTypes';
 import { calculateTextSize } from '@renderer/libs/utils';
 import AdvanceRowItems from '@renderer/components/PlayingView/AdvanceControlFunctionalities/AdvanceRowItems.vue';
 // @ts-ignore

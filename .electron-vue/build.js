@@ -14,8 +14,11 @@ const errorLog = chalk.bgRed.white(' ERROR ') + ' ';
 const okayLog = chalk.bgBlue.white(' OKAY ') + ' ';
 const isCI = process.env.CI || false;
 
-if (process.env.BUILD_TARGET === 'clean') clean();
-else build();
+if (process.env.BUILD_TARGET === 'clean') {
+  clean();
+} else {
+  build();
+}
 
 function clean() {
   del.sync(['build/*', '!build/icons', '!build/icons/icon.*']);
@@ -28,24 +31,30 @@ function build() {
 
   del.sync(['dist/electron/*', '!.gitkeep']);
 
-  const tasks = new Listr(['main', 'renderer', 'web'].map((configName) => ({
-    title: `building ${configName} process`,
-    task(ctx, task) {
-      const config = require(`./webpack.${configName}.config`);
-      return pack(config).then((result) => {
-        ctx.results += result + '\n\n';
-      }).catch((err) => {
-        console.log(`\n  ${errorLog}failed to build main process`);
-        console.error(`\n${err}\n`);
-        process.exit(1);
-      });
-    },
-  })), { concurrent: true });
-  tasks.run({ results: '' }).then(({ results }) => {
-    process.stdout.write('\x1B[2J\x1B[0f');
-    console.log(`\n\n${results}`);
-    console.log(`${okayLog}take it away ${chalk.yellow('`electron-builder`')}\n`);
-  });
+  const tasks = new Listr(
+    ['main', 'renderer', 'web']
+      .map((configName) => ({
+        title: `building ${configName} process`,
+        task(ctx, task) {
+          return pack(require(`./webpack.${configName}.config`))
+            .then((result) => {
+              ctx.results += result + '\n\n';
+            })
+            .catch((err) => {
+              console.log(`\n  ${errorLog}failed to build ${configName} process`);
+              console.error(`\n${err}\n`);
+              process.exit(1);
+            });
+        },
+      })),
+    { concurrent: true },
+  );
+  tasks.run({ results: '' })
+    .then(({ results }) => {
+      process.stdout.write('\x1B[2J\x1B[0f');
+      console.log(`\n\n${results}`);
+      console.log(`${okayLog}take it away ${chalk.yellow('`electron-builder`')}\n`);
+    });
 
   // const tasks = ['main', 'renderer', 'web'];
   // let results = '';
@@ -72,8 +81,9 @@ function build() {
 function pack(config) {
   return new Promise((resolve, reject) => {
     webpack(config, (err, stats) => {
-      if (err) reject(err.stack || err);
-      else if (stats.hasErrors()) {
+      if (err) {
+        reject(err.stack || err);
+      } else if (stats.hasErrors()) {
         let err = '';
 
         stats
@@ -103,9 +113,13 @@ function greeting() {
   const cols = process.stdout.columns;
   let text = '';
 
-  if (cols > 85) text = 'lets-build';
-  else if (cols > 60) text = 'lets-|build';
-  else text = false;
+  if (cols > 85) {
+    text = 'lets-build';
+  } else if (cols > 60) {
+    text = 'lets-|build';
+  } else {
+    text = false;
+  }
 
   if (text && !isCI) {
     say(text, {
@@ -113,6 +127,8 @@ function greeting() {
       font: 'simple3d',
       space: false,
     });
-  } else console.log(chalk.yellow.bold('\n  lets-build'));
+  } else {
+    console.log(chalk.yellow.bold('\n  lets-build'));
+  }
   console.log();
 }

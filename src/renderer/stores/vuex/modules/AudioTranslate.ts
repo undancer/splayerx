@@ -7,13 +7,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { ipcRenderer, remote } from 'electron';
 import { v4 as uuidv4 } from 'uuid';
-import { AudioTranslate as m } from '@renderer/store/mutationTypes';
-import store from '@renderer/store';
+import { AudioTranslate as m } from '@renderer/stores/vuex/mutationTypes';
+import store from '@renderer/stores/vuex';
 import {
   AudioTranslate as a,
   SubtitleManager as smActions,
   UserInfo as uActions,
-} from '@renderer/store/actionTypes';
+} from '@renderer/stores/vuex/actionTypes';
 import { AITaskInfo } from '@renderer/interfaces/IMediaStorable';
 import { TranscriptInfo } from '@renderer/services/subtitle';
 import { ISubtitleControlListItem, Type } from '@renderer/interfaces/ISubtitle';

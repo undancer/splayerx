@@ -15,8 +15,8 @@ import { isEqual, pick, remove } from 'lodash';
 import { mapGetters } from 'vuex';
 import {
   ImageCue, IEntity, Type, Format,
-} from '../interfaces/ISubtitle';
-import { isValidNumber } from '../plugins/input/helpers/validators';
+} from '@renderer/interfaces/ISubtitle';
+import { isValidNumber } from '@renderer/plugins/input/helpers/validators';
 
 export default Vue.extend({
   props: {
