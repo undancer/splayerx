@@ -1,29 +1,39 @@
 {
+  "include": [
+    "src/**/*",
+    "test/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    /* Visit https://aka.ms/tsconfig to read more about this file */
+    "target": "ES2021",
+    "module": "ESNext",
     "moduleResolution": "node",
-    "strict": false,
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
     "baseUrl": "./src",
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "newLine": "LF",
-    "noImplicitAny": true,
-    "outDir": "dist/typescript",
     "paths": {
-      "@main/*": ["main/*"],
-      "@renderer/*": ["renderer/*"],
-      "@shared/*": ["shared/*"]
+      "@main/*": [
+        "main/*"
+      ],
+      "@renderer/*": [
+        "renderer/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ]
     },
     "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "suppressImplicitAnyIndexErrors": true
-  },
-  "include": ["src/**/*", "test/**/*"],
-  "exclude": ["node_modules"]
+    "allowJs": true,
+    "outDir": "dist/typescript",
+    "newLine": "LF",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+//    "noImplicitAny": true,
+//    "strictNullChecks": true,
+//    "strictFunctionTypes": true,
+    "skipLibCheck": true
+  }
 }

@@ -53,7 +53,7 @@ export async function getJsonConfig(configKey: string, defaultValue: Json): Prom
 }
 
 export async function forceRefresh() {
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     client.forceRefresh(() => resolve());
   });
 }

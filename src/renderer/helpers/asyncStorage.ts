@@ -39,7 +39,7 @@ function get(key: string): Promise<any> { // eslint-disable-line
   });
 }
 function set(key: string, json: unknown) {
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     storage.set(key, json, (err) => {
       if (err) {
         log.warn('asyncStorage', err);
